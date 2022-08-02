@@ -1,0 +1,266 @@
+package tugasakhir.pemesanan.controller;
+
+import org.hibernate.criterion.Order;
+import org.modelmapper.ModelMapper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+import tugasakhir.pemesanan.dto.ResponseData;
+import tugasakhir.pemesanan.model.*;
+import tugasakhir.pemesanan.repository.ImageRepository;
+import tugasakhir.pemesanan.repository.OrderingRepository;
+import tugasakhir.pemesanan.repository.TransactionRepository;
+import tugasakhir.pemesanan.service.TransactionService;
+import tugasakhir.pemesanan.util.ImageUtility;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.BufferedOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.nio.file.Paths;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
+import java.util.List;
+import java.util.Optional;
+
+@Controller
+@RequestMapping("/transaction")
+public class TransactionController {
+
+    @Autowired
+    private TransactionService transactionService;
+
+    @Autowired
+    private ModelMapper modelMapper;
+
+    @Autowired
+    private ImageController imageController;
+
+    @Autowired
+    private OrderingRepository orderingRepository;
+
+    @Autowired
+    private TransactionRepository transactionRepository;
+
+    @Autowired
+    private SaleController saleController;
+
+    @Value("${ReceiptDir}")
+    private String uploadFolder;
+
+    private final Logger log = LoggerFactory.getLogger(this.getClass());
+
+    @GetMapping("/form")
+    public String registration(Model model) {
+        model.addAttribute("transaction", new Transaction());
+        return "forms/transactionforms";
+    }
+
+    @GetMapping("/form/{id_order}")
+    public String registration(@PathVariable("id_order") Integer idOrder, Model model) {
+        Ordering order = orderingRepository.getById(idOrder);
+        System.out.println("id order will pay : " + idOrder);
+        Transaction trx = new Transaction();
+        trx.setOrderId(order.getId_order());
+        model.addAttribute("transaction", trx);
+        return "createtransaction";
+    }
+
+
+    @PostMapping("/create")
+    public String register(@RequestParam("orderId") Integer idOrder,
+                           @RequestParam("lunas") String lunas, @RequestParam("totalPay") Integer totalPay,  @RequestParam("note") String note,
+                           Model model, HttpServletRequest request, final @RequestParam("image") MultipartFile file) {
+        System.out.println("masukk sini");
+        try {
+            String uploadDirectory = request.getServletContext().getRealPath(uploadFolder);
+            log.info("uploadDirectory:: " + uploadDirectory);
+            String fileName = file.getOriginalFilename();
+            String filePath = Paths.get(uploadDirectory, fileName).toString();
+            log.info("FileName: " + file.getOriginalFilename());
+            if (fileName == null || fileName.contains("..")) {
+                model.addAttribute("invalid", "Sorry! Filename contains invalid path sequence \" + fileName");
+                System.out.println("Sorry! Filename contains invalid path sequence " + fileName);
+            }
+            /*String[] names = name.split(",");
+            String[] descriptions = description.split(",");
+            Date createDate = new Date();
+            log.info("Name: " + names[0]+" "+filePath);
+            log.info("description: " + descriptions[0]);
+            log.info("price: " + price);*/
+            try {
+                File dir = new File(uploadDirectory);
+                if (!dir.exists()) {
+                    log.info("Folder Created");
+                    dir.mkdirs();
+                }
+                // Save the file locally
+                BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(new File(filePath)));
+                stream.write(file.getBytes());
+                stream.close();
+                System.out.println("file uploadeddd");
+            } catch (Exception e) {
+                log.info("in catch");
+                e.printStackTrace();
+            }
+            byte[] imageData = file.getBytes();
+            Transaction transaction = new Transaction();
+            transaction.setTotalPay(totalPay);
+            transaction.setLunas(lunas);
+            transaction.setNote(note);
+            transaction.setReceiptName(fileName);
+            transaction.setImage(imageData);
+            ResponseData<Transaction> response = new ResponseData<>();
+            Ordering ord = orderingRepository.getById(idOrder);
+            transaction.setOrdering(ord);
+            transaction.setOrderId(ord.getId_order());
+            String LD_PATTERN = "yyyy-MM-dd";
+            DateTimeFormatter LD_FORMATTER = DateTimeFormatter.ofPattern(LD_PATTERN);
+            String dateString = LD_FORMATTER.format(LocalDate.now());
+            transaction.setTransactionDate(dateString);
+            response.setPayload(transactionService.save(transaction));
+            log.info("HttpStatus===" + new ResponseEntity<>(HttpStatus.OK));
+            System.out.println("Receipt Saved With File - " + fileName);
+            User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+            if (user.getRole().getNameRole().equalsIgnoreCase("CUSTOMER")) {
+                return "redirect:/transaction/mytransaction";
+            } else {
+                return "redirect:/transaction/show";
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+            return "error bestiee";
+        }
+
+    }
+
+    @PostMapping("/update")
+    public String update(@RequestParam("id_transaction") Integer id,Transaction transaction){
+        Transaction trx = transactionRepository.getById(id);
+        trx.setTransactionDate(transaction.getTransactionDate());
+        trx.setImage(transaction.getImage());
+        trx.setLunas(transaction.getLunas());
+        trx.setTotalPay(transaction.getTotalPay());
+        trx.setNote(transaction.getNote());
+        trx.setTotalPay(transaction.getTotalPay());
+        trx.setOrderId(transaction.getOrderId());
+        System.out.println("status updated : " + transaction.getStatus().getIdStatus());
+        trx.setStatus(transaction.getStatus());
+        Ordering ord = orderingRepository.getById(transaction.getOrderId());
+        ord.setStatusPayment("Pay off");
+        orderingRepository.save(ord);
+        trx.setOrdering(ord);
+        trx.setUser(ord.getUser());
+        System.out.println("user order : " + ord.getUser().getIdUser() + " " + ord.getUser().getName());
+        transactionRepository.save(trx);
+        if(trx.getStatus().getIdStatus().equals(1)){
+            Sale sale = new Sale();
+            sale.setTransaction(trx);
+            sale.setTransactionId(transaction.getId_transaction());
+            sale.setTransactionDate(trx.getTransactionDate());
+            sale.setTotalPay(trx.getTotalPay());
+            System.out.println("save sale after approve payment");
+            System.out.println("trx no : "+ trx.getId_transaction());
+            System.out.println("trx date : "+ trx.getTransactionDate());
+            System.out.println("total : "+ trx.getTotalPay());
+            System.out.println("no order : "+ trx.getOrderId());
+            System.out.println("id user : " + trx.getUser().getIdUser());
+            System.out.println("name : "+ trx.getUser().getName());
+            saleController.save(sale);
+        }
+        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        if (user.getRole().getNameRole().equalsIgnoreCase("CUSTOMER")){
+            return  "redirect:/transaction/mytransaction";
+        }else{
+            return "redirect:/transaction/show";
+        }
+    }
+
+    //findOrderingByUsername
+    @GetMapping("/mytransaction")
+    public String order(Model model){
+        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        List<Transaction> transactions =  transactionService.findOrderingByUser(user.getIdUser());
+        for (Transaction t : transactions){
+            System.out.println("statuss trx :" + t.getStatus().getName());
+        }
+        model.addAttribute("transaction", transactions);
+        return "showtransactionC";
+    }
+
+    @GetMapping("/update/{id_transaction}")
+    public String transaction(@PathVariable("id_transaction") Integer id, Model model){
+        try{
+            Transaction transaction = transactionRepository.getById(id);
+            model.addAttribute("transaction", transaction);
+            return  "forms/transactionformsU";
+        }catch (Exception e){
+            return "redirect:/";
+        }
+
+    }
+
+    //update transaction approve
+    @GetMapping("/update/a/{id_transaction}")
+    public String approve(@PathVariable("id_transaction") Integer id, Model model){
+        try{
+            Transaction transaction = transactionRepository.getById(id);
+            transactionService.approve(transaction);
+            model.addAttribute("transaction", transaction);
+            return "redirect:/transaction/show";
+        }catch (Exception e){
+            return "redirect:/";
+        }
+
+    }
+
+    //update transaction reject
+    @GetMapping("/update/r/{id_transaction}")
+    public String reject(@PathVariable("id_transaction") Integer id, Model model){
+        try{
+            Transaction transaction = transactionRepository.getById(id);
+            transactionService.reject(transaction);
+            model.addAttribute("transaction", transaction);
+            return "redirect:/transaction/show";
+        }catch (Exception e){
+            return "redirect:/";
+        }
+
+    }
+
+
+    @GetMapping("/receipt/{id}")
+    void showImage(@PathVariable("id") Integer id, HttpServletResponse response, Transaction transaction)
+            throws ServletException, IOException {
+        transaction = transactionRepository.getById(id);
+        response.setContentType("image/jpeg, image/jpg, image/png, image/gif");
+        response.getOutputStream().write(transaction.getImage());
+        response.getOutputStream().close();
+    }
+
+    @GetMapping("/show")
+    public  String getAllTransaction(Model map){
+        List<Transaction> transaction = transactionRepository.findAll();
+        map.addAttribute("transaction", transaction);
+        return "tables/showtransactionA";
+    }
+
+    @GetMapping("/delete/{id}")
+    public String delete(@PathVariable("id") Integer id){
+        transactionRepository.deleteById(id);
+        return "redirect:/transaction/show";
+    }
+
+}

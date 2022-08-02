@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org"
+	  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+	<title>Java Hub</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!---->
+	<link href="img/favicon.ico" rel="icon">
+	<!-- Google Web Fonts -->
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+	<!-- Font Awesome -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+	<!-- Libraries Stylesheet -->
+	<link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+	<!-- Customized Bootstrap Stylesheet -->
+	<link href="css/style2.css" rel="stylesheet" type="text/css">
+	<!--&lt;!&ndash;&ndash;&gt;
+	<link rel="stylesheet" href="/css/styleUploadImg.css">-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<script>
+	</script>
+	<style>
+
+	</style>
+</head>
+<body>
+<br><br>
+<div class="x_title">
+	<img src="img/logo.png" alt="image" width="110px" height="110px" style="margin-left:30px">
+	<div id="title">
+		<div th:if="${product.id_product==null}">
+			<h2 class="text-center" align="center">CREATE PRODUCT</h2>
+		</div>
+		<div th:unless="${product.id_product==null}">
+			<h2 class="text-center" align="center">UPDATE PRODUCT</h2>
+		</div>
+		<!--<ul class="nav navbar-right panel_toolbox">
+			<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+
+		</ul>-->
+	</div>
+
+	<div class="clearfix"></div>
+</div>
+<nav class="navbar navbar-expand-lg  py-3 py-lg-0 px-0">
+	<a href="" class="text-decoration-none d-block d-lg-none">
+		<h1 class="m-0 display-5 font-weight-semi-bold"><span class="text-primary font-weight-bold border px-3 mr-1">E</span>Shopper</h1>
+	</a>
+	<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+		<div class="navbar-nav mr-auto py-0">
+			<div class="nav-item dropdown">
+				<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Product</a>
+				<div class="dropdown-menu rounded-0 m-0">
+					<a th:href="@{/product}" class="dropdown-item">Create Product</a>
+					<a th:href="@{/product/show}" class="dropdown-item">Show Product</a>
+				</div>
+			</div>
+			<div class="nav-item dropdown">
+				<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Order</a>
+				<div class="dropdown-menu rounded-0 m-0">
+					<a th:href="@{/ordering/order}" class="dropdown-item">Create Order</a>
+					<a th:href="@{/ordering/show}" class="dropdown-item">Show Order</a>
+				</div>
+			</div>
+			<div class="nav-item dropdown">
+				<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Sale</a>
+				<div class="dropdown-menu rounded-0 m-0">
+					<a th:href="@{/sale/salesdata}" class="dropdown-item">Sale</a>
+					<a th:href="@{/sale/show}" class="dropdown-item">Sales Data</a>
+				</div>
+			</div>
+			<div class="nav-item dropdown">
+				<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Transaction</a>
+				<div class="dropdown-menu rounded-0 m-0">
+					<a th:href="@{/transaction/form}" class="dropdown-item">Create Transaction</a>
+					<a th:href="@{/transaction/show}" class="dropdown-item">Show Transaction</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</nav>
+<div class="contact py-sm-5 py-4">
+	<div class="container py-xl-4 py-lg-2">
+		<!-- form -->
+		<form id="form"  th:action="@{/product/create}" th:object="${product}" method="post" novalidate enctype="multipart/form-data">
+			<!--<input type="text" name="id_product" th:field="*{id_product}" th:value="${product.id_product}" id="id_product" hidden="true">-->
+			<div class="contact-grids1 w3agile-6">
+				<div class="row">
+					<!--<div class="col-md-6 col-sm-6 contact-form1 form-group">
+						<label class="col-form-label">ID Product</label>
+						<input type="text" class="form-control" disabled="disabled" th:field="*{id_product}"  placeholder="ID Product" id="productName" name="productName" required="required">
+						<p id="error_name"></p>
+					</div>-->
+					<!--<input type="text" class="form-control is-valid" id="validationServer01" placeholder="First name" value="Mark" required>
+					<div class="valid-feedback">-->
+
+					<div class="col-md-6 col-sm-6 contact-form1 form-group">
+						<label class="col-form-label">Name</label>
+						<input type="text" class="form-control" th:field="*{productName}" placeholder="Product Name" id="productName" name="productName" required="required">
+						<p id="error_name"></p>
+					</div>
+					<div class="col-md-6 col-sm-6 contact-form1 form-group">
+						<label class="col-form-label">Description</label>
+						<textarea class="form-control" placeholder="Product Description" th:field="*{description}" id="description" rows="3" cols="45" name="description" required="required"></textarea>
+						<p id="error_description"></p>
+					</div>
+					<div class="col-md-6 col-sm-6 contact-form1 form-group">
+						<label class="col-form-label">Price</label>
+						<input type="text" class="form-control" placeholder="Price" th:field="*{price}"  name="price" id="price" required="required">
+						<p id="error_price"></p>
+					</div>
+					<div class="col-md-6 col-sm-6 contact-form1 form-group">
+						<label class="col-form-label">Image</label>
+						<input type="file" class="form-control" placeholder="" name="image" id="image" required="required">
+						<p id="error_file"></p>
+					</div>
+
+				</div>
+
+				<div class="right-w3l col-md-6">
+					<input type="submit" class="btn btn-primary form-control" value="Submit">
+					<br><br>
+					<a href="/product/show" style="float:left;" class="btn btn-success text-right">Show All</a>
+				</div>
+			</div>
+			<br>
+			<div id="success" class="text-center" style="color:green;"></div>
+			<div id="error" class="text-center" style="color:red;"></div>
+		</form>
+			</div>
+</div>
+<p class="text-center">
+	<!--<img src="${pageContext.request.contextPath}/img/loader.gif" alt="loader" style="width: 150px;height: 120px;" id="loader">-->
+</p>
+<script src="${pageContext.request.contextPath}/js/product.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Login Persada Konveksi</title>
+<link rel="stylesheet" th:href="@{/css/style_login.css}">
+	<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+
+
+</head>
+<body>
+
+	<!-- partial:index.partial.html -->
+	<div class="login-page">
+		<div class="form">
+			<center>
+				<img src="img/logo.png" alt="" width="120" height="120" >
+				<h1 style="fon">LOGIN </h1>
+			</center>
+			<br>
+			<form class="login-form" th:action="@{/login}" method="post">
+
+				<!--<div th:if="${param.error}" class="alert alert-arror">Invalid
+					Username and Password</div>-->
+
+				<div th:if="${param.logout}" class="alert alert-success">You
+					Haved Been Logged Out</div>
+
+				<input type="text" placeholder="username" name="username"  required="required"/> <input
+					type="password" placeholder="password" name="password" required="required"/>
+				<button type="submit">Sign In</button>
+				<p class="message">
+					Not registered? <a th:href="@{/user/registration}">Create an account</a>
+				</p>
+			</form>
+		</div>
+	</div>
+	<!-- partial -->
+
+
+</body>
+</html>
