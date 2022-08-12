@@ -472,6 +472,9 @@
 										<a th:href="@{transaction/form}">
 											<span class="sub-item">Transaction Form</span>
 										</a>
+										<a th:href="@{user/create/user}">
+											<span class="sub-item">User Form</span>
+										</a>
 									</li>
 								</ul>
 							</div>
@@ -504,6 +507,18 @@
 											<span class="sub-item">Sale</span>
 										</a>
 									</li>
+									<li>
+										<a th:href="@{/user/admin}">
+											<span class="sub-item">Admin</span>
+										</a>
+									</li>
+
+									<li>
+										<a th:href="@{/user/customer}">
+											<span class="sub-item">Customer</span>
+										</a>
+									</li>
+
 								</ul>
 							</div>
 						</li>
@@ -582,41 +597,39 @@
 					</div>
 					<div class="row">
 						<div class="col-md-12">
-							<form id="form"  th:action="@{/ordering/createorder}" th:object="${order}"  method="post">
+							<form id="form"  th:action="@{/user/updateadmin}" th:object="${user}"  method="post">
 							<div class="card">
 								<div class="card-header">
-									<div class="card-title"><b>Buat Pesanan</b></div>
-								</div>
-								<div class="card-body">
+									<div class="card-title"><b>Update Admin</b></div>
+									</div>
+									<div class="card-body">
 									<div class="row">
+										<input type="text" name="idUser" th:field="*{idUser}" th:value="${user.idUser}" id="idUser" hidden="true">
+
 										<div class="col-md-6 col-lg-4">
 											<div class="form-group form-floating-label">
-												<input type="text" class="form-control input-border-bottom" th:value="${order.productId}"  id="productId" name="productId" required>
-												<label for="productId" class="placeholder">Id Produk</label>
+												<input type="text" class="form-control input-border-bottom" th:field="${user.name}"  id="name" name="name" required>
+												<label for="name" class="placeholder">Nama Lengkap</label>
 											</div>
 											<div class="form-group form-floating-label">
-												<input type="number" class="form-control input-border-bottom" th:field="*{quantity}"  rows="3" cols="45" id="quantity" name="quantity" required>
-												<label for="quantity" class="placeholder">Jumlah</label>
+												<input type="text" class="form-control input-border-bottom" th:field="*{address}"  rows="3" cols="45" id="address" name="address" required>
+												<label for="address" class="placeholder">Alamat</label>
 											</div>
 											<div class="form-group form-floating-label">
-												<input type="number" class="form-control input-border-bottom" th:field="*{dp}"  name="dp" id="dp" required>
-												<label for="dp" class="placeholder">DP</label>
+												<input type="number" class="form-control input-border-bottom" th:field="*{noTelepon}"  name="noTelepon" id="noTelepon" required>
+												<label for="noTelepon" class="placeholder">No Telepon</label>
 											</div>
 											<div class="form-group form-floating-label">
-												<input type="date" class="form-control input-border-bottom" th:field="*{orderDate}"  name="orderDate" id="orderDate">
-												<label for="orderDate" class="placeholder">Tanggal pemesanan</label>
+												<input type="text" class="form-control input-border-bottom" th:field="*{username}"   name="username" id="username">
+												<label for="username" class="placeholder">Username</label>
 											</div>
+											<!--<div class="form-group form-floating-label">
+												<input type="password" class="form-control input-border-bottom" th:field="*{password}"  name="password" id="password">
+												<label for="password" class="placeholder">Password</label>
+											</div>-->
 											<div class="form-group form-floating-label">
-												<input type="date" class="form-control input-border-bottom" th:field="*{deadline}"   name="deadline" id="deadline">
-												<label for="dp" class="placeholder">Tenggat</label>
-											</div>
-											<div class="form-group">
-												<div class="input-group">
-													<div class="input-group-prepend">
-														<span class="input-group-text">Detail Pesanan</span>
-													</div>
-													<textarea class="form-control" aria-label="With textarea" name="orderDetails"  th:field="*{orderDetails}" ></textarea>
-												</div>
+												<input type="email" class="form-control input-border-bottom" th:field="*{email}"  name="email" id="email">
+												<label for="email" class="placeholder">Email</label>
 											</div>
 										</div>
 									</div>

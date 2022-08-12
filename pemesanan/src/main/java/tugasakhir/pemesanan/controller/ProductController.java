@@ -210,7 +210,7 @@ public class ProductController {
 		map.addAttribute("products", products);
 		User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 		if (user.getRole().getNameRole().equalsIgnoreCase("CUSTOMER")){
-			return  "showproduct2";
+			return  "tables/showproductC";
 		}else{
 			return "tables/showproduct";
 		}
@@ -251,7 +251,7 @@ public class ProductController {
 	public String detail(@PathVariable("id") Integer id, Model model){
 		Product product = productRepository.getById(id);
 		model.addAttribute("product", product);
-		return "detailproduct";
+		return "tables/showdetailproduct";
 	}
 
 

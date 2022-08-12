@@ -50,4 +50,6 @@ public class UserService {
     public List<User> getAdmin(){
         return userRepository.allAdmin();
     }
+
+
 }

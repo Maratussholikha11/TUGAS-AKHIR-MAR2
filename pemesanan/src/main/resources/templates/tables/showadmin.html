@@ -5,7 +5,7 @@
 	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<title>Forms - Atlantis Lite Bootstrap 4 Admin Dashboard</title>
+	<title>Tables - Atlantis Lite Bootstrap 4 Admin Dashboard</title>
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
 	<link rel="icon" href="../../assets/img/icon.ico" type="image/x-icon"/>
 	
@@ -28,7 +28,7 @@
 	<link rel="stylesheet" href="../../assets/css/demo.css">
 </head>
 <body>
-	<div class="wrapper sidebar_minimize">
+	<div class="wrapper">
 		<div class="main-header">
 			<!-- Logo Header -->
 			<div class="logo-header" data-background-color="blue">
@@ -51,7 +51,8 @@
 			<!-- End Logo Header -->
 
 			<!-- Navbar Header -->
-			<nav class="navbar navbar-header navbar-expand-lg" data-background-color="blue2">			
+			<nav class="navbar navbar-header navbar-expand-lg" data-background-color="blue2">
+				
 				<div class="container-fluid">
 					<div class="collapse" id="search-nav">
 						<form class="navbar-left navbar-form nav-search mr-md-3">
@@ -287,6 +288,7 @@
 		</div>
 		<!-- Sidebar -->
 		<div class="sidebar sidebar-style-2">
+			
 			<div class="sidebar-wrapper scrollbar scrollbar-inner">
 				<div class="sidebar-content">
 					<div class="user">
@@ -297,7 +299,7 @@
 							<a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
 								<span>
 									Hizrian
-									<span class="user-level">Customer</span>
+									<span class="user-level">Administrator</span>
 									<span class="caret"></span>
 								</span>
 							</a>
@@ -449,40 +451,45 @@
 								</ul>
 							</div>
 						</li>
-						<li class="nav-item active submenu">
+						<li class="nav-item">
 							<a data-toggle="collapse" href="#forms">
 								<i class="fas fa-pen-square"></i>
 								<p>Forms</p>
 								<span class="caret"></span>
 							</a>
-							<div class="collapse show" id="forms">
+							<div class="collapse" id="forms">
 								<ul class="nav nav-collapse">
-									<li class="active">
-										<a href="../forms/forms.html">
-											<span class="sub-item">Basic Form</span>
-										</a>
-									</li>
 									<li>
 										<a th:href="@{/product}">
 											<span class="sub-item">Product Form</span>
 										</a>
+									</li>
+									<li>
 										<a th:href="@{ordering/order}">
 											<span class="sub-item">Order Form</span>
 										</a>
+									</li>
+									<li>
 										<a th:href="@{transaction/form}">
 											<span class="sub-item">Transaction Form</span>
 										</a>
 									</li>
+									<li>
+										<a th:href="@{user/create/user}">
+											<span class="sub-item">User Form</span>
+										</a>
+									</li>
+
 								</ul>
 							</div>
 						</li>
-						<li class="nav-item">
+						<li class="nav-item active submenu">
 							<a data-toggle="collapse" href="#tables">
 								<i class="fas fa-table"></i>
 								<p>Tables</p>
 								<span class="caret"></span>
 							</a>
-							<div class="collapse" id="tables">
+							<div class="collapse show" id="tables">
 								<ul class="nav nav-collapse">
 									<li>
 										<a th:href="@{/product/show}">
@@ -500,8 +507,13 @@
 										</a>
 									</li>
 									<li>
-										<a th:href="@{/sale/show}">
-											<span class="sub-item">Sale</span>
+										<a th:href="@{user/admin}">
+											<span class="sub-item">Admin</span>
+										</a>
+									</li>
+									<li>
+										<a th:href="@{user/customer}">
+											<span class="sub-item">Customer</span>
 										</a>
 									</li>
 								</ul>
@@ -559,7 +571,7 @@
 			<div class="content">
 				<div class="page-inner">
 					<div class="page-header">
-						<h4 class="page-title">Forms</h4>
+						<h4 class="page-title">DataTables.Net</h4>
 						<ul class="breadcrumbs">
 							<li class="nav-home">
 								<a href="#">
@@ -570,63 +582,254 @@
 								<i class="flaticon-right-arrow"></i>
 							</li>
 							<li class="nav-item">
-								<a href="#">Forms</a>
+								<a href="#">Tables</a>
 							</li>
 							<li class="separator">
 								<i class="flaticon-right-arrow"></i>
 							</li>
 							<li class="nav-item">
-								<a href="#">Basic Form</a>
+								<a href="#">Datatables</a>
 							</li>
 						</ul>
 					</div>
 					<div class="row">
 						<div class="col-md-12">
-							<form id="form"  th:action="@{/ordering/createorder}" th:object="${order}"  method="post">
 							<div class="card">
 								<div class="card-header">
-									<div class="card-title"><b>Buat Pesanan</b></div>
+									<div class="d-flex align-items-center">
+										<h4 class="card-title">Add Row</h4>
+										<button class="btn btn-primary btn-round ml-auto" data-toggle="modal">
+											<i class="fa fa-plus">
+												<a th:href="@{ordering/order}">Add Row
+												</a>
+											</i>
+
+										</button>
+									</div>
 								</div>
 								<div class="card-body">
-									<div class="row">
-										<div class="col-md-6 col-lg-4">
-											<div class="form-group form-floating-label">
-												<input type="text" class="form-control input-border-bottom" th:value="${order.productId}"  id="productId" name="productId" required>
-												<label for="productId" class="placeholder">Id Produk</label>
-											</div>
-											<div class="form-group form-floating-label">
-												<input type="number" class="form-control input-border-bottom" th:field="*{quantity}"  rows="3" cols="45" id="quantity" name="quantity" required>
-												<label for="quantity" class="placeholder">Jumlah</label>
-											</div>
-											<div class="form-group form-floating-label">
-												<input type="number" class="form-control input-border-bottom" th:field="*{dp}"  name="dp" id="dp" required>
-												<label for="dp" class="placeholder">DP</label>
-											</div>
-											<div class="form-group form-floating-label">
-												<input type="date" class="form-control input-border-bottom" th:field="*{orderDate}"  name="orderDate" id="orderDate">
-												<label for="orderDate" class="placeholder">Tanggal pemesanan</label>
-											</div>
-											<div class="form-group form-floating-label">
-												<input type="date" class="form-control input-border-bottom" th:field="*{deadline}"   name="deadline" id="deadline">
-												<label for="dp" class="placeholder">Tenggat</label>
-											</div>
-											<div class="form-group">
-												<div class="input-group">
-													<div class="input-group-prepend">
-														<span class="input-group-text">Detail Pesanan</span>
-													</div>
-													<textarea class="form-control" aria-label="With textarea" name="orderDetails"  th:field="*{orderDetails}" ></textarea>
+									<!-- Modal -->
+									<div class="modal fade" id="addRowModal" tabindex="-1" role="dialog" aria-hidden="true">
+										<div class="modal-dialog" role="document">
+											<div class="modal-content">
+												<div class="modal-header no-bd">
+													<h5 class="modal-title">
+														<span class="fw-mediumbold">
+														New</span> 
+														<span class="fw-light">
+															Row
+														</span>
+													</h5>
+													<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+														<span aria-hidden="true">&times;</span>
+													</button>
+												</div>
+												<div class="modal-footer no-bd">
+													<button type="button" id="addRowButton" class="btn btn-primary">Add</button>
+													<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
 												</div>
 											</div>
 										</div>
 									</div>
-								</div>
-								<div class="card-action">
-									<button class="btn btn-success">Submit</button>&nbsp;&nbsp;&nbsp;
-									<button class="btn btn-danger">Cancel</button>
+
+									<div class="table-responsive">
+										<table id="add-row" class="display table table-striped table-hover" >
+											<thead>
+											<tr>
+												<th>Id Admin</th>
+												<th>Nama</th>
+												<!--<th>Deskripsi</th>-->
+												<th>Telepon</th>
+												<th>Alamat</th>
+												<th>Email</th>
+												<th>Username</th>
+												<th>Aksi</th>
+											</tr>
+											</thead>
+											<tbody>
+											<th:set var="count" value="0" scope="page"></th:set>
+											<tr th:each="admin : ${admin}">
+												<th:set var="count" value="${count + 1}" scope="page"></th:set>
+												<td th:text="${admin.idUser}"></td>
+												<!--<td><a th:href="@{/product/detail/{id} (id=${products.id_product})}"/> <u th:text="${products.productName}"></u></td>-->
+												<td th:text="${admin.name}"></td>
+												<td th:text="${admin.noTelepon}"></td>
+												<td th:text="${admin.address}"></td>
+												<td th:text="${admin.email}"></td>
+												<td th:text="${admin.username}"></td>
+												<td>
+													<div class="form-button-action">
+														<button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-danger" data-original-title="Edit">
+															<a th:href="@{/user/updateadmin/{id} (id=${admin.idUser})}" class="btn btn-info text-right" target="_blank">
+																<i class="fa fa-edit"></i>
+															</a>
+
+														</button>
+														<button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Hapus">
+															<a th:href="@{/user/delete/{id} (id=${admin.idUser})}" class="btn btn-danger text-right" target="_blank">
+																<i class="fa fa-times"></i>
+															</a>
+														</button>
+													</div>
+												</td>
+												<input type="hidden" th:id="idUser" th:name="idUser" th:value="${admin.idUser}"/> 												</tr>
+											</tbody>
+											<!--<tbody>
+												<tr>
+													<td>Tiger Nixon</td>
+													<td>System Architect</td>
+													<td>Edinburgh</td>
+													<td>
+														<div class="form-button-action">
+															<button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Edit Task">
+																<i class="fa fa-edit"></i>
+															</button>
+															<button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-danger" data-original-title="Remove">
+																<i class="fa fa-times"></i>
+															</button>
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<td>Garrett Winters</td>
+													<td>Accountant</td>
+													<td>Tokyo</td>
+													<td>
+														<div class="form-button-action">
+															<button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Edit Task">
+																<i class="fa fa-edit"></i>
+															</button>
+															<button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-danger" data-original-title="Remove">
+																<i class="fa fa-times"></i>
+															</button>
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<td>Ashton Cox</td>
+													<td>Junior Technical Author</td>
+													<td>San Francisco</td>
+													<td>
+														<div class="form-button-action">
+															<button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Edit Task">
+																<i class="fa fa-edit"></i>
+															</button>
+															<button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-danger" data-original-title="Remove">
+																<i class="fa fa-times"></i>
+															</button>
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<td>Cedric Kelly</td>
+													<td>Senior Javascript Developer</td>
+													<td>Edinburgh</td>
+													<td>
+														<div class="form-button-action">
+															<button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Edit Task">
+																<i class="fa fa-edit"></i>
+															</button>
+															<button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-danger" data-original-title="Remove">
+																<i class="fa fa-times"></i>
+															</button>
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<td>Airi Satou</td>
+													<td>Accountant</td>
+													<td>Tokyo</td>
+													<td>
+														<div class="form-button-action">
+															<button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Edit Task">
+																<i class="fa fa-edit"></i>
+															</button>
+															<button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-danger" data-original-title="Remove">
+																<i class="fa fa-times"></i>
+															</button>
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<td>Brielle Williamson</td>
+													<td>Integration Specialist</td>
+													<td>New York</td>
+													<td>
+														<div class="form-button-action">
+															<button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Edit Task">
+																<i class="fa fa-edit"></i>
+															</button>
+															<button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-danger" data-original-title="Remove">
+																<i class="fa fa-times"></i>
+															</button>
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<td>Herrod Chandler</td>
+													<td>Sales Assistant</td>
+													<td>San Francisco</td>
+													<td>
+														<div class="form-button-action">
+															<button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Edit Task">
+																<i class="fa fa-edit"></i>
+															</button>
+															<button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-danger" data-original-title="Remove">
+																<i class="fa fa-times"></i>
+															</button>
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<td>Rhona Davidson</td>
+													<td>Integration Specialist</td>
+													<td>Tokyo</td>
+													<td>
+														<div class="form-button-action">
+															<button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Edit Task">
+																<i class="fa fa-edit"></i>
+															</button>
+															<button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-danger" data-original-title="Remove">
+																<i class="fa fa-times"></i>
+															</button>
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<td>Colleen Hurst</td>
+													<td>Javascript Developer</td>
+													<td>San Francisco</td>
+													<td>
+														<div class="form-button-action">
+															<button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Edit Task">
+																<i class="fa fa-edit"></i>
+															</button>
+															<button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-danger" data-original-title="Remove">
+																<i class="fa fa-times"></i>
+															</button>
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<td>Sonya Frost</td>
+													<td>Software Engineer</td>
+													<td>Edinburgh</td>
+													<td>
+														<div class="form-button-action">
+															<button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Edit Task">
+																<i class="fa fa-edit"></i>
+															</button>
+															<button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-danger" data-original-title="Remove">
+																<i class="fa fa-times"></i>
+															</button>
+														</div>
+													</td>
+												</tr>
+											</tbody>-->
+										</table>
+									</div>
 								</div>
 							</div>
-							</form>
 						</div>
 					</div>
 				</div>
@@ -741,9 +944,59 @@
 	
 	<!-- jQuery Scrollbar -->
 	<script src="../../assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+	<!-- Datatables -->
+	<script src="../../assets/js/plugin/datatables/datatables.min.js"></script>
 	<!-- Atlantis JS -->
 	<script src="../../assets/js/atlantis.min.js"></script>
 	<!-- Atlantis DEMO methods, don't include it in your project! -->
 	<script src="../../assets/js/setting-demo2.js"></script>
+	<script >
+		$(document).ready(function() {
+			$('#basic-datatables').DataTable({
+			});
+
+			$('#multi-filter-select').DataTable( {
+				"pageLength": 5,
+				initComplete: function () {
+					this.api().columns().every( function () {
+						var column = this;
+						var select = $('<select class="form-control"><option value=""></option></select>')
+						.appendTo( $(column.footer()).empty() )
+						.on( 'change', function () {
+							var val = $.fn.dataTable.util.escapeRegex(
+								$(this).val()
+								);
+
+							column
+							.search( val ? '^'+val+'$' : '', true, false )
+							.draw();
+						} );
+
+						column.data().unique().sort().each( function ( d, j ) {
+							select.append( '<option value="'+d+'">'+d+'</option>' )
+						} );
+					} );
+				}
+			});
+
+			// Add Row
+			$('#add-row').DataTable({
+				"pageLength": 5,
+			});
+
+			var action = '<td> <div class="form-button-action"> <button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Edit Task"> <i class="fa fa-edit"></i> </button> <button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-danger" data-original-title="Remove"> <i class="fa fa-times"></i> </button> </div> </td>';
+
+			$('#addRowButton').click(function() {
+				$('#add-row').dataTable().fnAddData([
+					$("#addName").val(),
+					$("#addPosition").val(),
+					$("#addOffice").val(),
+					action
+					]);
+				$('#addRowModal').modal('hide');
+
+			});
+		});
+	</script>
 </body>
 </html>

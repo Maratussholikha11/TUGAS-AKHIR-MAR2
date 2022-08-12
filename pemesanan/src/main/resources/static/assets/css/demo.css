@@ -177,6 +177,31 @@ body[data-background-color="dark"] .demo-icon .icon-preview {
 	color: #969696;
 }
 
+.nav-item .dropdown-toggle .avatar-sm{
+    margin-top:15px;
+    color:black;
+    background:#ffffff;
+    height:23px;
+    width:60px;
+    border-radius:8px;
+}
+
+
+.nav-item .dropdown-toggle .avatar-sm:hover{
+    margin-top:15px;
+    color:white;
+    background:#4000ff;
+    height:23px;
+    width:60px;
+    border-radius:8px;
+
+}
+
+.nav .nav-item .collapsed{
+    margin-top: -23px;
+
+}
+
 .demo-icon .icon-class{
 	font-weight: 300;
 	font-size: 13px;

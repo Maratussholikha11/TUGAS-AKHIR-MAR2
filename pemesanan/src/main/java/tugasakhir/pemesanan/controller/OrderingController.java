@@ -46,13 +46,16 @@ public class OrderingController {
         order.setProductId(product.getId_product());
         System.out.println("id product will order : " + product.getId_product());
         model.addAttribute("order",order);
-        return  "createorder";
+        return  "forms/orderforms";
     }
 
 
     @PostMapping("/createorder")
     public String register(Ordering ordering){
         ResponseData<Ordering> response = new ResponseData<>();
+        if (ordering.getPercentage() == null){
+            ordering.setPercentage(0);
+        }
         response.setPayload(orderingService.save(ordering));
         User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         if (user.getRole().getNameRole().equalsIgnoreCase("CUSTOMER")){
@@ -118,7 +121,7 @@ public class OrderingController {
         User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         List<Ordering> ordering =  orderingService.findOrderingByUser(user.getIdUser());
         model.addAttribute("order", ordering);
-        return "showOrderC";
+        return "tables/showOrderC";
     }
 
     //findAllOrdering
@@ -126,7 +129,12 @@ public class OrderingController {
     public  String getAllOrder(Model map){
         List<Ordering> ordering = orderingRepository.findAll();
         map.addAttribute("order", ordering);
-        return "tables/showorderA";
+        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        if (user.getRole().getNameRole().equalsIgnoreCase("CUSTOMER")){
+            return  "tables/showOrderC";
+        }else{
+            return "tables/showorderA";
+        }
     }
 
 

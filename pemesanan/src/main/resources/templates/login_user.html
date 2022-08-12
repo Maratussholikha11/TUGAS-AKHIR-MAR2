@@ -1,21 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org"
+	  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
 <meta charset="UTF-8">
 <title>Login Persada Konveksi</title>
 <link rel="stylesheet" th:href="@{/css/style_login.css}">
 	<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+	<style>
+		body .login-page{
+			background: #ffffff;
+		}
+	</style>
 
 
 </head>
 <body>
 
 	<!-- partial:index.partial.html -->
-	<div class="login-page">
+	<div class="login-page" style="">
 		<div class="form">
 			<center>
 				<img src="img/logo.png" alt="" width="120" height="120" >
-				<h1 style="fon">LOGIN </h1>
+				<h1 style="">LOGIN </h1>
 			</center>
 			<br>
 			<form class="login-form" th:action="@{/login}" method="post">

@@ -75,7 +75,7 @@ public class TransactionController {
         Transaction trx = new Transaction();
         trx.setOrderId(order.getId_order());
         model.addAttribute("transaction", trx);
-        return "createtransaction";
+        return "forms/transactionforms";
     }
 
 
@@ -197,7 +197,7 @@ public class TransactionController {
             System.out.println("statuss trx :" + t.getStatus().getName());
         }
         model.addAttribute("transaction", transactions);
-        return "showtransactionC";
+        return "tables/showtransactionC";
     }
 
     @GetMapping("/update/{id_transaction}")
@@ -254,7 +254,12 @@ public class TransactionController {
     public  String getAllTransaction(Model map){
         List<Transaction> transaction = transactionRepository.findAll();
         map.addAttribute("transaction", transaction);
-        return "tables/showtransactionA";
+        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        if (user.getRole().getNameRole().equalsIgnoreCase("CUSTOMER")){
+            return "tables/showtransactionC";
+        }else{
+            return "tables/showtransactionA";
+        }
     }
 
     @GetMapping("/delete/{id}")

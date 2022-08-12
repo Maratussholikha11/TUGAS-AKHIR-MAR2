@@ -5,7 +5,7 @@
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Dashboard - Persada Konveksi </title>
+    <title>Atlantis Lite - Bootstrap 4 Admin Dashboard</title>
     <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
     <link rel="icon" href="../assets/img/icon.ico" type="image/x-icon"/>
 
@@ -35,7 +35,7 @@
         <div class="logo-header" data-background-color="blue">
 
             <a href="index.html" class="logo">
-                <img src="../assets/img/logo(2).png" alt="navbar brand" class="navbar-brand">
+                <img src="../assets/img/logo.svg" alt="navbar brand" class="navbar-brand">
             </a>
             <button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon">
@@ -73,7 +73,7 @@
                             <i class="fa fa-search"></i>
                         </a>
                     </li>
-                  <!--  <li class="nav-item dropdown hidden-caret">
+                    <li class="nav-item dropdown hidden-caret">
                         <a class="nav-link dropdown-toggle" href="#" id="messageDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="fa fa-envelope"></i>
                         </a>
@@ -253,32 +253,33 @@
                                 </div>
                             </div>
                         </div>
-                    </li>-->
+                    </li>
                     <li class="nav-item dropdown hidden-caret">
                         <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false">
-                            <div class="avatar-sm">&nbsp;&nbsp;&nbsp;Logout
-                                <!--<img src="../assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle">-->
+                            <div class="avatar-sm">
+                                <img src="../assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle">
                             </div>
                         </a>
                         <ul class="dropdown-menu dropdown-user animated fadeIn">
                             <div class="dropdown-user-scroll scrollbar-outer">
                                 <li>
                                     <div class="user-box">
-                                        <!--<div class="avatar-lg"><img src="../assets/img/profile.jpg" alt="image profile" class="avatar-img rounded"></div>-->                                        <div class="u-text">
-                                        <h4 th:text="${userName}"></h4>
-                                        <p class="text-muted" th:text="${userEmail}"></p><!--<a href="profile.html" class="btn btn-xs btn-secondary btn-sm">View Profile</a>-->
-                                        <!--</div>-->
+                                        <div class="avatar-lg"><img src="../assets/img/profile.jpg" alt="image profile" class="avatar-img rounded"></div>
+                                        <div class="u-text">
+                                            <h4>Hizrian</h4>
+                                            <p class="text-muted">hello@example.com</p><a href="profile.html" class="btn btn-xs btn-secondary btn-sm">View Profile</a>
+                                        </div>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="dropdown-divider"></div>
-                                    <!--<a class="dropdown-item" href="#">My Profile</a>
+                                    <a class="dropdown-item" href="#">My Profile</a>
                                     <a class="dropdown-item" href="#">My Balance</a>
                                     <a class="dropdown-item" href="#">Inbox</a>
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="#">Account Setting</a>
-                                    <div class="dropdown-divider"></div>-->
-                                    <a class="dropdown-item" href="@(/logout)">Logout</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">Logout</a>
                                 </li>
                             </div>
                         </ul>
@@ -290,348 +291,350 @@
     </div>
 
     <!-- Sidebar -->
-
-        <div class="sidebar sidebar-style-2">
-            <div class="sidebar-wrapper scrollbar scrollbar-inner">
-                <div class="sidebar-content">
-                    <div class="user">
-                        <!--<table>
-                            <tr th:each="user : ${user}">
-                                <td th:text="${user.name}"></td>
-                            </tr>
-                        </table>-->
-                        <!--<div class="avatar-sm float-left mr-2">
-                            <img src="../assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle">
-                        </div>-->
-                        <div class="info">
-                            <a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
-                                   <!-- <span>-->
-                                        <p th:text="${userName}"></p>
-                                        <!--<p th:text="${user.role.nameRole}"></p>-->
-                                        <!--<span class="user-level">Administrator</span>-->
-                                        <!--<span class="caret"></span>-->
-                                   <!-- </span>-->
-                                        <p th:text="${userRole}"></p>
-                            </a>
-                            <!--<div class="clearfix"></div>-->
-
-                           <!-- <div class="collapse in" id="collapseExample">
-                                <ul class="nav">
-                                    <li>
-                                        <a href="#profile">
-                                            <span class="link-collapse">My Profile</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#edit">
-                                            <span class="link-collapse">Edit Profile</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#settings">
-                                            <span class="link-collapse">Settings</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>-->
-                        </div>
-
+    <div class="sidebar sidebar-style-2">
+        <div class="sidebar-wrapper scrollbar scrollbar-inner">
+            <div class="sidebar-content">
+                <div class="user">
+                    <table>
+                        <tr th:each="user : ${user}">
+                            <td th:text="${user.name}"></td>
+                        </tr>
+                    </table>
+                    <div class="avatar-sm float-left mr-2">
+                        <img src="../assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle">
                     </div>
-                    <ul class="nav nav-primary">
-                        <li class="nav-item active">
-                            <a data-toggle="collapse" href="@{/}" class="collapsed" aria-expanded="false">
-                                <i class="fas fa-home"></i>
-                                <p>Dashboard</p>
-                                <!--<span class="caret"></span>-->
-                            </a>
-                            <div class="collapse" id="dashboard">
-                                <!--<ul class="nav nav-collapse">
-                                    <li>
-                                        <a href="../demo1/index.html">
-                                            <span class="sub-item">Dashboard 1</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="../demo2/index.html">
-                                            <span class="sub-item">Dashboard 2</span>
-                                        </a>
-                                    </li>
-                                </ul>-->
-                            </div>
-                        </li>
-                        <li class="nav-section">
-                                <span class="sidebar-mini-icon">
-                                    <i class="fa fa-ellipsis-h"></i>
-                                </span>
-                            <h4 class="text-section">Components</h4>
-                        </li>
-                        <!--<li class="nav-item">
-                            <a data-toggle="collapse" href="#base">
-                                <i class="fas fa-layer-group"></i>
-                                <p>Base</p>
-                                <span class="caret"></span>
-                            </a>
-                            <div class="collapse" id="base">
-                                <ul class="nav nav-collapse">
-                                    <li>
-                                        <a href="components/avatars.html">
-                                            <span class="sub-item">Avatars</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="components/buttons.html">
-                                            <span class="sub-item">Buttons</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="components/gridsystem.html">
-                                            <span class="sub-item">Grid System</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="components/panels.html">
-                                            <span class="sub-item">Panels</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="components/notifications.html">
-                                            <span class="sub-item">Notifications</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="components/sweetalert.html">
-                                            <span class="sub-item">Sweet Alert</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="components/font-awesome-icons.html">
-                                            <span class="sub-item">Font Awesome Icons</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="components/simple-line-icons.html">
-                                            <span class="sub-item">Simple Line Icons</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="components/flaticons.html">
-                                            <span class="sub-item">Flaticons</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="components/typography.html">
-                                            <span class="sub-item">Typography</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>-->
-                        <!--<li class="nav-item">
-                            <a data-toggle="collapse" href="#sidebarLayouts">
-                                <i class="fas fa-th-list"></i>
-                                <p>Sidebar Layouts</p>
-                                <span class="caret"></span>
-                            </a>
-                            <div class="collapse" id="sidebarLayouts">
-                                <ul class="nav nav-collapse">
-                                    <li>
-                                        <a href="sidebar-style-1.html">
-                                            <span class="sub-item">Sidebar Style 1</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="overlay-sidebar.html">
-                                            <span class="sub-item">Overlay Sidebar</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="compact-sidebar.html">
-                                            <span class="sub-item">Compact Sidebar</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="static-sidebar.html">
-                                            <span class="sub-item">Static Sidebar</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="icon-menu.html">
-                                            <span class="sub-item">Icon Menu</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>-->
-                        <li class="nav-item">
-                            <a data-toggle="collapse" href="#forms">
-                                <i class="fas fa-pen-square"></i>
-                                <p>Forms</p>
-                                <span class="caret"></span>
-                            </a>
-                            <div class="collapse" id="forms">
-                                <ul class="nav nav-collapse">
-                                    <li>
-                                        <a th:href="@{/product}">
-                                            <span class="sub-item">Product Form</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a th:href="@{ordering/order}">
-                                            <span class="sub-item">Order Form</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a th:href="@{transaction/form}">
-                                            <span class="sub-item">Transaction Form</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a th:href="@{user/registration}">
-                                            <span class="sub-item">Customer Form</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <a data-toggle="collapse" href="#tables">
-                                <i class="fas fa-table"></i>
-                                <p>Tables</p>
-                                <span class="caret"></span>
-                            </a>
-                            <div class="collapse" id="tables">
-                                <ul class="nav nav-collapse">
-                                    <li>
-                                        <a th:href="@{/product/show}">
-                                            <span class="sub-item">Product</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a th:href="@{/ordering/show}">
-                                            <span class="sub-item">Order</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a th:href="@{/transaction/show}">
-                                            <span class="sub-item">Transaction</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a th:href="@{/sale/show}">
-                                            <span class="sub-item">Sale</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a th:href="@{/user/customer}">
-                                            <span class="sub-item">Customers</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                       <!-- <li class="nav-item">
-                            <a data-toggle="collapse" href="#maps">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <p>Maps</p>
-                                <span class="caret"></span>
-                            </a>
-                            <div class="collapse" id="maps">
-                                <ul class="nav nav-collapse">
-                                    <li>
-                                        <a href="maps/jqvmap.html">
-                                            <span class="sub-item">JQVMap</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <a data-toggle="collapse" href="#charts">
-                                <i class="far fa-chart-bar"></i>
-                                <p>Charts</p>
-                                <span class="caret"></span>
-                            </a>
-                            <div class="collapse" id="charts">
-                                <ul class="nav nav-collapse">
-                                    <li>
-                                        <a href="charts/charts.html">
-                                            <span class="sub-item">Chart Js</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="charts/sparkline.html">
-                                            <span class="sub-item">Sparkline</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>-->
-                        <!--<li class="nav-item">
-                            <a href="widgets.html">
-                                <i class="fas fa-desktop"></i>
-                                <p>Widgets</p>
-                                <span class="badge badge-success">4</span>
-                            </a>
-                        </li>-->
-                        <!--<li class="nav-item">
-                            <a data-toggle="collapse" href="#submenu">
-                                <i class="fas fa-bars"></i>
-                                <p>Menu Levels</p>
-                                <span class="caret"></span>
-                            </a>
-                            <div class="collapse" id="submenu">
-                                <ul class="nav nav-collapse">
-                                    <li>
-                                        <a data-toggle="collapse" href="#subnav1">
-                                            <span class="sub-item">Level 1</span>
-                                            <span class="caret"></span>
-                                        </a>
-                                        <div class="collapse" id="subnav1">
-                                            <ul class="nav nav-collapse subnav">
-                                                <li>
-                                                    <a href="#">
-                                                        <span class="sub-item">Level 2</span>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">
-                                                        <span class="sub-item">Level 2</span>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <a data-toggle="collapse" href="#subnav2">
-                                            <span class="sub-item">Level 1</span>
-                                            <span class="caret"></span>
-                                        </a>
-                                        <div class="collapse" id="subnav2">
-                                            <ul class="nav nav-collapse subnav">
-                                                <li>
-                                                    <a href="#">
-                                                        <span class="sub-item">Level 2</span>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <span class="sub-item">Level 1</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>-->
-                       <!-- <li class="mx-4 mt-2">
-                            <a href="http://themekita.com/atlantis-bootstrap-dashboard.html" class="btn btn-primary btn-block"><span class="btn-label mr-2"> <i class="fa fa-heart"></i> </span>Buy Pro</a>
-                        </li>-->
-                    </ul>
+                    <div class="info">
+                        <a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
+								<span>
+                                    Maratus
+									<span th:text="${user.name}"></span>
+									<span class="user-level">Owner</span>
+									<span class="caret"></span>
+								</span>
+                        </a>
+                        <div class="clearfix"></div>
+
+                        <div class="collapse in" id="collapseExample">
+                            <ul class="nav">
+                                <li>
+                                    <a href="#profile">
+                                        <span class="link-collapse">My Profile</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#edit">
+                                        <span class="link-collapse">Edit Profile</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#settings">
+                                        <span class="link-collapse">Settings</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
                 </div>
+                <ul class="nav nav-primary">
+                    <li class="nav-item active">
+                        <a data-toggle="collapse" href="#dashboard" class="collapsed" aria-expanded="false">
+                            <i class="fas fa-home"></i>
+                            <p>Dashboard</p>
+                            <span class="caret"></span>
+                        </a>
+                        <div class="collapse" id="dashboard">
+                            <ul class="nav nav-collapse">
+                                <li>
+                                    <a href="../demo1/index.html">
+                                        <span class="sub-item">Dashboard 1</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../demo2/index.html">
+                                        <span class="sub-item">Dashboard 2</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-section">
+							<span class="sidebar-mini-icon">
+								<i class="fa fa-ellipsis-h"></i>
+							</span>
+                        <h4 class="text-section">Components</h4>
+                    </li>
+                    <li class="nav-item">
+                        <a data-toggle="collapse" href="#base">
+                            <i class="fas fa-layer-group"></i>
+                            <p>Base</p>
+                            <span class="caret"></span>
+                        </a>
+                        <div class="collapse" id="base">
+                            <ul class="nav nav-collapse">
+                                <li>
+                                    <a href="components/avatars.html">
+                                        <span class="sub-item">Avatars</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="components/buttons.html">
+                                        <span class="sub-item">Buttons</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="components/gridsystem.html">
+                                        <span class="sub-item">Grid System</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="components/panels.html">
+                                        <span class="sub-item">Panels</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="components/notifications.html">
+                                        <span class="sub-item">Notifications</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="components/sweetalert.html">
+                                        <span class="sub-item">Sweet Alert</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="components/font-awesome-icons.html">
+                                        <span class="sub-item">Font Awesome Icons</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="components/simple-line-icons.html">
+                                        <span class="sub-item">Simple Line Icons</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="components/flaticons.html">
+                                        <span class="sub-item">Flaticons</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="components/typography.html">
+                                        <span class="sub-item">Typography</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a data-toggle="collapse" href="#sidebarLayouts">
+                            <i class="fas fa-th-list"></i>
+                            <p>Sidebar Layouts</p>
+                            <span class="caret"></span>
+                        </a>
+                        <div class="collapse" id="sidebarLayouts">
+                            <ul class="nav nav-collapse">
+                                <li>
+                                    <a href="sidebar-style-1.html">
+                                        <span class="sub-item">Sidebar Style 1</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="overlay-sidebar.html">
+                                        <span class="sub-item">Overlay Sidebar</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="compact-sidebar.html">
+                                        <span class="sub-item">Compact Sidebar</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="static-sidebar.html">
+                                        <span class="sub-item">Static Sidebar</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="icon-menu.html">
+                                        <span class="sub-item">Icon Menu</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a data-toggle="collapse" href="#forms">
+                            <i class="fas fa-pen-square"></i>
+                            <p>Forms</p>
+                            <span class="caret"></span>
+                        </a>
+                        <div class="collapse" id="forms">
+                            <ul class="nav nav-collapse">
+                                <li>
+                                    <a th:href="@{/product}">
+                                        <span class="sub-item">Product Form</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a th:href="@{ordering/order}">
+                                        <span class="sub-item">Order Form</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a th:href="@{transaction/form}">
+                                        <span class="sub-item">Transaction Form</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a th:href="@{user/create/user}">
+                                        <span class="sub-item">User Form</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a data-toggle="collapse" href="#tables">
+                            <i class="fas fa-table"></i>
+                            <p>Tables</p>
+                            <span class="caret"></span>
+                        </a>
+                        <div class="collapse" id="tables">
+                            <ul class="nav nav-collapse">
+                                <li>
+                                    <a th:href="@{/product/show}">
+                                        <span class="sub-item">Product</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a th:href="@{/ordering/show}">
+                                        <span class="sub-item">Order</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a th:href="@{/transaction/show}">
+                                        <span class="sub-item">Transaction</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a th:href="@{/sale/show}">
+                                        <span class="sub-item">Sale</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a th:href="@{user/admin}">
+                                        <span class="sub-item">Admin</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a th:href="@{/user/customer}">
+                                        <span class="sub-item">customer</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a data-toggle="collapse" href="#maps">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p>Maps</p>
+                            <span class="caret"></span>
+                        </a>
+                        <div class="collapse" id="maps">
+                            <ul class="nav nav-collapse">
+                                <li>
+                                    <a href="maps/jqvmap.html">
+                                        <span class="sub-item">JQVMap</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a data-toggle="collapse" href="#charts">
+                            <i class="far fa-chart-bar"></i>
+                            <p>Charts</p>
+                            <span class="caret"></span>
+                        </a>
+                        <div class="collapse" id="charts">
+                            <ul class="nav nav-collapse">
+                                <li>
+                                    <a href="charts/charts.html">
+                                        <span class="sub-item">Chart Js</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="charts/sparkline.html">
+                                        <span class="sub-item">Sparkline</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="widgets.html">
+                            <i class="fas fa-desktop"></i>
+                            <p>Widgets</p>
+                            <span class="badge badge-success">4</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a data-toggle="collapse" href="#submenu">
+                            <i class="fas fa-bars"></i>
+                            <p>Menu Levels</p>
+                            <span class="caret"></span>
+                        </a>
+                        <div class="collapse" id="submenu">
+                            <ul class="nav nav-collapse">
+                                <li>
+                                    <a data-toggle="collapse" href="#subnav1">
+                                        <span class="sub-item">Level 1</span>
+                                        <span class="caret"></span>
+                                    </a>
+                                    <div class="collapse" id="subnav1">
+                                        <ul class="nav nav-collapse subnav">
+                                            <li>
+                                                <a href="#">
+                                                    <span class="sub-item">Level 2</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <span class="sub-item">Level 2</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a data-toggle="collapse" href="#subnav2">
+                                        <span class="sub-item">Level 1</span>
+                                        <span class="caret"></span>
+                                    </a>
+                                    <div class="collapse" id="subnav2">
+                                        <ul class="nav nav-collapse subnav">
+                                            <li>
+                                                <a href="#">
+                                                    <span class="sub-item">Level 2</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="sub-item">Level 1</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="mx-4 mt-2">
+                        <a href="http://themekita.com/atlantis-bootstrap-dashboard.html" class="btn btn-primary btn-block"><span class="btn-label mr-2"> <i class="fa fa-heart"></i> </span>Buy Pro</a>
+                    </li>
+                </ul>
             </div>
         </div>
-    </form>
+    </div>
     <!-- End Sidebar -->
 
     <div class="main-panel">
@@ -640,42 +643,41 @@
                 <div class="page-inner py-5">
                     <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
                         <div>
-                            <h2 class="text-white pb-2 fw-bold">Persada Konveksi</h2>
-                            <h5 class="text-white op-7 mb-2">Dashboard</h5>
+                            <h2 class="text-white pb-2 fw-bold">Dashboard</h2>
+                            <h5 class="text-white op-7 mb-2">Free Bootstrap 4 Admin Dashboard</h5>
                         </div>
                         <div class="ml-md-auto py-2 py-md-0">
-                            <!--<a href="#" class="btn btn-white btn-border btn-round mr-2">Manage</a>-->
-                            <a th:href="@{/user/registration}" class="btn btn-secondary btn-round">Tambah Pelanggan</a>
+                            <a href="#" class="btn btn-white btn-border btn-round mr-2">Manage</a>
+                            <a href="#" class="btn btn-secondary btn-round">Tambah Pelanggan</a>
                         </div>
                     </div>
                 </div>
             </div>
-            <br><br>
             <div class="page-inner mt--5">
                 <div class="row mt--2">
                     <div class="col-md-6">
                         <div class="card full-height">
                             <div class="card-body">
                                 <div class="card-title">Overall statistics</div>
-                                <div class="card-category" style="text-align:center;">Daily information about statistics in system</div>
+                                <div class="card-category">Daily information about statistics in system</div>
                                 <div class="d-flex flex-wrap justify-content-around pb-2 pt-4">
                                     <div class="px-2 pb-2 pb-md-0 text-center">
-                                        <div><p th:text="${customer}"></p></div>
-                                        <h6 class="fw-bold mt-3 mb-0">Customers</h6>
+                                        <div id="circles-1"></div>
+                                        <h6 class="fw-bold mt-3 mb-0">New Users</h6>
                                     </div>
                                     <div class="px-2 pb-2 pb-md-0 text-center">
-                                        <div><p th:text="${ordering}"></p></div>
-                                        <h6 class="fw-bold mt-3 mb-0">Order</h6>
-                                    </div>
-                                    <div class="px-2 pb-2 pb-md-0 text-center">
-                                        <div><p th:text="${sale}"></p></div><!-- circles-3-->
+                                        <div id="circles-2"></div>
                                         <h6 class="fw-bold mt-3 mb-0">Sales</h6>
+                                    </div>
+                                    <div class="px-2 pb-2 pb-md-0 text-center">
+                                        <div id="circles-3"></div>
+                                        <h6 class="fw-bold mt-3 mb-0">Subscribers</h6>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <!--<div class="col-md-6">
+                    <div class="col-md-6">
                         <div class="card full-height">
                             <div class="card-body">
                                 <div class="card-title">Total income & spend statistics</div>
@@ -698,9 +700,9 @@
                                 </div>
                             </div>
                         </div>
-                    </div>-->
+                    </div>
                 </div>
-                <!--<div class="row">
+                <div class="row">
                     <div class="col-md-8">
                         <div class="card">
                             <div class="card-header">
@@ -756,8 +758,8 @@
                             </div>
                         </div>
                     </div>
-                </div>-->
-                <!--<div class="row row-card-no-pd">
+                </div>
+                <div class="row row-card-no-pd">
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
@@ -875,7 +877,7 @@
                             </div>
                         </div>
                     </div>
-                </div>-->
+                </div>
                 <div class="row">
                     <div class="col-md-4">
                         <div class="card">
@@ -888,11 +890,11 @@
                                         <img src="../assets/img/logoproduct.svg" alt="..." class="avatar-img rounded-circle">
                                     </div>
                                     <div class="flex-1 pt-1 ml-2">
-                                        <h6 class="fw-bold mb-1"><p th:text="${p1}"></p></h6>
-                                        <!--<small class="text-muted">Cascading Style Sheets</small>-->
+                                        <h6 class="fw-bold mb-1">CSS</h6>
+                                        <small class="text-muted">Cascading Style Sheets</small>
                                     </div>
                                     <div class="d-flex ml-auto align-items-center">
-                                        <h3 class="text-info fw-bold"><p th:text="${h1}"></p></h3>
+                                        <h3 class="text-info fw-bold">+$17</h3>
                                     </div>
                                 </div>
                                 <div class="separator-dashed"></div>
@@ -901,11 +903,11 @@
                                         <img src="../assets/img/logoproduct.svg" alt="..." class="avatar-img rounded-circle">
                                     </div>
                                     <div class="flex-1 pt-1 ml-2">
-                                        <h6 class="fw-bold mb-1"><p th:text="${p2}"></p></h6>
-                                        <!--<small class="text-muted">The Best Donuts</small>-->
+                                        <h6 class="fw-bold mb-1">J.CO Donuts</h6>
+                                        <small class="text-muted">The Best Donuts</small>
                                     </div>
                                     <div class="d-flex ml-auto align-items-center">
-                                        <h3 class="text-info fw-bold"><p th:text="${h2}"></p></h3>
+                                        <h3 class="text-info fw-bold">+$300</h3>
                                     </div>
                                 </div>
                                 <div class="separator-dashed"></div>
@@ -914,11 +916,11 @@
                                         <img src="../assets/img/logoproduct3.svg" alt="..." class="avatar-img rounded-circle">
                                     </div>
                                     <div class="flex-1 pt-1 ml-2">
-                                        <h6 class="fw-bold mb-1"><p th:text="${p3}"></p></h6>
-                                       <!-- <small class="text-muted">Bootstrap 4 Admin Dashboard</small>-->
+                                        <h6 class="fw-bold mb-1">Ready Pro</h6>
+                                        <small class="text-muted">Bootstrap 4 Admin Dashboard</small>
                                     </div>
                                     <div class="d-flex ml-auto align-items-center">
-                                        <h3 class="text-info fw-bold"><p th:text="${h3}"></p></h3>
+                                        <h3 class="text-info fw-bold">+$350</h3>
                                     </div>
                                 </div>
                                 <div class="separator-dashed"></div>
@@ -934,70 +936,82 @@
                                 <div class="card-title fw-mediumbold">Suggested People</div>
                                 <div class="card-list">
                                     <div class="item-list">
-                                        <!--<div class="avatar">
+                                        <div class="avatar">
                                             <img src="../assets/img/jm_denis.jpg" alt="..." class="avatar-img rounded-circle">
-                                        </div>-->
-                                        <div class="info-user ml-3">
-                                            <div class="username"><p th:text="${o1}"></p></div>
-                                            <div class="status"><p th:text="${c1}">%</p></div>
                                         </div>
-                                        <!--<button class="btn btn-icon btn-primary btn-round btn-xs">
+                                        <div class="info-user ml-3">
+                                            <div class="username">Jimmy Denis</div>
+                                            <div class="status">Graphic Designer</div>
+                                        </div>
+                                        <button class="btn btn-icon btn-primary btn-round btn-xs">
                                             <i class="fa fa-plus"></i>
-                                        </button>-->
+                                        </button>
                                     </div>
                                     <div class="item-list">
-                                        <!--<div class="avatar">
+                                        <div class="avatar">
                                             <img src="../assets/img/chadengle.jpg" alt="..." class="avatar-img rounded-circle">
-                                        </div>-->
-                                        <div class="info-user ml-3">
-                                            <div class="username"><p th:text="${o2}"></p></div>
-                                            <div class="status"><p th:text="${c2}">%</p></div>
                                         </div>
-                                        <!--<button class="btn btn-icon btn-primary btn-round btn-xs">
+                                        <div class="info-user ml-3">
+                                            <div class="username">Chad</div>
+                                            <div class="status">CEO Zeleaf</div>
+                                        </div>
+                                        <button class="btn btn-icon btn-primary btn-round btn-xs">
                                             <i class="fa fa-plus"></i>
-                                        </button>-->
+                                        </button>
                                     </div>
                                     <div class="item-list">
-                                        <!--<div class="avatar">
+                                        <div class="avatar">
                                             <img src="../assets/img/talha.jpg" alt="..." class="avatar-img rounded-circle">
-                                        </div>-->
-                                        <div class="info-user ml-3">
-                                            <div class="username"><p th:text="${o3}"></p></div>
-                                            <div class="status"><p th:text="${c3}">%</p></div>
                                         </div>
-                                        <!--<button class="btn btn-icon btn-primary btn-round btn-xs">
+                                        <div class="info-user ml-3">
+                                            <div class="username">Talha</div>
+                                            <div class="status">Front End Designer</div>
+                                        </div>
+                                        <button class="btn btn-icon btn-primary btn-round btn-xs">
                                             <i class="fa fa-plus"></i>
-                                        </button>-->
+                                        </button>
                                     </div>
                                     <div class="item-list">
-                                        <!--<div class="avatar">
+                                        <div class="avatar">
                                             <img src="../assets/img/mlane.jpg" alt="..." class="avatar-img rounded-circle">
-                                        </div>-->
-                                        <div class="info-user ml-3">
-                                            <div class="username"><p th:text="${o4}"></p></div>
-                                            <div class="status"><p th:text="${c4}">%</p></div>
                                         </div>
-                                        <!--<button class="btn btn-icon btn-primary btn-round btn-xs">
+                                        <div class="info-user ml-3">
+                                            <div class="username">John Doe</div>
+                                            <div class="status">Back End Developer</div>
+                                        </div>
+                                        <button class="btn btn-icon btn-primary btn-round btn-xs">
                                             <i class="fa fa-plus"></i>
-                                        </button>-->
+                                        </button>
                                     </div>
                                     <div class="item-list">
-                                        <!--<div class="avatar">
+                                        <div class="avatar">
                                             <img src="../assets/img/talha.jpg" alt="..." class="avatar-img rounded-circle">
-                                        </div>-->
-                                        <div class="info-user ml-3">
-                                            <div class="username"><p th:text="${o5}"></p></div>
-                                            <div class="status"><p th:text="${c5}">%</p></div>
                                         </div>
-                                       <!-- <button class="btn btn-icon btn-primary btn-round btn-xs">
+                                        <div class="info-user ml-3">
+                                            <div class="username">Talha</div>
+                                            <div class="status">Front End Designer</div>
+                                        </div>
+                                        <button class="btn btn-icon btn-primary btn-round btn-xs">
                                             <i class="fa fa-plus"></i>
-                                        </button>-->
+                                        </button>
+                                    </div>
+                                    <div class="item-list">
+                                        <div class="avatar">
+                                            <img src="../assets/img/jm_denis.jpg" alt="..." class="avatar-img rounded-circle">
+                                        </div>
+                                        <div class="info-user ml-3">
+                                            <div class="username">Jimmy Denis</div>
+                                            <div class="status">Graphic Designer</div>
+                                        </div>
+                                        <button class="btn btn-icon btn-primary btn-round btn-xs">
+                                            <i class="fa fa-plus"></i>
+                                        </button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <!--<div class="col-md-4">
+                    <div class="col-md-4">
                         <div class="card card-primary bg-primary-gradient">
                             <div class="card-body">
                                 <h4 class="mt-3 b-b1 pb-2 mb-4 fw-bold">Active user right now</h4>
@@ -1011,9 +1025,9 @@
                                 </ul>
                             </div>
                         </div>
-                    </div>-->
+                    </div>
                 </div>
-                <!--<div class="row">
+                <div class="row">
                     <div class="col-md-6">
                         <div class="card full-height">
                             <div class="card-header">
@@ -1137,7 +1151,7 @@
                             </div>
                         </div>
                     </div>
-                </div>-->
+                </div>
             </div>
         </div>
         <footer class="footer">

@@ -50,7 +50,7 @@ public class UserController {
     @GetMapping("/registration")
     public String registration(Model model){
         model.addAttribute("user",new User());
-        return  "register";
+        return  "forms/customerformsA";
     }
 
     @PostMapping("/register")
@@ -82,10 +82,16 @@ public class UserController {
         return "redirect:/";
     }
 
-    @GetMapping("/create/newadmin")
+    @GetMapping("/create/customer")
+    public String newCustomer(Model model){
+        model.addAttribute("user",new User());
+        return  "forms/customerformsA";
+    }
+
+    @GetMapping("/create/user")
     public String newAdmin(Model model){
         model.addAttribute("user",new User());
-        return  "registeradmin";
+        return  "forms/adminformsO";
     }
 
     @PostMapping("/newadmin")
@@ -112,16 +118,59 @@ public class UserController {
             role = roleRepository.findByNameRole("ADMIN");
             user.setRole(role);
         }*/
+       /* Role role = roleRepository.findByNameRole("ADMIN");
+        user.setRole(role);*/
         System.out.println("role : " + user.getRole().getNameRole());
+        Integer role = user.getRole().getIdRole();
+        String a = "";
         userDetailService.save(user);
+        if(role == 7){
+            System.out.println("create admin berhasil");
+            return  "redirect:/user/admin";
+        }else if(role == 8){
+            System.out.println("create customer berhasil");
+            return "redirect:/user/customer";
+        }else if (role == 9){
+            System.out.println("create owner berhasil");
+            return "indexO";
+        }
+        return a;
+    }
+
+    @GetMapping("/updateadmin/{id}")
+    public String updateProduct(@PathVariable("id") Integer id, Model model){
+        try {
+            User user = userRepository.getById(id);
+            model.addAttribute("user", user);
+            return  "forms/adminformsOU";
+        }catch (Exception e){
+            return "redirect:/";
+        }
+
+    }
+
+    @PostMapping("/updateadmin")
+    public String updateRegister(@RequestParam("idUser") Integer id, User user){
+        User u = userRepository.getById(id);
+        u.setName(user.getName());
+        u.setAddress(user.getAddress());
+        u.setEmail(user.getEmail());
+        u.setUsername(user.getUsername());
+        u.setNoTelepon(user.getNoTelepon());
+        userRepository.save(u);
         return "redirect:/user/admin";
     }
 
-    @PutMapping("/update")
-    @ResponseBody
-    public String updateRegister(@RequestBody User user){
-        userDetailService.save(user);
-        return "Updated";
+    @PostMapping("/updatecustomer")
+    public String updateCustomer(@RequestParam("idUser") Integer id, User user){
+        User u = userRepository.getById(id);
+        u.setName(user.getName());
+        u.setAddress(user.getAddress());
+        u.setEmail(user.getEmail());
+        u.setUsername(user.getUsername());
+        u.setNoTelepon(user.getNoTelepon());
+        userRepository.save(u);
+        return "redirect:/user/customer";
     }
 
     @GetMapping("/delete/{id}")
@@ -129,6 +178,7 @@ public class UserController {
         userRepository.deleteById(id);
         return "showcustomer";
     }
+
 
     // not yet
     @GetMapping("/getAll")
@@ -141,14 +191,26 @@ public class UserController {
     public String getAllCustomer(Model model){
         List<User> allCustomer =  userService.getCustomer();
         model.addAttribute("customer", allCustomer);
-        return "showcustomer";
+        return "tables/showcustomer";
+    }
+
+    @GetMapping("/updatecustomer/{id}")
+    public String updateCustomer(@PathVariable("id") Integer id, Model model){
+        try {
+            User user = userRepository.getById(id);
+            model.addAttribute("user", user);
+            return  "forms/customerformsAU";
+        }catch (Exception e){
+            return "redirect:/";
+        }
+
     }
 
     @GetMapping("/admin")
     public String getAllAdmin(Model model){
         List<User> getAllAdmin =  userService.getAdmin();
         model.addAttribute("admin", getAllAdmin);
-        return "showadmin";
+        return "tables/showadmin";
     }
 
 

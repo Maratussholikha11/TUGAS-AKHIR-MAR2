@@ -297,7 +297,7 @@
 							<a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
 								<span>
 									Hizrian
-									<span class="user-level">Administrator</span>
+									<span class="user-level">Customer</span>
 									<span class="caret"></span>
 								</span>
 							</a>
@@ -605,7 +605,7 @@
 												<label for="orderId" class="placeholder">Id Pesanan</label>
 											</div>
 											<div class="form-group form-floating-label">
-												<input type="number" class="form-control input-border-bottom"  id="totalPay" name="totalPay" required>
+												<input type="number" class="form-control input-border-bottom" th:value="${transaction.totalPay}" id="totalPay" name="totalPay" required>
 												<label for="totalPay" class="placeholder">Jumlah Bayar</label>
 											</div>
 											<div class="form-check" style="font-size:15px">

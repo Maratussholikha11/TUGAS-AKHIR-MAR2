@@ -487,6 +487,17 @@
 										</a>
 									</li>
 									<li>
+										<a th:href="@{/ordering/show}">
+											<span class="sub-item">Order</span>
+										</a>
+									</li>
+									<li>
+										<a th:href="@{/transaction/show}">
+											<span class="sub-item">Transaction</span>
+										</a>
+									</li>
+									<li>
+									<li>
 										<a href="../tables/tables.html">
 											<span class="sub-item">Basic Table</span>
 										</a>
@@ -618,7 +629,7 @@
 											<tr>
 												<th>Id Produk</th>
 												<th>Nama</th>
-												<th>Deskripsi</th>
+												<!--<th>Deskripsi</th>-->
 												<th>Harga</th>
 												<th>Gambar</th>
 												<th>Aksi</th>
@@ -630,7 +641,7 @@
 												<th:set var="count" value="${count + 1}" scope="page"></th:set>
 												<td th:text="${products.id_product}"></td>
 												<td><a th:href="@{/product/detail/{id} (id=${products.id_product})}"/> <u th:text="${products.productName}"></u></td>
-												<td th:text="${products.description}"></td>
+											<!--	<td th:text="${products.description}"></td>-->
 												<td th:text="${products.price}"></td>
 												<!--<td><img src="../resources/static/upload/cat-1.jpg" alt=""></td>-->
 												<td> <img th:src="'../resources/static/upload/' +${products.fileName}" alt="" width="170px" height="170px"></td>
