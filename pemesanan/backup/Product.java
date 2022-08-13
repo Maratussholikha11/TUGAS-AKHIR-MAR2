@@ -16,9 +16,9 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "Product")
+@Table(name = "product")
 @JsonIgnoreProperties({"hibernateLazyInitializer"})
-public class Product implements Serializable {
+public class product implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

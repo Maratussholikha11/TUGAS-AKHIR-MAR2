@@ -7,7 +7,7 @@ body {
 }
 
 .no-bd{
-  border: 0px !important;
+  bOrder: 0px !important;
 }
 
 .no-box-shadow {
@@ -129,7 +129,7 @@ body {
   }
   .more {
     background: $transparent-bg;
-    border: 0;
+    bOrder: 0;
     font-size: 22px;
     padding: 0;
     opacity: 0;
@@ -188,7 +188,7 @@ body {
     padding-left: 15px;
     padding-right: 15px;
     padding-bottom: 12.5px;
-    border-bottom: 1px solid $grey-color;
+    bOrder-bottom: 1px solid $grey-color;
     display: block;
     margin-left: 10px;
     margin-right: 10px;
@@ -221,7 +221,7 @@ body {
         position: absolute;
         top: 17px;
         right: 0px;
-        border-top-color: #777;
+        bOrder-top-color: #777;
       }
     }
   }
@@ -452,7 +452,7 @@ body {
             left: -15px;
             top: 50%;
             transform: translateY(-50%);
-            border-radius: 100%;
+            bOrder-radius: 100%;
           }
         }
         &:hover {
@@ -492,7 +492,7 @@ body {
         padding: 0 15px;
         a {
           padding: 8px 10px;
-          border-radius: 5px;
+          bOrder-radius: 5px;
         }
         a:hover, a:focus, a[data-toggle=collapse][aria-expanded=true]  {
           background: hsla(0,0%,78%,.2);
@@ -622,7 +622,7 @@ body {
       padding: 0px;
       color: #6b6b6b;
       box-shadow: 0 2px 14px 0 rgba(144, 116, 212, 0.1) !important;
-      border: 0;
+      bOrder: 0;
       &:after {
         display: none;
       }
@@ -633,9 +633,9 @@ body {
       &:after {
         width: 0;
         height: 0;
-        border-left: 8px solid $transparent-bg;
-        border-right: 8px solid $transparent-bg;
-        border-bottom: 8px solid $white-color;
+        bOrder-left: 8px solid $transparent-bg;
+        bOrder-right: 8px solid $transparent-bg;
+        bOrder-bottom: 8px solid $white-color;
         position: absolute;
         top: -8px;
         right: 32px;
@@ -647,7 +647,7 @@ body {
     height: 0;
     margin: .3rem 0 1rem;
     overflow: hidden;
-    border-top: 1px solid #ebecec;
+    bOrder-top: 1px solid #ebecec;
   }
 }
 
@@ -675,9 +675,9 @@ body {
     }
   }
   .nav-line {
-    border: 0px !important;
+    bOrder: 0px !important;
     .nav-link {
-      border-bottom-width: 3px !important;
+      bOrder-bottom-width: 3px !important;
     }
   }
 }
@@ -736,7 +736,7 @@ body {
   overflow: auto;
   z-index: 999;
   transition: transform .2s ease-in-out;
-  border-left: 1px solid rgba(61,70,79,.125)!important;
+  bOrder-left: 1px solid rgba(61,70,79,.125)!important;
   .back {
     width: 100%;
     display: flex;
@@ -779,7 +779,7 @@ body {
   .page-aside{
     width: 280px;
     min-height: 100vh;
-    border-right: 1px solid $grey-color;
+    bOrder-right: 1px solid $grey-color;
     padding: 15px 0;    
     .aside-header{
       padding: 15px 22px;
@@ -839,7 +839,7 @@ body {
 }
 
 .footer {
-  border-top: 1px solid #eee;
+  bOrder-top: 1px solid #eee;
   padding: 15px;
   background: $white-color;
   position: absolute;
@@ -1195,7 +1195,7 @@ body {
     }
     .email-head{
       padding: 35px 25px;
-      border-bottom: 1px solid $grey-color;
+      bOrder-bottom: 1px solid $grey-color;
       .favorite {
         color: #eee;
         margin-right: 5px;
@@ -1223,13 +1223,13 @@ body {
       padding: 14px 25px;
       display: flex;
       align-items: center;
-      border-bottom: 1px solid $grey-color;
+      bOrder-bottom: 1px solid $grey-color;
       .avatar{
         padding-right: 12px;
         img {
           max-width: 40px;
           max-height: 40px;
-          border-radius: 50%;
+          bOrder-radius: 50%;
         }
       }
       .date {
@@ -1249,7 +1249,7 @@ body {
     }
     .email-attachments{
       padding: 25px 28px;
-      border-top: 1px solid $grey-color;
+      bOrder-top: 1px solid $grey-color;
       .title{
         font-weight: $font-weight-normal;
         margin-bottom: 10px;
@@ -1290,7 +1290,7 @@ body {
         }
         .btn-option{
           color: #555 !important;
-          border: 1px solid #ebedf2 !important;
+          bOrder: 1px solid #ebedf2 !important;
           font-weight: $font-weight-bold;
           background: $white-color !important;
           box-shadow: 2px 2px 3px 0px #f2f1f1 !important;
@@ -1298,7 +1298,7 @@ body {
         .form-check{
           padding: 0;
           .form-check-sign:before{
-            border: 1px solid #eee;
+            bOrder: 1px solid #eee;
             background: #eeeeee;
           }
         }
@@ -1311,7 +1311,7 @@ body {
           position: relative;
           font-size: 12px;
           width: 100%;
-          border-top: 1px solid $grey-color;
+          bOrder-top: 1px solid $grey-color;
           &:hover {
             background: #f6f5f5;
           }
@@ -1385,7 +1385,7 @@ body {
     }
     .email-compose-fields{
       padding: 20px 25px;
-      border-bottom: 1px solid $grey-color;
+      bOrder-bottom: 1px solid $grey-color;
     }
     .email-action{
       text-align: right;

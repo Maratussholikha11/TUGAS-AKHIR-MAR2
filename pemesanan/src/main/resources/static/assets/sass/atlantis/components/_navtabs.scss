@@ -2,10 +2,10 @@
 
 .nav-pills > li {
   &:first-child > .nav-link {
-    border-radius: 4px 0 0 4px !important;
+    bOrder-radius: 4px 0 0 4px !important;
   }
   &:last-child > .nav-link {
-    border-radius: 0 4px 4px 0 !important;
+    bOrder-radius: 0 4px 4px 0 !important;
   }
 }
 
@@ -19,13 +19,13 @@
   }
   > li > .nav-link {
     margin-left: -1px;
-    border-radius: 0 !important;
+    bOrder-radius: 0 !important;
     margin-top: 5px;
     margin-bottom: 5px;
     &.active {
       background: $primary-color;
     }
-    border: 1px solid $primary-color;
+    bOrder: 1px solid $primary-color;
     color: #585c5d;
     &:hover {
       background: rgba(222, 222, 222, 0.4);
@@ -35,11 +35,11 @@
     li {
       margin-left: 15px !important;
       .nav-link{
-        border: 0px !important;
-        border-radius: 50px !important;
+        bOrder: 0px !important;
+        bOrder-radius: 50px !important;
         background: rgba(222, 222, 222, 0.4);
         &.active{
-          border-radius: 50px !important;
+          bOrder-radius: 50px !important;
         }
       }
       &:first-child{
@@ -48,14 +48,14 @@
     }
     &.nav-pills-icons{
       .nav-link, .nav-link.active{
-        border-radius: 5px !important;
+        bOrder-radius: 5px !important;
       }
     }
   }
   &.flex-column {
     .nav-link {
-      border-radius: 0 !important;
-      border: 1px solid $primary-color;
+      bOrder-radius: 0 !important;
+      bOrder: 1px solid $primary-color;
       color: #585c5d;
       margin-top: -1px;
       text-align: center;
@@ -68,33 +68,33 @@
         background: $primary-color;
       }
       &:first-child {
-        border-radius: 4px 4px 0 0 !important;
+        bOrder-radius: 4px 4px 0 0 !important;
       }
       &:last-child {
-        border-radius: 0 0 4px 4px !important;
+        bOrder-radius: 0 0 4px 4px !important;
       }
     }
     &.nav-pills-no-bd{
       .nav-link{
-        border: 0px !important;
-        border-radius: 50px !important;
+        bOrder: 0px !important;
+        bOrder-radius: 50px !important;
         background: rgba(222, 222, 222, 0.4);
         margin-top: 5px;
         margin-bottom: 5px;
         &.active{
-          border-radius: 50px !important;
+          bOrder-radius: 50px !important;
         }
       }
     }
     &.nav-pills-icons{
       .nav-link, .nav-link.active{
-        border-radius: 5px !important;
+        bOrder-radius: 5px !important;
       }
     }
   }
   &.nav-pills-icons{
     .nav-link, .nav-link.active{
-      border-radius: 5px !important;
+      bOrder-radius: 5px !important;
       padding-top: 12px;
       padding-bottom: 12px;
     }
@@ -107,7 +107,7 @@
   }
   &.nav-default, &.nav-primary, &.nav-secondary, &.nav-info, &.nav-warning, &.nav-success, &.nav-danger{
     .nav-link {
-      border: 1px solid #eeeeee;
+      bOrder: 1px solid #eeeeee;
     }
     .nav-link.active {
       color: $white-color !important;
@@ -116,7 +116,7 @@
 
   @mixin nav-pills-states-active($color) {
     background: $color;
-    border: 1px solid $color;
+    bOrder: 1px solid $color;
   }
 
   &.nav-default .nav-link {

@@ -11,8 +11,8 @@
 	transition: all .3s;
 	z-index: 1003;
 	box-shadow: -1px 1px 20px rgba(69, 65, 78, 0.15);
-	border-top-left-radius: 5px;
-	border-bottom-left-radius: 5px;
+	bOrder-top-left-radius: 5px;
+	bOrder-bottom-left-radius: 5px;
 	transition: all .5s;
 }
 
@@ -32,9 +32,9 @@
 	align-items: center;
 	justify-content: center;
 	text-align: center;
-	border-top-left-radius: 5px;
-	border-bottom-left-radius: 5px;
-	border-right: 1px solid #177dff;
+	bOrder-top-left-radius: 5px;
+	bOrder-bottom-left-radius: 5px;
+	bOrder-right: 1px solid #177dff;
 	cursor: pointer;
 	color: #ffffff;
 	box-shadow: -5px 5px 20px rgba(69, 65, 78, 0.21);
@@ -51,8 +51,8 @@
     font-size: 16px;
     font-weight: 600;
     color: #ffffff;
-    border-top-left-radius: 5px;
-    border-bottom: 1px solid #ebedf2;
+    bOrder-top-left-radius: 5px;
+    bOrder-bottom: 1px solid #ebedf2;
     background: #5867dd;
 }
 
@@ -81,7 +81,7 @@
 }
 
 .custom-template .btnSwitch button {
-	border: 0px;
+	bOrder: 0px;
 	height: 20px;
 	width: 20px;
 	outline: 0;
@@ -89,24 +89,24 @@
 	margin-bottom: 10px;
 	cursor: pointer;
 	padding: 0;
-	border-radius: 50%;
-	border: 2px solid #eee;
+	bOrder-radius: 50%;
+	bOrder: 2px solid #eee;
 	position: relative;
 	transition: all .2s;
 }
 
 .custom-template .btnSwitch button:hover{
-	border-color: #0bf;
+	bOrder-color: #0bf;
 }
 
 .custom-template .btnSwitch button.selected{
-	border-color: #0bf;
+	bOrder-color: #0bf;
 }
 
 .custom-template .img-pick {
 	padding: 4px;
 	min-height: 100px;
-	border-radius: 5px;
+	bOrder-radius: 5px;
 	cursor: pointer;
 }
 
@@ -114,12 +114,12 @@
 	height: 100%;
 	height: 100px;
 	width: 100%;
-	border-radius: 5px;
-	border: 2px solid transparent;
+	bOrder-radius: 5px;
+	bOrder: 2px solid transparent;
 }
 
 .custom-template .img-pick:hover img, .custom-template .img-pick.active img{
-	border-color: #177dff;
+	bOrder-color: #177dff;
 }
 
 .demo .btn, .demo .progress{
@@ -139,7 +139,7 @@
 }
 
 .table-typo tbody > tr > td{
-	border-color: #fafafa;
+	bOrder-color: #fafafa;
 }
 
 .table-typo tbody > tr > td:first-child{
@@ -163,7 +163,7 @@
 
 .demo-icon:hover{
 	background-color: #f4f5f8;
-	border-radius: 3px;
+	bOrder-radius: 3px;
 }
 
 .demo-icon .icon-preview{
@@ -177,13 +177,21 @@ body[data-background-color="dark"] .demo-icon .icon-preview {
 	color: #969696;
 }
 
+
+.logo-header .logo img{
+    margin-top:-21px;
+    width:120px;
+    height:100px;
+}
+
+
 .nav-item .dropdown-toggle .avatar-sm{
     margin-top:15px;
     color:black;
     background:#ffffff;
     height:23px;
     width:60px;
-    border-radius:8px;
+    bOrder-radius:8px;
 }
 
 
@@ -193,7 +201,7 @@ body[data-background-color="dark"] .demo-icon .icon-preview {
     background:#4000ff;
     height:23px;
     width:60px;
-    border-radius:8px;
+    bOrder-radius:8px;
 
 }
 
@@ -260,9 +268,19 @@ body[data-background-color="dark"] .demo-icon .icon-class {
 	background: #ddd;
 }
 
-button[type="button"]{
-    width:60px;
+thead tr th{
+    text-align:center;
+    background-color:#99bbff;
 }
+
+button[type="button"] btn{
+   /* width:45px;*/
+   /* margin-right:10px;
+    margin-left:10px;*/
+}
+
+
+
 
 .btnSwitch button[data-color="white"] {
 	background-color: #fff;

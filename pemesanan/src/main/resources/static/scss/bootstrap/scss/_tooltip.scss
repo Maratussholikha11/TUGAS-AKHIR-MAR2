@@ -23,8 +23,8 @@
     &::before {
       position: absolute;
       content: "";
-      border-color: transparent;
-      border-style: solid;
+      bOrder-color: transparent;
+      bOrder-style: solid;
     }
   }
 }
@@ -37,8 +37,8 @@
 
     &::before {
       top: 0;
-      border-width: $tooltip-arrow-height ($tooltip-arrow-width / 2) 0;
-      border-top-color: $tooltip-arrow-color;
+      bOrder-width: $tooltip-arrow-height ($tooltip-arrow-width / 2) 0;
+      bOrder-top-color: $tooltip-arrow-color;
     }
   }
 }
@@ -53,8 +53,8 @@
 
     &::before {
       right: 0;
-      border-width: ($tooltip-arrow-width / 2) $tooltip-arrow-height ($tooltip-arrow-width / 2) 0;
-      border-right-color: $tooltip-arrow-color;
+      bOrder-width: ($tooltip-arrow-width / 2) $tooltip-arrow-height ($tooltip-arrow-width / 2) 0;
+      bOrder-right-color: $tooltip-arrow-color;
     }
   }
 }
@@ -67,8 +67,8 @@
 
     &::before {
       bottom: 0;
-      border-width: 0 ($tooltip-arrow-width / 2) $tooltip-arrow-height;
-      border-bottom-color: $tooltip-arrow-color;
+      bOrder-width: 0 ($tooltip-arrow-width / 2) $tooltip-arrow-height;
+      bOrder-bottom-color: $tooltip-arrow-color;
     }
   }
 }
@@ -83,8 +83,8 @@
 
     &::before {
       left: 0;
-      border-width: ($tooltip-arrow-width / 2) 0 ($tooltip-arrow-width / 2) $tooltip-arrow-height;
-      border-left-color: $tooltip-arrow-color;
+      bOrder-width: ($tooltip-arrow-width / 2) 0 ($tooltip-arrow-width / 2) $tooltip-arrow-height;
+      bOrder-left-color: $tooltip-arrow-color;
     }
   }
 }
@@ -111,5 +111,5 @@
   color: $tooltip-color;
   text-align: center;
   background-color: $tooltip-bg;
-  @include border-radius($tooltip-border-radius);
+  @include bOrder-radius($tooltip-bOrder-radius);
 }

@@ -24,7 +24,7 @@
     + .form-control,
     + .custom-select,
     + .custom-file {
-      margin-left: -$input-border-width;
+      margin-left: -$input-bOrder-width;
     }
   }
 
@@ -42,19 +42,19 @@
 
   > .form-control,
   > .custom-select {
-    &:not(:last-child) { @include border-right-radius(0); }
-    &:not(:first-child) { @include border-left-radius(0); }
+    &:not(:last-child) { @include bOrder-right-radius(0); }
+    &:not(:first-child) { @include bOrder-left-radius(0); }
   }
 
   // Custom file inputs have more complex markup, thus requiring different
-  // border-radius overrides.
+  // bOrder-radius overrides.
   > .custom-file {
     display: flex;
     align-items: center;
 
     &:not(:last-child) .custom-file-label,
-    &:not(:last-child) .custom-file-label::after { @include border-right-radius(0); }
-    &:not(:first-child) .custom-file-label { @include border-left-radius(0); }
+    &:not(:last-child) .custom-file-label::after { @include bOrder-right-radius(0); }
+    &:not(:first-child) .custom-file-label { @include bOrder-left-radius(0); }
   }
 }
 
@@ -69,8 +69,8 @@
 .input-group-append {
   display: flex;
 
-  // Ensure buttons are always above inputs for more visually pleasing borders.
-  // This isn't needed for `.input-group-text` since it shares the same border-color
+  // Ensure buttons are always above inputs for more visually pleasing bOrders.
+  // This isn't needed for `.input-group-text` since it shares the same bOrder-color
   // as our inputs.
   .btn {
     position: relative;
@@ -85,12 +85,12 @@
   .btn + .input-group-text,
   .input-group-text + .input-group-text,
   .input-group-text + .btn {
-    margin-left: -$input-border-width;
+    margin-left: -$input-bOrder-width;
   }
 }
 
-.input-group-prepend { margin-right: -$input-border-width; }
-.input-group-append { margin-left: -$input-border-width; }
+.input-group-prepend { margin-right: -$input-bOrder-width; }
+.input-group-append { margin-left: -$input-bOrder-width; }
 
 
 // Textual addons
@@ -110,8 +110,8 @@
   text-align: center;
   white-space: nowrap;
   background-color: $input-group-addon-bg;
-  border: $input-border-width solid $input-group-addon-border-color;
-  @include border-radius($input-border-radius);
+  bOrder: $input-bOrder-width solid $input-group-addon-bOrder-color;
+  @include bOrder-radius($input-bOrder-radius);
 
   // Nuke default margins from checkboxes and radios to vertically center within.
   input[type="radio"],
@@ -140,7 +140,7 @@
   padding: $input-padding-y-lg $input-padding-x-lg;
   @include font-size($input-font-size-lg);
   line-height: $input-line-height-lg;
-  @include border-radius($input-border-radius-lg);
+  @include bOrder-radius($input-bOrder-radius-lg);
 }
 
 .input-group-sm > .form-control:not(textarea),
@@ -157,7 +157,7 @@
   padding: $input-padding-y-sm $input-padding-x-sm;
   @include font-size($input-font-size-sm);
   line-height: $input-line-height-sm;
-  @include border-radius($input-border-radius-sm);
+  @include bOrder-radius($input-bOrder-radius-sm);
 }
 
 .input-group-lg > .custom-select,
@@ -169,7 +169,7 @@
 // Prepend and append rounded corners
 //
 // These rulesets must come after the sizing ones to properly override sm and lg
-// border-radius values when extending. They're more specific than we'd like
+// bOrder-radius values when extending. They're more specific than we'd like
 // with the `.input-group >` part, but without it, we cannot override the sizing.
 
 
@@ -179,7 +179,7 @@
 .input-group > .input-group-append:not(:last-child) > .input-group-text,
 .input-group > .input-group-append:last-child > .btn:not(:last-child):not(.dropdown-toggle),
 .input-group > .input-group-append:last-child > .input-group-text:not(:last-child) {
-  @include border-right-radius(0);
+  @include bOrder-right-radius(0);
 }
 
 .input-group > .input-group-append > .btn,
@@ -188,5 +188,5 @@
 .input-group > .input-group-prepend:not(:first-child) > .input-group-text,
 .input-group > .input-group-prepend:first-child > .btn:not(:first-child),
 .input-group > .input-group-prepend:first-child > .input-group-text:not(:first-child) {
-  @include border-left-radius(0);
+  @include bOrder-left-radius(0);
 }

@@ -24,11 +24,11 @@ public class Transaction {
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JsonIgnoreProperties({"transaction"})
-    @JoinColumn(name = "id_order")
+    @JoinColumn(name = "id_Order")
     private Ordering ordering;
 
 
-    private Integer orderId;
+    private Integer OrderId;
 
     //
     @OneToMany(mappedBy = "transaction",cascade = CascadeType.ALL)
@@ -69,7 +69,7 @@ public class Transaction {
     private String note;
 
     @ManyToOne //(cascade = CascadeType.ALL)
-    @JsonIgnoreProperties({"orderingUserT"})
+    @JsonIgnoreProperties({"OrderingUserT"})
     @JoinColumn(name = "id_user")
     private User user;
 

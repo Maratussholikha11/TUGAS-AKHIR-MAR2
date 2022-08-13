@@ -4,15 +4,14 @@ import tugasakhir.pemesanan.dto.SearchData;
 import tugasakhir.pemesanan.model.Product;
 
 import java.util.List;
-import java.util.Optional;
 
 
 public interface ProductService {
-	void saveProduct(Product product);
-	List<Product> getAllActiveProducts();
-	Product getProductById(Integer id);
+	void saveproduct(Product product);
+	List<Product> getAllActiveproducts();
+	Product getproductById(Integer id);
 	public Product findById(Integer id);
-	public List<Product> getProduct(SearchData searchData);
+	public List<Product> getproduct(SearchData searchData);
 	public Product update(Product product);
 	public boolean delete(Integer id);
 

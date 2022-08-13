@@ -1,20 +1,20 @@
 // Form control focus state
 //
 // Generate a customized focus state and for any input with the specified color,
-// which defaults to the `$input-focus-border-color` variable.
+// which defaults to the `$input-focus-bOrder-color` variable.
 //
 // We highly encourage you to not customize the default value, but instead use
 // this to tweak colors on an as-needed basis. This aesthetic change is based on
 // WebKit's default styles, but applicable to a wider range of browsers. Its
 // usability and accessibility should be taken into account with any change.
 //
-// Example usage: change the default blue border and shadow to white for better
+// Example usage: change the default blue bOrder and shadow to white for better
 // contrast against a dark gray background.
 @mixin form-control-focus($ignore-warning: false) {
   &:focus {
     color: $input-focus-color;
     background-color: $input-focus-bg;
-    border-color: $input-focus-border-color;
+    bOrder-color: $input-focus-bOrder-color;
     outline: 0;
     @if $enable-shadows {
       @include box-shadow($input-box-shadow, $input-focus-box-shadow);
@@ -63,7 +63,7 @@
     line-height: $form-feedback-tooltip-line-height;
     color: color-yiq($color);
     background-color: rgba($color, $form-feedback-tooltip-opacity);
-    @include border-radius($form-feedback-tooltip-border-radius);
+    @include bOrder-radius($form-feedback-tooltip-bOrder-radius);
   }
 
   @include form-validation-state-selector($state) {
@@ -75,7 +75,7 @@
 
   .form-control {
     @include form-validation-state-selector($state) {
-      border-color: $color;
+      bOrder-color: $color;
 
       @if $enable-validation-icons {
         padding-right: $input-height-inner;
@@ -86,7 +86,7 @@
       }
 
       &:focus {
-        border-color: $color;
+        bOrder-color: $color;
         box-shadow: 0 0 0 $input-focus-width rgba($color, .25);
       }
     }
@@ -104,7 +104,7 @@
 
   .custom-select {
     @include form-validation-state-selector($state) {
-      border-color: $color;
+      bOrder-color: $color;
 
       @if $enable-validation-icons {
         padding-right: $custom-select-feedback-icon-padding-right;
@@ -112,7 +112,7 @@
       }
 
       &:focus {
-        border-color: $color;
+        bOrder-color: $color;
         box-shadow: 0 0 0 $input-focus-width rgba($color, .25);
       }
     }
@@ -137,13 +137,13 @@
         color: $color;
 
         &::before {
-          border-color: $color;
+          bOrder-color: $color;
         }
       }
 
       &:checked {
         ~ .custom-control-label::before {
-          border-color: lighten($color, 10%);
+          bOrder-color: lighten($color, 10%);
           @include gradient-bg(lighten($color, 10%));
         }
       }
@@ -154,7 +154,7 @@
         }
 
         &:not(:checked) ~ .custom-control-label::before {
-          border-color: $color;
+          bOrder-color: $color;
         }
       }
     }
@@ -164,12 +164,12 @@
   .custom-file-input {
     @include form-validation-state-selector($state) {
       ~ .custom-file-label {
-        border-color: $color;
+        bOrder-color: $color;
       }
 
       &:focus {
         ~ .custom-file-label {
-          border-color: $color;
+          bOrder-color: $color;
           box-shadow: 0 0 0 $input-focus-width rgba($color, .25);
         }
       }

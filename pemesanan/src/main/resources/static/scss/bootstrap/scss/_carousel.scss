@@ -139,7 +139,7 @@
 
 // Optional indicator pips
 //
-// Add an ordered list with the following class and add a list item for each
+// Add an Ordered list with the following class and add a list item for each
 // slide your carousel holds.
 
 .carousel-indicators {
@@ -167,9 +167,9 @@
     cursor: pointer;
     background-color: $carousel-indicator-active-bg;
     background-clip: padding-box;
-    // Use transparent borders to increase the hit area by 10px on top and bottom.
-    border-top: $carousel-indicator-hit-area-height solid transparent;
-    border-bottom: $carousel-indicator-hit-area-height solid transparent;
+    // Use transparent bOrders to increase the hit area by 10px on top and bottom.
+    bOrder-top: $carousel-indicator-hit-area-height solid transparent;
+    bOrder-bottom: $carousel-indicator-hit-area-height solid transparent;
     opacity: .5;
     @include transition($carousel-indicator-transition);
   }

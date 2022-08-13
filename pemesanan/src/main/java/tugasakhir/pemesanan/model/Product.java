@@ -33,12 +33,12 @@ public class Product {
 	@JsonIgnore
 	private List<Ordering> orderings = new ArrayList<>();
 
-	@NotNull(message = "Product name is required.")
+	@NotNull(message = "product name is required.")
 	@Column(name = "product_name")
 	private String productName;
 
-	@NotNull(message = "Product description is required.")
-	//@Size(min = 10, max = 1000, message = "Product description must be between 10 and 1000 characters.")
+	@NotNull(message = "product description is required.")
+	//@Size(min = 10, max = 1000, message = "product description must be between 10 and 1000 characters.")
 	@Column(name = "description", nullable = false)
 	private String description;	
 	

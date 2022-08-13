@@ -1,7 +1,6 @@
 package tugasakhir.pemesanan.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,10 +14,9 @@ import tugasakhir.pemesanan.service.SaleService;
 import tugasakhir.pemesanan.service.UserService;
 
 import java.security.Principal;
-import java.util.Collection;
 import java.util.List;
 
-//import tugasakhir.pemesanan.repository.ProductRepository;
+//import tugasakhir.pemesanan.repository.productRepository;
 
 @Controller
 public class DashboardController {
@@ -68,7 +66,7 @@ public class DashboardController {
 		List<User> allCustomer =  userService.getCustomer();
 		List<Ordering> ordering = orderingService.findAllOrdering();
 		List<Sale> sale = saleService.listAll();
-		List<Product> products = productService.getAllActiveProducts();
+		List<Product> products = productService.getAllActiveproducts();
 		String p1 = products.get(0).getProductName();
 		String p2 = products.get(1).getProductName();
 		String p3 = products.get(2).getProductName();
@@ -86,27 +84,27 @@ public class DashboardController {
 		String o2 = ord.get(1).getUser().getName();
 		String o3 = ord.get(2).getUser().getName();
 		String o4 = ord.get(3).getUser().getName();
-		String o5 = ord.get(4).getUser().getName();
+		/*String o5 = ord.get(4).getUser().getName();*/
 		Integer c1 = ord.get(0).getPercentage();
 		Integer c2 = ord.get(1).getPercentage();
 		Integer c3 = ord.get(2).getPercentage();
 		Integer c4 = ord.get(3).getPercentage();
-		Integer c5 = ord.get(4).getPercentage();
+		/*Integer c5 = ord.get(4).getPercentage();*/
 		model.addAttribute("o1", o1);
 		model.addAttribute("o2", o2);
 		model.addAttribute("o3", o3);
 		model.addAttribute("o4", o4);
-		model.addAttribute("o5", o5);
+		/*model.addAttribute("o5", o5);*/
 		model.addAttribute("c1", c1);
 		model.addAttribute("c2", c2);
 		model.addAttribute("c3", c3);
 		model.addAttribute("c4", c4);
-		model.addAttribute("c5", c5);
+		/*model.addAttribute("c5", c5);*/
 		Integer sizeCustomer = allCustomer.size();
 		Integer sizeOrdering = ordering.size();
 		Integer sizeSale = sale.size();
 		model.addAttribute("customer", sizeCustomer);
-		model.addAttribute("ordering", sizeOrdering);
+		model.addAttribute("Ordering", sizeOrdering);
 		model.addAttribute("sale", sizeSale);
 
 		Role login = roleRepository.checkRole("CUSTOMER");
@@ -190,7 +188,7 @@ public class DashboardController {
 	}
 
 	@RequestMapping(value = "/allproduct", method = RequestMethod.GET)
-	public  String getAllProducts (Model model){
+	public  String getAllproducts (Model model){
 		List<Product> products = productRepository.findAll();
 		model.addAttribute("products", products);
 		return "shop";

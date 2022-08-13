@@ -25,7 +25,7 @@
 					<div class="grid images_3_of_2">
 						<div class="flexslider">
 						<div class="thumb-image">
-							<img src="${pageContext.request.contextPath}/product/display/${id}" 
+							<img src="${pageContext.request.contextPath}/product/display/${id}"
 							 class="img img-responsive img-fluid" alt=""> 
 						</div>
 							<div class="clearfix"></div>

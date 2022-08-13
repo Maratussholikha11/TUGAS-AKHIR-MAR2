@@ -33,16 +33,16 @@ body {
 			}
 		}
 		.card .card-header, .card .card-footer, .card .card-action, .card-profile .user-stats [class^="col"], .timeline > li > .timeline-panel, .table td, .table th, .breadcrumbs, .separator-dashed, .separator-solid, .separator-dot, .list-group .list-group-item, .conversations .messages-form, .mail-wrapper .mail-content .inbox-body .email-list .email-list-item, .page-with-aside .page-aside, .mail-wrapper .mail-content .email-head, .mail-wrapper .mail-content .email-sender, .main-panel .page-divider { 
-			border-color: hsla(0,0%,71%,.1) !important;
+			bOrder-color: hsla(0,0%,71%,.1) !important;
 		}
 		.timeline > li > .timeline-panel {
 			&:before {
-				border-left-color: hsla(0,0%,71%,.1);
-				border-right-color: hsla(0,0%,71%,.1);
+				bOrder-left-color: hsla(0,0%,71%,.1);
+				bOrder-right-color: hsla(0,0%,71%,.1);
 			}
 			&:after {
-				border-left-color: #202940;
-				border-right-color: #202940;
+				bOrder-left-color: #202940;
+				bOrder-right-color: #202940;
 			}
 		}
 		.page-title, .breadcrumbs li a {
@@ -67,34 +67,34 @@ body {
 			background: #fff;
 		}
 		.card-pricing .specification-list li {
-			border-color: #373d4c;
+			bOrder-color: #373d4c;
 		}
 		.input-group-text {
-			border-color: #2f374b !important;
+			bOrder-color: #2f374b !important;
 			background-color: #1f283e;
 			color: #fff;
 		}
 		.input-solid {
 			background: #363b4c !important;
-			border-color: #363b4c !important;
+			bOrder-color: #363b4c !important;
 		}
 		.list-group-messages .list-group-item-title a, .list-group .list-group-item-text {
 			color: inherit;
 		}
 		.footer {
-			border-top: 1px solid #293247;
+			bOrder-top: 1px solid #293247;
 			background: #1f283e;
 		}
 		.form-control, .form-group-default, .select2-container--bootstrap .select2-selection {
 			background-color: #1a2035;
 			color: #fff;
-			border-color: #2f374b;
+			bOrder-color: #2f374b;
 		}
 		.bootstrap-tagsinput {
 			background: transparent;
 		}
 		.selectgroup-button {
-			border: 1px solid #2f374b;
+			bOrder: 1px solid #2f374b;
 		}
 		.conversations {
 			.message-header {
@@ -103,7 +103,7 @@ body {
 			}
 			.conversations-content {
 				color: #575962;
-				border-color: #2e364a;
+				bOrder-color: #2e364a;
 			}
 		}
 		.mail-wrapper .mail-content .inbox-body .email-list .email-list-item.unread {

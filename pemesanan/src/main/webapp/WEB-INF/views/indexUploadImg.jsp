@@ -22,12 +22,12 @@
 					<div class="row">
 						<div class="col-md-6 col-sm-6 contact-form1 form-group">
 							<label class="col-form-label">Name</label>
-							<input type="text" class="form-control" placeholder="Product Name" id="name" name="name" required="required">
+							<input type="text" class="form-control" placeholder="product Name" id="name" name="name" required="required">
 							<p id="error_name"></p>
 						</div>
 						<div class="col-md-6 col-sm-6 contact-form1 form-group">
 							<label class="col-form-label">Description</label>
-							<textarea class="form-control" placeholder="Product Description" id="description" rows="3" cols="45" name="description" required="required"></textarea>
+							<textarea class="form-control" placeholder="product Description" id="description" rows="3" cols="45" name="description" required="required"></textarea>
 							<p id="error_description"></p>
 						</div>
 						<div class="col-md-6 col-sm-6 contact-form1 form-group">

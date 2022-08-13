@@ -1,19 +1,19 @@
 /*     Card     */
 
 .card, .card-light {
-  border-radius: 5px;
+  bOrder-radius: 5px;
   background-color: $white-color;
   margin-bottom: 30px;
   -webkit-box-shadow: 2px 6px 15px 0px rgba(69,65,78,.1);
   -moz-box-shadow: 2px 6px 15px 0px rgba(69,65,78,.1);
   box-shadow: 2px 6px 15px 0px rgba(69,65,78,.1);
-  border: 0px;
+  bOrder: 0px;
   .card-header {
     padding: 1rem 1.25rem;
     background-color: $transparent-bg;
-    border-bottom: 1px solid #ebecec !important;
+    bOrder-bottom: 1px solid #ebecec !important;
     &:first-child {
-      border-radius: 0px
+      bOrder-radius: 0px
     }
     .card-head-row{
       display: flex;
@@ -26,22 +26,22 @@
     }
   }
   .separator-solid {
-    border-top: 1px solid #ebecec;
+    bOrder-top: 1px solid #ebecec;
     margin: 15px 0;
   }
   .separator-dashed {
-    border-top: 1px dashed #ebecec;
+    bOrder-top: 1px dashed #ebecec;
     margin: 15px 0;
   }
   .separator-dot {
-    border-top: 1px dotted #ebecec;
+    bOrder-top: 1px dotted #ebecec;
     margin: 15px 0;
   }
   .full-width-separator {
     margin: 15px -20px 15px;
   }
   .b-b1 {
-    border-bottom: 1px solid rgba(255, 255, 255, .3);
+    bOrder-bottom: 1px solid rgba(255, 255, 255, .3);
   }
   .card-body {
     padding: 1.25rem;
@@ -49,7 +49,7 @@
   .card-footer {
     background-color: $transparent-bg;
     line-height: 30px;
-    border-top: 1px solid #ebecec !important;
+    bOrder-top: 1px solid #ebecec !important;
     font-size: 13px;
   }
   .pull-in {
@@ -70,7 +70,7 @@
     padding: 30px;
     background-color: $transparent-bg;
     line-height: 30px;
-    border-top: 1px solid #ebecec !important;
+    bOrder-top: 1px solid #ebecec !important;
     font-size: 14px;
   }
   .card-footer {
@@ -116,7 +116,7 @@
 }
 .card-with-nav{
   .card-header{
-    border-bottom: 0px !important;
+    bOrder-bottom: 0px !important;
     padding-top: 0px !important;
     padding-bottom: 0px !important;
   }
@@ -166,7 +166,7 @@
   background: #f7f8fa;
   color: $body-text-color;
   padding: 0.85rem 1.5rem;
-  border-radius: 4px;
+  bOrder-radius: 4px;
   line-height: 1.82;
 }
 .card-category {
@@ -186,7 +186,7 @@ label {
 .card-transparent{
   background: $transparent-bg !important;
   box-shadow: none;
-  border-color: $transparent-bg !important;
+  bOrder-color: $transparent-bg !important;
 }
 
 /*     Card Stats    */
@@ -214,7 +214,7 @@ label {
     align-items: center;
     justify-content: center;
     &.icon-default, &.icon-primary, &.icon-secondary, &.icon-success, &.icon-info, &.icon-warning, &.icon-danger{
-      border-radius: 5px;
+      bOrder-radius: 5px;
       i{
         color: $white-color !important;
       }
@@ -241,7 +241,7 @@ label {
       background: $danger-color;
     }
     &.round {
-      border-radius: 50% !important;
+      bOrder-radius: 50% !important;
     }
   }
   .col-stats{
@@ -269,7 +269,7 @@ label {
       padding-right: 15px;
     }
     tbody tr:last-child td {
-      border-bottom-width: 0px !important;
+      bOrder-bottom-width: 0px !important;
     }
   }
   .card-body {
@@ -295,11 +295,11 @@ label {
 /*     Card States    */
 .card-dark, .card-default, .card-primary, .card-secondary, .card-info, .card-success, .card-warning, .card-danger {
   color: $white-color;
-  border: 0px;
+  bOrder: 0px;
 }
 
 .card-dark .card-header, .card-default .card-header, .card-primary .card-header, .card-secondary .card-header, .card-info .card-header, .card-success .card-header, .card-warning .card-header, .card-danger .card-header {
-  border-bottom: $transparent-bg !important;
+  bOrder-bottom: $transparent-bg !important;
 }
 
 .card-dark .card-category, .card-default .card-category, .card-primary .card-category, .card-secondary .card-category, .card-info .card-category, .card-success .card-category, .card-warning .card-category, .card-danger .card-category, .card-dark .card-title, .card-default .card-title, .card-primary .card-title, .card-secondary .card-title, .card-info .card-title, .card-success .card-title, .card-warning .card-title, .card-danger .card-title, .card-dark label, .card-default label, .card-primary label, .card-info label, .card-success label, .card-warning label, .card-danger label {
@@ -311,7 +311,7 @@ label {
 }
 
 .card-dark .card-footer, .card-default .card-footer, .card-primary .card-footer, .card-secondary .card-footer, .card-info .card-footer, .card-success .card-footer, .card-warning .card-footer, .card-danger .card-footer {
-  border-top: $transparent-bg !important;
+  bOrder-top: $transparent-bg !important;
 }
 
 .card-default {
@@ -343,7 +343,7 @@ label {
 }
 
 .card-round{
-  border-radius: 5px;
+  bOrder-radius: 5px;
 }
 
 /*     Progress Card    */
@@ -376,12 +376,12 @@ label {
 .card-pricing{
   padding: 20px 5px;
   text-align: center;
-  border-radius: 5px;
+  bOrder-radius: 5px;
   .card-header {
-    border-bottom: 0px !important;
+    bOrder-bottom: 0px !important;
   }
   .card-footer{
-    border-top: 0px !important;
+    bOrder-top: 0px !important;
     padding: 15px 15px 10px 15px;
   }
   .card-title{
@@ -404,7 +404,7 @@ label {
     padding-left: 0px;
     li {
       padding: 8px 0 12px;
-      border-bottom: 1px solid #eee;
+      bOrder-bottom: 1px solid #eee;
       text-align: left;
       font-size: 12px;
       margin-bottom: 5px;
@@ -429,7 +429,7 @@ label {
   &.card-primary {
     .specification-list{
       li {
-        border-color: #2f8bff !important;
+        bOrder-color: #2f8bff !important;
       }
     }
     .btn-light {
@@ -439,7 +439,7 @@ label {
   &.card-success {
     .specification-list{
       li {
-        border-color: #64e069 !important;
+        bOrder-color: #64e069 !important;
       }
     }
     .btn-light {
@@ -449,7 +449,7 @@ label {
   &.card-secondary {
     .specification-list{
       li {
-        border-color: #7f77dc !important;
+        bOrder-color: #7f77dc !important;
       }
     }
     .btn-light {
@@ -459,7 +459,7 @@ label {
   &.card-default {
     .specification-list{
       li {
-        border-color: #6f8996 !important;
+        bOrder-color: #6f8996 !important;
       }
     }
     .btn-light {
@@ -469,7 +469,7 @@ label {
   &.card-info {
     .specification-list{
       li {
-        border-color: #11c0e4 !important;
+        bOrder-color: #11c0e4 !important;
       }
     }
     .btn-light {
@@ -479,7 +479,7 @@ label {
   &.card-danger {
     .specification-list{
       li {
-        border-color: #ff6972 !important;
+        bOrder-color: #ff6972 !important;
       }
     }
     .btn-light {
@@ -489,7 +489,7 @@ label {
   &.card-warning {
     .specification-list{
       li {
-        border-color: #ffbc67 !important;
+        bOrder-color: #ffbc67 !important;
       }
     }
     .btn-light {
@@ -501,11 +501,11 @@ label {
 .card-pricing2 {
   padding-bottom: 10px;
   background: #fff !important;
-  border-bottom: 7px solid;
+  bOrder-bottom: 7px solid;
   text-align: center;
   overflow: hidden;
   position: relative;
-  border-radius: 5px;
+  bOrder-radius: 5px;
   -webkit-box-shadow: 0px 1px 15px 1px rgba(69, 65, 78, 0.08);
   -moz-box-shadow: 0px 1px 15px 1px rgba(69, 65, 78, 0.08);
   box-shadow: 0px 1px 15px 1px rgba(69, 65, 78, 0.08);
@@ -549,24 +549,24 @@ label {
     width: 170px;
     height: 110px;
     padding: 15px;
-    border: 2px solid;
-    border-top: none;
-    border-bottom: none;
+    bOrder: 2px solid;
+    bOrder-top: none;
+    bOrder-bottom: none;
     position: relative;
     &:after, &:before {
       width: 121px;
       height: 121px;
-      border: 3px solid;
-      border-right: none;
-      border-bottom: none;
+      bOrder: 3px solid;
+      bOrder-right: none;
+      bOrder-bottom: none;
       position: absolute;
       top: -60px;
     }
     &:after {
-      border-top: none;
-      border-left: none;
-      border-bottom: 3px solid;
-      border-right: 3px solid;
+      bOrder-top: none;
+      bOrder-left: none;
+      bOrder-bottom: 3px solid;
+      bOrder-right: 3px solid;
       top: auto;
       bottom: -60px;
     }
@@ -574,27 +574,27 @@ label {
   .value {
     width: 100%;
     height: 100%;
-    border: 2px solid;
-    border-top: none;
-    border-bottom: none;
+    bOrder: 2px solid;
+    bOrder-top: none;
+    bOrder-bottom: none;
     z-index: 1;
     position: relative;
     &:after, &:before {
       width: 97px;
       height: 97px;
       background: #fff;
-      border: 3px solid;
-      border-bottom: none;
-      border-right: none;
+      bOrder: 3px solid;
+      bOrder-bottom: none;
+      bOrder-right: none;
       position: absolute;
       top: -48px;
       z-index: -1;
     }
     &:after {
-      border-right: 3px solid;
-      border-bottom: 3px solid;
-      border-top: none;
-      border-left: none;
+      bOrder-right: 3px solid;
+      bOrder-bottom: 3px solid;
+      bOrder-top: none;
+      bOrder-left: none;
       top: auto;
       bottom: -48px;
     }
@@ -641,7 +641,7 @@ label {
         width: 20px;
         height: 20px;
         line-height: 20px;
-        border-radius: 50%;
+        bOrder-radius: 50%;
         background: #98c458;
         text-align: center;
         color: #fff;
@@ -657,18 +657,18 @@ label {
   }
   @mixin pricing-card2-state-style($color) {
     .price-value:before, .value:before {
-      border-left-color: $color;
-      border-top-color: $color;
+      bOrder-left-color: $color;
+      bOrder-top-color: $color;
     }
     .price-value, .value {
-      border-right-color: $color;
+      bOrder-right-color: $color;
       &:after {
-        border-right-color: $color;
+        bOrder-right-color: $color;
       }
     }
-    border-bottom-color: $color;
+    bOrder-bottom-color: $color;
     .price-value:after, .value:after {
-      border-bottom-color: $color;
+      bOrder-bottom-color: $color;
     }
     .value {
       color: $color;
@@ -677,7 +677,7 @@ label {
       background: $color;
     }
     .price-value, .value {
-      border-left-color: $color;
+      bOrder-left-color: $color;
     }
   }
   &.card-default {
@@ -703,8 +703,8 @@ label {
   }
 }
 
-/*    Card Product    */
-.row-cardProduct {
+/*    Card product    */
+.row-cardproduct {
   padding: 0 5px;
   white-space: nowrap;
   overflow-x: auto;
@@ -713,7 +713,7 @@ label {
   width: unset !important;
 }
 
-.col-cardProduct {
+.col-cardproduct {
   width: 225px; 
   padding: 0 10px;
   display: inline-block;
@@ -721,7 +721,7 @@ label {
 
 .card-product {
   background: #fff;
-  border-radius: 5px;
+  bOrder-radius: 5px;
   overflow: hidden;
   box-shadow: 0px 7px 15px rgba(0, 0, 0, 0.12);
   margin-bottom: 15px;
@@ -731,7 +731,7 @@ label {
 }
 
 @media screen and (max-width: 768px) {
-  .col-cardProduct {
+  .col-cardproduct {
     width: 175px;
   }
   .card-product {
@@ -772,7 +772,7 @@ label {
     width: 300px;
     height: 300px;
     content: "";
-    border-radius: 50%;
+    bOrder-radius: 50%;
     background: rgba(255,255,255,.05);
   }
   &:after {
@@ -782,7 +782,7 @@ label {
     width: 150px;
     height: 150px;
     content: "";
-    border-radius: 50%;
+    bOrder-radius: 50%;
     background: rgba(255, 255, 255, 0.05);
   }
 }
@@ -880,7 +880,7 @@ label {
     right: 0;
     bottom: -41px;
     width: 100%;
-    box-sizing: border-box;
+    box-sizing: bOrder-box;
   }
   .user-profile{
     .name{
@@ -909,10 +909,10 @@ label {
   .user-stats {
     margin-bottom: 10px;
     [class^="col"]{
-      border-right: 1px solid #ebebeb;
+      bOrder-right: 1px solid #ebebeb;
     }
     [class^="col"]:last-child{
-      border-right: 0px;
+      bOrder-right: 0px;
     }
     .number {
       font-weight: $font-weight-normal;
@@ -923,7 +923,7 @@ label {
     }
   }
   .card-header {
-    border-bottom: 0px;
+    bOrder-bottom: 0px;
     height: 100px;
     position: relative;
   }
@@ -931,7 +931,7 @@ label {
     padding-top: 60px;
   }
   .card-footer{
-    border-top: 0px;
+    bOrder-top: 0px;
   }
   &.card-secondary{
     .card-header {
@@ -943,7 +943,7 @@ label {
 /*      Row Card No Padding      */
 
 .row-card-no-pd {
-  border-radius: 5px;
+  bOrder-radius: 5px;
   margin-left: 0;
   margin-right: 0;
   background: $white-color;
@@ -954,10 +954,10 @@ label {
   -webkit-box-shadow: 2px 6px 15px 0px rgba(69,65,78,.1);
   -moz-box-shadow: 2px 6px 15px 0px rgba(69,65,78,.1);
   box-shadow: 2px 6px 15px 0px rgba(69,65,78,.1);
-  border: 0px;
+  bOrder: 0px;
   .card {
     margin-bottom: 0px;
-    border-width: 0px;
+    bOrder-width: 0px;
     box-shadow: none;
     position: unset;
     .card-header{
@@ -982,10 +982,10 @@ label {
 /*     Accordion     */
 .accordion {
   .card{
-    border-radius: 5px !important;
+    bOrder-radius: 5px !important;
     background: #f7f7f7 !important;
     color: $body-text-color !important;
-    border: 0;
+    bOrder: 0;
     box-shadow: none;
     .span-icon{
       font-size: 22px;
@@ -993,12 +993,12 @@ label {
       padding-right: 15px;
     }
     > .card-header{
-      border: 0px !important;
+      bOrder: 0px !important;
       display: flex;
       flex-direction: row;
       align-items: center;
       cursor: pointer;
-      border-radius: 0 !important;
+      bOrder-radius: 0 !important;
       > .span-mode{
         margin-left: auto;
         &:before {
@@ -1017,7 +1017,7 @@ label {
       }
     }
     .card-body{
-      border-top: 1px solid #ebebeb;
+      bOrder-top: 1px solid #ebebeb;
       padding: 30px;
     }
   }
@@ -1073,6 +1073,6 @@ label {
   }
 }
 
-.border-transparent {
-  border-color: transparent !important;
+.bOrder-transparent {
+  bOrder-color: transparent !important;
 }

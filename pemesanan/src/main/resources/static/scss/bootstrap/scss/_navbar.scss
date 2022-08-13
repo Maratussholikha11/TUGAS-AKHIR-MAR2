@@ -120,8 +120,8 @@
   @include font-size($navbar-toggler-font-size);
   line-height: 1;
   background-color: transparent; // remove default button style
-  border: $border-width solid transparent; // remove default button style
-  @include border-radius($navbar-toggler-border-radius);
+  bOrder: $bOrder-width solid transparent; // remove default button style
+  @include bOrder-radius($navbar-toggler-bOrder-radius);
 
   @include hover-focus() {
     text-decoration: none;
@@ -252,7 +252,7 @@
 
   .navbar-toggler {
     color: $navbar-light-color;
-    border-color: $navbar-light-toggler-border-color;
+    bOrder-color: $navbar-light-toggler-bOrder-color;
   }
 
   .navbar-toggler-icon {
@@ -304,7 +304,7 @@
 
   .navbar-toggler {
     color: $navbar-dark-color;
-    border-color: $navbar-dark-toggler-border-color;
+    bOrder-color: $navbar-dark-toggler-bOrder-color;
   }
 
   .navbar-toggler-icon {

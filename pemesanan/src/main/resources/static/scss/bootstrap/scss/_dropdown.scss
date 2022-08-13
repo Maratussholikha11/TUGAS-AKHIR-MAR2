@@ -30,8 +30,8 @@
   list-style: none;
   background-color: $dropdown-bg;
   background-clip: padding-box;
-  border: $dropdown-border-width solid $dropdown-border-color;
-  @include border-radius($dropdown-border-radius);
+  bOrder: $dropdown-bOrder-width solid $dropdown-bOrder-color;
+  @include bOrder-radius($dropdown-bOrder-radius);
   @include box-shadow($dropdown-box-shadow);
 }
 
@@ -131,17 +131,17 @@
   text-decoration: if($link-decoration == none, null, none);
   white-space: nowrap; // prevent links from randomly breaking onto new lines
   background-color: transparent; // For `<button>`s
-  border: 0; // For `<button>`s
+  bOrder: 0; // For `<button>`s
 
   // Prevent dropdown overflow if there's no padding
   // See https://github.com/twbs/bootstrap/pull/27703
   @if $dropdown-padding-y == 0 {
     &:first-child {
-      @include border-top-radius($dropdown-inner-border-radius);
+      @include bOrder-top-radius($dropdown-inner-bOrder-radius);
     }
 
     &:last-child {
-      @include border-bottom-radius($dropdown-inner-border-radius);
+      @include bOrder-bottom-radius($dropdown-inner-bOrder-radius);
     }
   }
 

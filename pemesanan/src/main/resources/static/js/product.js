@@ -16,19 +16,19 @@
         if (name === "" || file === "" || price === "" || description === "") {
         	$("#submit").prop("disabled", false);
             $('#loader').hide();
-            $("#name").css("border-color", "red");
-            $("#image").css("border-color", "red");
-            $("#price").css("border-color", "red");
-//            $("#description").css("border-color", "red");
+            $("#name").css("bOrder-color", "red");
+            $("#image").css("bOrder-color", "red");
+            $("#price").css("bOrder-color", "red");
+//            $("#description").css("bOrder-color", "red");
             $("#error_name").html("Please fill the required field.");
             $("#error_file").html("Please fill the required field.");
             $("#error_price").html("Please fill the required field.");
             $("#error_description").html("Please fill the required field.");
         } else {
-            $("#name").css("border-color", "");
-            $("#image").css("border-color", "");
-            $("#price").css("border-color", "");
-            $("#description").css("border-color", "");
+            $("#name").css("bOrder-color", "");
+            $("#image").css("bOrder-color", "");
+            $("#price").css("bOrder-color", "");
+            $("#description").css("bOrder-color", "");
             $('#error_name').css('opacity', 0);
             $('#error_file').css('opacity', 0);
             $('#error_price').css('opacity', 0);
@@ -48,7 +48,7 @@
                         	$("#form")[0].reset();
                         	$('#success').css('display','block');
                             $("#error").text("");
-                            $("#success").html("Product Inserted Succsessfully.");
+                            $("#success").html("product Inserted Succsessfully.");
                             $('#success').delay(2000).fadeOut('slow');
                          }	   
                         },
@@ -64,4 +64,4 @@
             });
         });
 
-        var product = document.getElementById("searchProduct").value;
+        var product = document.getElementById("searchproduct").value;

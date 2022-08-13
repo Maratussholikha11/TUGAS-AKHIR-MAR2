@@ -2,12 +2,12 @@
 .popover {
 	max-width: 240px;
 	line-height: 1.7;
-	border: 0;
+	bOrder: 0;
 	box-shadow: 0px 0px 20px 1px rgba(69, 65, 78, 0.2);
 	.popover-header{
 		background: $transparent-bg;
 		font-size: 14px;
-		border-bottom: 0px;
+		bOrder-bottom: 0px;
 		text-transform: capitalize;
 		margin-top: 5px;
 		color: #aaaaaa;
@@ -23,7 +23,7 @@
 	&.bs-popover-top, &.bs-popover-bottom, &.bs-popover-left, &.bs-popover-right{
 		.arrow{
 			&:before {
-				border: $transparent-bg;
+				bOrder: $transparent-bg;
 			}
 		}
 	}

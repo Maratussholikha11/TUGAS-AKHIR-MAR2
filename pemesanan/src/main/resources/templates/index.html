@@ -35,7 +35,7 @@
         <div class="logo-header" data-background-color="blue">
 
             <a href="index.html" class="logo">
-                <img src="../assets/img/logo(2).png" alt="navbar brand" class="navbar-brand">
+                <img src="../assets/img/logo3.png" alt="navbar brand" class="navbar-brand">
             </a>
             <button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon">
@@ -73,10 +73,7 @@
                             <i class="fa fa-search"></i>
                         </a>
                     </li>
-                  <!--  <li class="nav-item dropdown hidden-caret">
-                        <a class="nav-link dropdown-toggle" href="#" id="messageDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fa fa-envelope"></i>
-                        </a>
+                  <!--
                         <ul class="dropdown-menu messages-notif-box animated fadeIn" aria-labelledby="messageDropdown">
                             <li>
                                 <div class="dropdown-title d-flex justify-content-between align-items-center">
@@ -255,19 +252,20 @@
                         </div>
                     </li>-->
                     <li class="nav-item dropdown hidden-caret">
-                        <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false">
+                        <a class="dropdown-toggle profile-pic" data-toggle="dropdown" th:href="@{/logout}" aria-expanded="false">
                             <div class="avatar-sm">&nbsp;&nbsp;&nbsp;Logout
-                                <!--<img src="../assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle">-->
+                                <!-- <img src="../assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle">-->
                             </div>
                         </a>
                         <ul class="dropdown-menu dropdown-user animated fadeIn">
                             <div class="dropdown-user-scroll scrollbar-outer">
                                 <li>
                                     <div class="user-box">
-                                        <!--<div class="avatar-lg"><img src="../assets/img/profile.jpg" alt="image profile" class="avatar-img rounded"></div>-->                                        <div class="u-text">
+                                        <!--<div class="avatar-lg"><img src="../assets/img/profile.jpg" alt="image profile" class="avatar-img rounded"></div>-->
+                                        <div class="u-text">
                                         <h4 th:text="${userName}"></h4>
                                         <p class="text-muted" th:text="${userEmail}"></p><!--<a href="profile.html" class="btn btn-xs btn-secondary btn-sm">View Profile</a>-->
-                                        <!--</div>-->
+                                        </div>
                                     </div>
                                 </li>
                                 <li>
@@ -276,9 +274,8 @@
                                     <a class="dropdown-item" href="#">My Balance</a>
                                     <a class="dropdown-item" href="#">Inbox</a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#">Account Setting</a>
                                     <div class="dropdown-divider"></div>-->
-                                    <a class="dropdown-item" href="@(/logout)">Logout</a>
+                                    <a class="dropdown-item" th:href="@{/logout}">Logout</a>
                                 </li>
                             </div>
                         </ul>
@@ -301,7 +298,7 @@
                             </tr>
                         </table>-->
                         <!--<div class="avatar-sm float-left mr-2">
-                            <img src="../assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle">
+                             <img src="../assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle">
                         </div>-->
                         <div class="info">
                             <a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
@@ -339,7 +336,7 @@
                     </div>
                     <ul class="nav nav-primary">
                         <li class="nav-item active">
-                            <a data-toggle="collapse" href="@{/}" class="collapsed" aria-expanded="false">
+                            <a data-toggle="collapse" th:href="@{/}" class="collapsed" aria-expanded="false">
                                 <i class="fas fa-home"></i>
                                 <p>Dashboard</p>
                                 <!--<span class="caret"></span>-->
@@ -472,22 +469,22 @@
                                 <ul class="nav nav-collapse">
                                     <li>
                                         <a th:href="@{/product}">
-                                            <span class="sub-item">Product Form</span>
+                                            <span class="sub-item">Form Produk</span>
                                         </a>
                                     </li>
                                     <li>
                                         <a th:href="@{ordering/order}">
-                                            <span class="sub-item">Order Form</span>
+                                            <span class="sub-item">Form Pemesanan</span>
                                         </a>
                                     </li>
                                     <li>
                                         <a th:href="@{transaction/form}">
-                                            <span class="sub-item">Transaction Form</span>
+                                            <span class="sub-item">Form Transaksi</span>
                                         </a>
                                     </li>
                                     <li>
                                         <a th:href="@{user/registration}">
-                                            <span class="sub-item">Customer Form</span>
+                                            <span class="sub-item">Form Pelanggan</span>
                                         </a>
                                     </li>
                                 </ul>
@@ -503,27 +500,27 @@
                                 <ul class="nav nav-collapse">
                                     <li>
                                         <a th:href="@{/product/show}">
-                                            <span class="sub-item">Product</span>
+                                            <span class="sub-item">Produk</span>
                                         </a>
                                     </li>
                                     <li>
                                         <a th:href="@{/ordering/show}">
-                                            <span class="sub-item">Order</span>
+                                            <span class="sub-item">Pesanan</span>
                                         </a>
                                     </li>
                                     <li>
                                         <a th:href="@{/transaction/show}">
-                                            <span class="sub-item">Transaction</span>
+                                            <span class="sub-item">Transaksi</span>
                                         </a>
                                     </li>
                                     <li>
                                         <a th:href="@{/sale/show}">
-                                            <span class="sub-item">Sale</span>
+                                            <span class="sub-item">Penjualan</span>
                                         </a>
                                     </li>
                                     <li>
                                         <a th:href="@{/user/customer}">
-                                            <span class="sub-item">Customers</span>
+                                            <span class="sub-item">Pelanggan</span>
                                         </a>
                                     </li>
                                 </ul>
@@ -644,7 +641,7 @@
                             <h5 class="text-white op-7 mb-2">Dashboard</h5>
                         </div>
                         <div class="ml-md-auto py-2 py-md-0">
-                            <!--<a href="#" class="btn btn-white btn-border btn-round mr-2">Manage</a>-->
+                            <!--<a href="#" class="btn btn-white btn-bOrder btn-round mr-2">Manage</a>-->
                             <a th:href="@{/user/registration}" class="btn btn-secondary btn-round">Tambah Pelanggan</a>
                         </div>
                     </div>
@@ -664,7 +661,7 @@
                                         <h6 class="fw-bold mt-3 mb-0">Customers</h6>
                                     </div>
                                     <div class="px-2 pb-2 pb-md-0 text-center">
-                                        <div><p th:text="${ordering}"></p></div>
+                                        <div><p th:text="${Ordering}"></p></div>
                                         <h6 class="fw-bold mt-3 mb-0">Order</h6>
                                     </div>
                                     <div class="px-2 pb-2 pb-md-0 text-center">
@@ -707,13 +704,13 @@
                                 <div class="card-head-row">
                                     <div class="card-title">User Statistics</div>
                                     <div class="card-tools">
-                                        <a href="#" class="btn btn-info btn-border btn-round btn-sm mr-2">
+                                        <a href="#" class="btn btn-info btn-bOrder btn-round btn-sm mr-2">
 												<span class="btn-label">
 													<i class="fa fa-pencil"></i>
 												</span>
                                             Export
                                         </a>
-                                        <a href="#" class="btn btn-info btn-border btn-round btn-sm">
+                                        <a href="#" class="btn btn-info btn-bOrder btn-round btn-sm">
 												<span class="btn-label">
 													<i class="fa fa-print"></i>
 												</span>
@@ -880,7 +877,7 @@
                     <div class="col-md-4">
                         <div class="card">
                             <div class="card-header">
-                                <div class="card-title">Top Products</div>
+                                <div class="card-title">Top products</div>
                             </div>
                             <div class="card-body pb-0">
                                 <div class="d-flex">
@@ -923,7 +920,7 @@
                                 </div>
                                 <div class="separator-dashed"></div>
                                 <div class="pull-in">
-                                    <canvas id="topProductsChart"></canvas>
+                                    <canvas id="topproductsChart"></canvas>
                                 </div>
                             </div>
                         </div>
@@ -981,18 +978,18 @@
                                             <i class="fa fa-plus"></i>
                                         </button>-->
                                     </div>
-                                    <div class="item-list">
-                                        <!--<div class="avatar">
+                                    <!--<div class="item-list">
+                                        &lt;!&ndash;<div class="avatar">
                                             <img src="../assets/img/talha.jpg" alt="..." class="avatar-img rounded-circle">
-                                        </div>-->
+                                        </div>&ndash;&gt;
                                         <div class="info-user ml-3">
                                             <div class="username"><p th:text="${o5}"></p></div>
                                             <div class="status"><p th:text="${c5}">%</p></div>
                                         </div>
-                                       <!-- <button class="btn btn-icon btn-primary btn-round btn-xs">
+                                       &lt;!&ndash; <button class="btn btn-icon btn-primary btn-round btn-xs">
                                             <i class="fa fa-plus"></i>
-                                        </button>-->
-                                    </div>
+                                        </button>&ndash;&gt;
+                                    </div>-->
                                 </div>
                             </div>
                         </div>
@@ -1072,7 +1069,7 @@
                             <div class="card-body">
                                 <div class="d-flex">
                                     <div class="avatar avatar-online">
-                                        <span class="avatar-title rounded-circle border border-white bg-info">J</span>
+                                        <span class="avatar-title rounded-circle bOrder bOrder-white bg-info">J</span>
                                     </div>
                                     <div class="flex-1 ml-3 pt-1">
                                         <h6 class="text-uppercase fw-bold mb-1">Joko Subianto <span class="text-warning pl-3">pending</span></h6>
@@ -1085,7 +1082,7 @@
                                 <div class="separator-dashed"></div>
                                 <div class="d-flex">
                                     <div class="avatar avatar-offline">
-                                        <span class="avatar-title rounded-circle border border-white bg-secondary">P</span>
+                                        <span class="avatar-title rounded-circle bOrder bOrder-white bg-secondary">P</span>
                                     </div>
                                     <div class="flex-1 ml-3 pt-1">
                                         <h6 class="text-uppercase fw-bold mb-1">Prabowo Widodo <span class="text-success pl-3">open</span></h6>
@@ -1098,7 +1095,7 @@
                                 <div class="separator-dashed"></div>
                                 <div class="d-flex">
                                     <div class="avatar avatar-away">
-                                        <span class="avatar-title rounded-circle border border-white bg-danger">L</span>
+                                        <span class="avatar-title rounded-circle bOrder bOrder-white bg-danger">L</span>
                                     </div>
                                     <div class="flex-1 ml-3 pt-1">
                                         <h6 class="text-uppercase fw-bold mb-1">Lee Chong Wei <span class="text-muted pl-3">closed</span></h6>
@@ -1111,7 +1108,7 @@
                                 <div class="separator-dashed"></div>
                                 <div class="d-flex">
                                     <div class="avatar avatar-offline">
-                                        <span class="avatar-title rounded-circle border border-white bg-secondary">P</span>
+                                        <span class="avatar-title rounded-circle bOrder bOrder-white bg-secondary">P</span>
                                     </div>
                                     <div class="flex-1 ml-3 pt-1">
                                         <h6 class="text-uppercase fw-bold mb-1">Peter Parker <span class="text-success pl-3">open</span></h6>
@@ -1124,7 +1121,7 @@
                                 <div class="separator-dashed"></div>
                                 <div class="d-flex">
                                     <div class="avatar avatar-away">
-                                        <span class="avatar-title rounded-circle border border-white bg-danger">L</span>
+                                        <span class="avatar-title rounded-circle bOrder bOrder-white bg-danger">L</span>
                                     </div>
                                     <div class="flex-1 ml-3 pt-1">
                                         <h6 class="text-uppercase fw-bold mb-1">Logan Paul <span class="text-muted pl-3">closed</span></h6>
@@ -1336,7 +1333,7 @@
 				datasets : [{
 					label: "Total Income",
 					backgroundColor: '#ff9e27',
-					borderColor: 'rgb(23, 125, 255)',
+					bOrderColor: 'rgb(23, 125, 255)',
 					data: [6, 4, 9, 5, 4, 6, 4, 3, 8, 10],
 				}],
 			},
@@ -1352,13 +1349,13 @@
 							display: false //this will remove only the label
 						},
 						gridLines : {
-							drawBorder: false,
+							drawBOrder: false,
 							display : false
 						}
 					}],
 					xAxes : [ {
 						gridLines : {
-							drawBorder: false,
+							drawBOrder: false,
 							display : false
 						}
 					}]

@@ -3,7 +3,7 @@
 %nav-background-color-style {
 	.nav-search{
 		.input-group {
-			border: 0;
+			bOrder: 0;
 			background: rgba(0, 0, 0, 0.14)!important;
 			box-shadow: 3px 3px 6px 0 rgba(0, 0, 0, 0.07);
 			transition: all .4s;
@@ -152,7 +152,7 @@
 @mixin sidebar-color-style($color) {
 	background: $color !important;
 	.user {
-		border-color: rgba(181, 181, 181, 0.1) !important;
+		bOrder-color: rgba(181, 181, 181, 0.1) !important;
 		.info a > span {
 			color: #b9babf;
 			.user-level {
@@ -209,8 +209,8 @@
 	.user {
 		margin-top: 0px;
 		padding-top: 12.5px;
-		border-top: 1px solid;
-		border-color: rgba(255, 255, 255, 0.1) !important;
+		bOrder-top: 1px solid;
+		bOrder-color: rgba(255, 255, 255, 0.1) !important;
 		.info { 
 			a > span {
 				color: #fff;
@@ -219,7 +219,7 @@
 				}
 			}
 			.caret {
-				border-top-color: #fff;
+				bOrder-top-color: #fff;
 			}
 		}
 	}

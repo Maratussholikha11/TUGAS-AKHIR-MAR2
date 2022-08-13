@@ -11,7 +11,7 @@
     color: #666;
     letter-spacing: 0.04em;
     padding: 10px;
-    border-radius: 3px;
+    bOrder-radius: 3px;
     position: relative;
     font-size: 12px;
     font-weight: $font-weight-normal;
@@ -45,7 +45,7 @@
   position: absolute;
   background-color: $success-color;
   text-align: center;
-  border-radius: 10px;
+  bOrder-radius: 10px;
   min-width: 17px;
   height: 17px;
   font-size: 10px;
@@ -92,8 +92,8 @@
 
 .navbar {
   &[class*="bg-"] {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
-    border-left: 1px solid rgba(255, 255, 255, 0.1) !important;
+    bOrder-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
+    bOrder-left: 1px solid rgba(255, 255, 255, 0.1) !important;
     .navbar-brand {
       color: $white-color;
     }
@@ -124,7 +124,7 @@
     }
     .nav-search{
       .input-group {
-        border: 0;
+        bOrder: 0;
         background: rgba(19, 19, 19, 0.25) !important;
         .form-control {
           color: $white-color !important
@@ -145,23 +145,23 @@
 .nav{
   &.nav-line {
     width: 100%;
-    border-bottom: 1px solid $grey-color;
+    bOrder-bottom: 1px solid $grey-color;
     .nav-link {
       padding: 15px 20px;
       color: $body-text-color;
-      border-width: 0px;
+      bOrder-width: 0px;
       font-size: 14px;
       font-weight: 600;
       &:hover, &:focus{
         color: $primary-color;
-        border-width: 0px;
+        bOrder-width: 0px;
       }
       &.active {
-        border-width: 0;
+        bOrder-width: 0;
         background-color: $transparent-bg;
         color: $primary-color;
-        border-bottom: 2px solid $primary-color;
-        border-radius: 0px;
+        bOrder-bottom: 2px solid $primary-color;
+        bOrder-radius: 0px;
       }
     }
 
@@ -172,7 +172,7 @@
         }
         &.active{
           color: $color;
-          border-color: $color;
+          bOrder-color: $color;
         }
       }
     }

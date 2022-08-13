@@ -1,27 +1,27 @@
 //
-// Rotating border
+// Rotating bOrder
 //
 
-@keyframes spinner-border {
+@keyframes spinner-bOrder {
   to { transform: rotate(360deg); }
 }
 
-.spinner-border {
+.spinner-bOrder {
   display: inline-block;
   width: $spinner-width;
   height: $spinner-height;
   vertical-align: text-bottom;
-  border: $spinner-border-width solid currentColor;
-  border-right-color: transparent;
+  bOrder: $spinner-bOrder-width solid currentColor;
+  bOrder-right-color: transparent;
   // stylelint-disable-next-line property-disallowed-list
-  border-radius: 50%;
-  animation: spinner-border .75s linear infinite;
+  bOrder-radius: 50%;
+  animation: spinner-bOrder .75s linear infinite;
 }
 
-.spinner-border-sm {
+.spinner-bOrder-sm {
   width: $spinner-width-sm;
   height: $spinner-height-sm;
-  border-width: $spinner-border-width-sm;
+  bOrder-width: $spinner-bOrder-width-sm;
 }
 
 //
@@ -45,7 +45,7 @@
   vertical-align: text-bottom;
   background-color: currentColor;
   // stylelint-disable-next-line property-disallowed-list
-  border-radius: 50%;
+  bOrder-radius: 50%;
   opacity: 0;
   animation: spinner-grow .75s linear infinite;
 }

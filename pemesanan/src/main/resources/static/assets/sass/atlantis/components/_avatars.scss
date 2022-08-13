@@ -28,9 +28,9 @@
   bottom: 0;
   width: 25%;
   height: 25%;
-  border-radius: 50%;
+  bOrder-radius: 50%;
   content: '';
-  border: 2px solid #fff;
+  bOrder: 2px solid #fff;
 }
 
 .avatar-online::before {
@@ -49,11 +49,11 @@
 .avatar {
   width: 3rem;
   height: 3rem;
-  .border {
-    border-width: 3px !important;
+  .bOrder {
+    bOrder-width: 3px !important;
   }
   .rounded {
-    border-radius: 6px !important;
+    bOrder-radius: 6px !important;
   }
   .avatar-title {
     font-size: 18px;
@@ -63,85 +63,85 @@
 .avatar-xs {
   width: 1.65rem;
   height: 1.65rem;
-  .border {
-    border-width: 2px !important;
+  .bOrder {
+    bOrder-width: 2px !important;
   }
   .rounded {
-    border-radius: 4px !important;
+    bOrder-radius: 4px !important;
   }
   .avatar-title {
     font-size: 12px;
   }
   &.avatar-online::before, &.avatar-offline::before, &.avatar-away::before {
-    border-width: 1px;
+    bOrder-width: 1px;
   }
 }
 
 .avatar-sm {
   width: 2.5rem;
   height: 2.5rem;
-  .border {
-    border-width: 3px !important;
+  .bOrder {
+    bOrder-width: 3px !important;
   }
   .rounded {
-    border-radius: 4px !important;
+    bOrder-radius: 4px !important;
   }
   .avatar-title {
     font-size: 15px;
   }
   &.avatar-online::before, &.avatar-offline::before, &.avatar-away::before {
-    border-width: 2px;
+    bOrder-width: 2px;
   }
 }
 
 .avatar-lg {
   width: 3.75rem;
   height: 3.75rem;
-  .border {
-    border-width: 3px !important;
+  .bOrder {
+    bOrder-width: 3px !important;
   }
   .rounded {
-    border-radius: 8px !important;
+    bOrder-radius: 8px !important;
   }
   .avatar-title {
     font-size: 24px;
   }
   &.avatar-online::before, &.avatar-offline::before, &.avatar-away::before {
-    border-width: 3px;
+    bOrder-width: 3px;
   }
 }
 
 .avatar-xl {
   width: 5rem;
   height: 5rem;
-  .border {
-    border-width: 4px !important;
+  .bOrder {
+    bOrder-width: 4px !important;
   }
   .rounded {
-    border-radius: 8px !important;
+    bOrder-radius: 8px !important;
   }
   .avatar-title {
     font-size: 28px;
   }
   &.avatar-online::before, &.avatar-offline::before, &.avatar-away::before {
-    border-width: 4px;
+    bOrder-width: 4px;
   }
 }
 
 .avatar-xxl {
   width: 5.125rem;
   height: 5.125rem;
-  .border {
-    border-width: 6px !important;
+  .bOrder {
+    bOrder-width: 6px !important;
   }
   .rounded {
-    border-radius: 8px !important;
+    bOrder-radius: 8px !important;
   }
   .avatar-title {
     font-size: 30px;
   }
   &.avatar-online::before, &.avatar-offline::before, &.avatar-away::before {
-    border-width: 4px;
+    bOrder-width: 4px;
   }
 }
 
@@ -149,17 +149,17 @@
   .avatar-xxl {
     width: 8rem;
     height: 8rem;
-    .border {
-      border-width: 4px !important;
+    .bOrder {
+      bOrder-width: 4px !important;
     }
     .rounded {
-      border-radius: 12px !important;
+      bOrder-radius: 12px !important;
     }
     .avatar-title {
       font-size: 42px;
     }
     &.avatar-online::before, &.avatar-offline::before, &.avatar-away::before {
-      border-width: 4px;
+      bOrder-width: 4px;
     }
   }
 }
@@ -186,6 +186,6 @@
   }
 }
 
-.border-dark {
-  border-color: #202940 !important;
+.bOrder-dark {
+  bOrder-color: #202940 !important;
 }

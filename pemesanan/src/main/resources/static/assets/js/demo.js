@@ -34,8 +34,8 @@ $('#map-example').vectorMap(
 {
 	map: 'world_en',
 	backgroundColor: 'transparent',
-	borderColor: '#fff',
-	borderWidth: 2,
+	bOrderColor: '#fff',
+	bOrderWidth: 2,
 	color: '#e4e4e4',
 	enableZoom: true,
 	hoverColor: '#35cd3a',
@@ -61,33 +61,33 @@ var statisticsChart = new Chart(ctx, {
 		labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
 		datasets: [ {
 			label: "Subscribers",
-			borderColor: '#f3545d',
+			bOrderColor: '#f3545d',
 			pointBackgroundColor: 'rgba(243, 84, 93, 0.6)',
 			pointRadius: 0,
 			backgroundColor: 'rgba(243, 84, 93, 0.4)',
 			legendColor: '#f3545d',
 			fill: true,
-			borderWidth: 2,
+			bOrderWidth: 2,
 			data: [154, 184, 175, 203, 210, 231, 240, 278, 252, 312, 320, 374]
 		}, {
 			label: "New Visitors",
-			borderColor: '#fdaf4b',
+			bOrderColor: '#fdaf4b',
 			pointBackgroundColor: 'rgba(253, 175, 75, 0.6)',
 			pointRadius: 0,
 			backgroundColor: 'rgba(253, 175, 75, 0.4)',
 			legendColor: '#fdaf4b',
 			fill: true,
-			borderWidth: 2,
+			bOrderWidth: 2,
 			data: [256, 230, 245, 287, 240, 250, 230, 295, 331, 431, 456, 521]
 		}, {
 			label: "Active Users",
-			borderColor: '#177dff',
+			bOrderColor: '#177dff',
 			pointBackgroundColor: 'rgba(23, 125, 255, 0.6)',
 			pointRadius: 0,
 			backgroundColor: 'rgba(23, 125, 255, 0.4)',
 			legendColor: '#177dff',
 			fill: true,
-			borderWidth: 2,
+			bOrderWidth: 2,
 			data: [542, 480, 430, 550, 530, 453, 380, 434, 568, 610, 700, 900]
 		}]
 	},
@@ -174,7 +174,7 @@ var myDailySalesChart = new Chart(dailySalesChart, {
 		"August",
 		"September"],
 		datasets:[ {
-			label: "Sales Analytics", fill: !0, backgroundColor: "rgba(255,255,255,0.2)", borderColor: "#fff", borderCapStyle: "butt", borderDash: [], borderDashOffset: 0, pointBorderColor: "#fff", pointBackgroundColor: "#fff", pointBorderWidth: 1, pointHoverRadius: 5, pointHoverBackgroundColor: "#fff", pointHoverBorderColor: "#fff", pointHoverBorderWidth: 1, pointRadius: 1, pointHitRadius: 5, data: [65, 59, 80, 81, 56, 55, 40, 35, 30]
+			label: "Sales Analytics", fill: !0, backgroundColor: "rgba(255,255,255,0.2)", bOrderColor: "#fff", bOrderCapStyle: "butt", bOrderDash: [], bOrderDashOffset: 0, pointBOrderColor: "#fff", pointBackgroundColor: "#fff", pointBOrderWidth: 1, pointHoverRadius: 5, pointHoverBackgroundColor: "#fff", pointHoverBOrderColor: "#fff", pointHoverBOrderWidth: 1, pointRadius: 1, pointHitRadius: 5, data: [65, 59, 80, 81, 56, 55, 40, 35, 30]
 		}]
 	},
 	options : {
@@ -214,9 +214,9 @@ $("#activeUsersChart").sparkline([112,109,120,107,110,85,87,90,102,109,120,99,11
 	barColor: 'rgba(255,255,255,.3)'
 });
 
-var topProductsChart = document.getElementById('topProductsChart').getContext('2d');
+var topproductsChart = document.getElementById('topproductsChart').getContext('2d');
 
-var myTopProductsChart = new Chart(topProductsChart, {
+var myTopproductsChart = new Chart(topproductsChart, {
 	type:"line",
 	data: {
 		labels:["January",
@@ -254,7 +254,7 @@ var myTopProductsChart = new Chart(topProductsChart, {
 		"March",
 		"April"],
 		datasets:[ {
-			label: "Sales Analytics", fill: !0, backgroundColor: "rgba(53, 205, 58, 0.2)", borderColor: "#35cd3a", borderCapStyle: "butt", borderDash: [], borderDashOffset: 0, pointBorderColor: "#35cd3a", pointBackgroundColor: "#35cd3a", pointBorderWidth: 1, pointHoverRadius: 5, pointHoverBackgroundColor: "#35cd3a", pointHoverBorderColor: "#35cd3a", pointHoverBorderWidth: 1, pointRadius: 1, pointHitRadius: 5, data: [20, 10, 18, 14, 32, 18, 15, 22, 8, 6, 17, 12, 17, 18, 14, 25, 18, 12, 19, 21, 16, 14, 24, 21, 13, 15, 27, 29, 21, 11, 14, 19, 21, 17]
+			label: "Sales Analytics", fill: !0, backgroundColor: "rgba(53, 205, 58, 0.2)", bOrderColor: "#35cd3a", bOrderCapStyle: "butt", bOrderDash: [], bOrderDashOffset: 0, pointBOrderColor: "#35cd3a", pointBackgroundColor: "#35cd3a", pointBOrderWidth: 1, pointHoverRadius: 5, pointHoverBackgroundColor: "#35cd3a", pointHoverBOrderColor: "#35cd3a", pointHoverBOrderWidth: 1, pointRadius: 1, pointHitRadius: 5, data: [20, 10, 18, 14, 32, 18, 15, 22, 8, 6, 17, 12, 17, 18, 14, 25, 18, 12, 19, 21, 16, 14, 24, 21, 13, 15, 27, 29, 21, 11, 14, 19, 21, 17]
 		}
 		]
 	},

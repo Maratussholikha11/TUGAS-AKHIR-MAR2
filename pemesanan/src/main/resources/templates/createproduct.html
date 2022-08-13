@@ -38,10 +38,10 @@
 	<img src="img/logo.png" alt="image" width="110px" height="110px" style="margin-left:30px">
 	<div id="title">
 		<div th:if="${product.id_product==null}">
-			<h2 class="text-center" align="center">CREATE PRODUCT</h2>
+			<h2 class="text-center" align="center">CREATE product</h2>
 		</div>
 		<div th:unless="${product.id_product==null}">
-			<h2 class="text-center" align="center">UPDATE PRODUCT</h2>
+			<h2 class="text-center" align="center">UPDATE product</h2>
 		</div>
 		<!--<ul class="nav navbar-right panel_toolbox">
 			<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
@@ -53,7 +53,7 @@
 </div>
 <nav class="navbar navbar-expand-lg  py-3 py-lg-0 px-0">
 	<a href="" class="text-decoration-none d-block d-lg-none">
-		<h1 class="m-0 display-5 font-weight-semi-bold"><span class="text-primary font-weight-bold border px-3 mr-1">E</span>Shopper</h1>
+		<h1 class="m-0 display-5 font-weight-semi-bold"><span class="text-primary font-weight-bold bOrder px-3 mr-1">E</span>Shopper</h1>
 	</a>
 	<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
 		<span class="navbar-toggler-icon"></span>
@@ -61,10 +61,10 @@
 	<div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
 		<div class="navbar-nav mr-auto py-0">
 			<div class="nav-item dropdown">
-				<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Product</a>
+				<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">product</a>
 				<div class="dropdown-menu rounded-0 m-0">
-					<a th:href="@{/product}" class="dropdown-item">Create Product</a>
-					<a th:href="@{/product/show}" class="dropdown-item">Show Product</a>
+					<a th:href="@{/product}" class="dropdown-item">Create product</a>
+					<a th:href="@{/product/show}" class="dropdown-item">Show product</a>
 				</div>
 			</div>
 			<div class="nav-item dropdown">
@@ -99,8 +99,8 @@
 			<div class="contact-grids1 w3agile-6">
 				<div class="row">
 					<!--<div class="col-md-6 col-sm-6 contact-form1 form-group">
-						<label class="col-form-label">ID Product</label>
-						<input type="text" class="form-control" disabled="disabled" th:field="*{id_product}"  placeholder="ID Product" id="productName" name="productName" required="required">
+						<label class="col-form-label">Id produk</label>
+						<input type="text" class="form-control" disabled="disabled" th:field="*{id_product}"  placeholder="ID product" id="productName" name="productName" required="required">
 						<p id="error_name"></p>
 					</div>-->
 					<!--<input type="text" class="form-control is-valid" id="validationServer01" placeholder="First name" value="Mark" required>
@@ -108,12 +108,12 @@
 
 					<div class="col-md-6 col-sm-6 contact-form1 form-group">
 						<label class="col-form-label">Name</label>
-						<input type="text" class="form-control" th:field="*{productName}" placeholder="Product Name" id="productName" name="productName" required="required">
+						<input type="text" class="form-control" th:field="*{productName}" placeholder="product Name" id="productName" name="productName" required="required">
 						<p id="error_name"></p>
 					</div>
 					<div class="col-md-6 col-sm-6 contact-form1 form-group">
 						<label class="col-form-label">Description</label>
-						<textarea class="form-control" placeholder="Product Description" th:field="*{description}" id="description" rows="3" cols="45" name="description" required="required"></textarea>
+						<textarea class="form-control" placeholder="product Description" th:field="*{description}" id="description" rows="3" cols="45" name="description" required="required"></textarea>
 						<p id="error_description"></p>
 					</div>
 					<div class="col-md-6 col-sm-6 contact-form1 form-group">

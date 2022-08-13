@@ -12,12 +12,12 @@
     margin-left: -1px;
   }
   &:not(:first-child) .selectgroup-button {
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
+    bOrder-top-left-radius: 0;
+    bOrder-bottom-left-radius: 0;
   }
   &:not(:last-child) .selectgroup-button {
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
+    bOrder-top-right-radius: 0;
+    bOrder-bottom-right-radius: 0;
   }
 }
 
@@ -31,12 +31,12 @@
 
 .selectgroup-button {
   display: block;
-  border: 1px solid rgba(0, 40, 100, 0.12);
+  bOrder: 1px solid rgba(0, 40, 100, 0.12);
   text-align: center;
   padding: 0.375rem 1rem;
   position: relative;
   cursor: pointer;
-  border-radius: 3px;
+  bOrder-radius: 3px;
   color: #9aa0ac;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -55,13 +55,13 @@
 
 .selectgroup-input {
   &:checked + .selectgroup-button {
-    border-color: $primary-color;
+    bOrder-color: $primary-color;
     z-index: 1;
     color: $primary-color;
     background: rgba($primary-color, .15);
   }
   &:focus + .selectgroup-button {
-    border-color: $primary-color;
+    bOrder-color: $primary-color;
     z-index: 2;
     color: $primary-color;
     box-shadow: 0 0 0 2px rgba($primary-color, .25);
@@ -79,19 +79,19 @@
     flex-grow: 0;
   }
   .selectgroup-button {
-    border-radius: 50px !important;
+    bOrder-radius: 50px !important;
   }
 }
 
 @mixin select-group-state-style($color) {
   .selectgroup-input {
     &:checked + .selectgroup-button {
-      border-color: $color;
+      bOrder-color: $color;
       color: $color;
       background: rgba($color, .15);
     }
     &:focus + .selectgroup-button {
-      border-color: $color;
+      bOrder-color: $color;
       color: $color;
       box-shadow: 0 0 0 2px rgba($color, .25);
     }

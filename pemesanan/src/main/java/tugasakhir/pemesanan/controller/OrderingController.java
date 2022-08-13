@@ -12,7 +12,7 @@ import tugasakhir.pemesanan.model.User;
 import tugasakhir.pemesanan.repository.OrderingRepository;
 import tugasakhir.pemesanan.service.OrderingService;
 import tugasakhir.pemesanan.service.ProductService;
-//import tugasakhir.pemesanan.service.ProductService;
+//import tugasakhir.pemesanan.service.productService;
 
 import java.util.List;
 
@@ -39,12 +39,12 @@ public class OrderingController {
     }
 
     @GetMapping("/order/{id_product}")
-    public String registration(@PathVariable("id_product") Integer idProduct,Model model){
-        System.out.println("id product for order come in : " + idProduct);
-        Product product = productService.findById(idProduct);
-        Ordering order = new Ordering();
+    public String registration(@PathVariable("id_product") Integer idproduct,Model model){
+        System.out.println("id product for Order come in : " + idproduct);
+        Product product = productService.findById(idproduct);
+        Ordering order  = new Ordering();
         order.setProductId(product.getId_product());
-        System.out.println("id product will order : " + product.getId_product());
+        System.out.println("id product will Order : " + product.getId_product());
         model.addAttribute("order",order);
         return  "forms/orderforms";
     }
@@ -66,7 +66,7 @@ public class OrderingController {
     }
 
     @PostMapping("/updateorder")
-    public String update(@RequestParam("id_order") Integer id_order, Ordering ordering){
+    public String update(@RequestParam("id_Order") Integer id_order, Ordering ordering){
         ResponseData<Ordering> response = new ResponseData<>();
         System.out.println("productId :" + ordering.getProductId());
         Ordering ord = orderingRepository.getById(id_order);
@@ -84,7 +84,7 @@ public class OrderingController {
 
     //1
     @GetMapping("/update/{id}")
-    public String updateProduct(@PathVariable("id") String id, Model model){
+    public String updateproduct(@PathVariable("id") String id, Model model){
         try {
             Integer idp = Integer.valueOf(id);
             Ordering ordering = orderingRepository.getById(idp);
@@ -97,12 +97,18 @@ public class OrderingController {
     }
 
     @GetMapping("/detail/{id}")
-    public String detailOrder(@PathVariable("id") String id, Model model){
+    public String detailorder(@PathVariable("id") String id, Model model){
         try {
             Integer idp = Integer.valueOf(id);
             Ordering ordering = orderingRepository.getById(idp);
             model.addAttribute("order", ordering);
-            return  "tables/showdetailorder";
+            User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+            if (user.getRole().getNameRole().equalsIgnoreCase("CUSTOMER")){
+                return  "tables/showdetailorderC";
+            }else{
+                return  "tables/showdetailorder";
+            }
+
         }catch (Exception e){
             return "redirect:/";
         }
@@ -117,11 +123,11 @@ public class OrderingController {
 
     //findOrderingByUsername
     @GetMapping("/myorder")
-    public String order(Model model){
+    public String Order(Model model){
         User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         List<Ordering> ordering =  orderingService.findOrderingByUser(user.getIdUser());
         model.addAttribute("order", ordering);
-        return "tables/showOrderC";
+        return "tables/showorderC";
     }
 
     //findAllOrdering
@@ -131,7 +137,7 @@ public class OrderingController {
         map.addAttribute("order", ordering);
         User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         if (user.getRole().getNameRole().equalsIgnoreCase("CUSTOMER")){
-            return  "tables/showOrderC";
+            return "redirect:/ordering/myorder";
         }else{
             return "tables/showorderA";
         }
@@ -140,11 +146,11 @@ public class OrderingController {
 
     //find by username
     //BELUM JADI
-    @GetMapping("/findorderbyuser/{username}")
+    @GetMapping("/findOrderbyuser/{username}")
     @ResponseBody
     public  List<Ordering> getOrderByUser(@PathVariable("username") String username ){
         System.out.println("username : " +  username );
-        return orderingService.findByProductUsernameLike(username);
+        return orderingService.findByproductUsernameLike(username);
     }
 
     @GetMapping("/findbypercentage/{a}/{b}")

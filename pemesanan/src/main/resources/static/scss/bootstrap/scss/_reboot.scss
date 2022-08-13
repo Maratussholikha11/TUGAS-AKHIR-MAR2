@@ -10,7 +10,7 @@
 
 // Document
 //
-// 1. Change from `box-sizing: content-box` so that `width` is not affected by `padding` or `border`.
+// 1. Change from `box-sizing: content-box` so that `width` is not affected by `padding` or `bOrder`.
 // 2. Change the default font family in all browsers.
 // 3. Correct the line height in all browsers.
 // 4. Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS.
@@ -19,7 +19,7 @@
 *,
 *::before,
 *::after {
-  box-sizing: border-box; // 1
+  box-sizing: bOrder-box; // 1
 }
 
 html {
@@ -108,7 +108,7 @@ p {
 // 1. Duplicate behavior to the data-* attribute for our tooltip plugin
 // 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
 // 3. Add explicit cursor to indicate changed behavior.
-// 4. Remove the bottom border in Firefox 39-.
+// 4. Remove the bottom bOrder in Firefox 39-.
 // 5. Prevent the text-decoration to be skipped.
 
 abbr[title],
@@ -116,7 +116,7 @@ abbr[data-original-title] { // 1
   text-decoration: underline; // 2
   text-decoration: underline dotted; // 2
   cursor: help; // 3
-  border-bottom: 0; // 4
+  bOrder-bottom: 0; // 4
   text-decoration-skip-ink: none; // 5
 }
 
@@ -251,7 +251,7 @@ figure {
 
 img {
   vertical-align: middle;
-  border-style: none; // Remove the border on images inside links in IE 10-.
+  bOrder-style: none; // Remove the bOrder on images inside links in IE 10-.
 }
 
 svg {
@@ -267,7 +267,7 @@ svg {
 //
 
 table {
-  border-collapse: collapse; // Prevent double borders
+  bOrder-collapse: collapse; // Prevent double bOrders
 }
 
 caption {
@@ -299,12 +299,12 @@ label {
   margin-bottom: $label-margin-bottom;
 }
 
-// Remove the default `border-radius` that macOS Chrome adds.
+// Remove the default `bOrder-radius` that macOS Chrome adds.
 //
 // Details at https://github.com/twbs/bootstrap/issues/24093
 button {
   // stylelint-disable-next-line property-disallowed-list
-  border-radius: 0;
+  bOrder-radius: 0;
 }
 
 // Work around a Firefox/IE bug where the transparent `button` background
@@ -374,18 +374,18 @@ button,
   }
 }
 
-// Remove inner border and padding from Firefox, but don't restore the outline like Normalize.
+// Remove inner bOrder and padding from Firefox, but don't restore the outline like Normalize.
 button::-moz-focus-inner,
 [type="button"]::-moz-focus-inner,
 [type="reset"]::-moz-focus-inner,
 [type="submit"]::-moz-focus-inner {
   padding: 0;
-  border-style: none;
+  bOrder-style: none;
 }
 
 input[type="radio"],
 input[type="checkbox"] {
-  box-sizing: border-box; // 1. Add the correct box sizing in IE 10-
+  box-sizing: bOrder-box; // 1. Add the correct box sizing in IE 10-
   padding: 0; // 2. Remove the padding in IE 10-
 }
 
@@ -406,7 +406,7 @@ fieldset {
   // Reset the default outline behavior of fieldsets so they don't affect page layout.
   padding: 0;
   margin: 0;
-  border: 0;
+  bOrder: 0;
 }
 
 // 1. Correct the text wrapping in Edge and IE.

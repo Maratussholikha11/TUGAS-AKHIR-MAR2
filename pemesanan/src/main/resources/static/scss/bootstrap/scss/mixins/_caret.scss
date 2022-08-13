@@ -1,28 +1,28 @@
 @mixin caret-down() {
-  border-top: $caret-width solid;
-  border-right: $caret-width solid transparent;
-  border-bottom: 0;
-  border-left: $caret-width solid transparent;
+  bOrder-top: $caret-width solid;
+  bOrder-right: $caret-width solid transparent;
+  bOrder-bottom: 0;
+  bOrder-left: $caret-width solid transparent;
 }
 
 @mixin caret-up() {
-  border-top: 0;
-  border-right: $caret-width solid transparent;
-  border-bottom: $caret-width solid;
-  border-left: $caret-width solid transparent;
+  bOrder-top: 0;
+  bOrder-right: $caret-width solid transparent;
+  bOrder-bottom: $caret-width solid;
+  bOrder-left: $caret-width solid transparent;
 }
 
 @mixin caret-right() {
-  border-top: $caret-width solid transparent;
-  border-right: 0;
-  border-bottom: $caret-width solid transparent;
-  border-left: $caret-width solid;
+  bOrder-top: $caret-width solid transparent;
+  bOrder-right: 0;
+  bOrder-bottom: $caret-width solid transparent;
+  bOrder-left: $caret-width solid;
 }
 
 @mixin caret-left() {
-  border-top: $caret-width solid transparent;
-  border-right: $caret-width solid;
-  border-bottom: $caret-width solid transparent;
+  bOrder-top: $caret-width solid transparent;
+  bOrder-right: $caret-width solid;
+  bOrder-bottom: $caret-width solid transparent;
 }
 
 @mixin caret($direction: down) {

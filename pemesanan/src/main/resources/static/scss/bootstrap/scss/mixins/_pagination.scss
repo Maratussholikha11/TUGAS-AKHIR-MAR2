@@ -1,6 +1,6 @@
 // Pagination
 
-@mixin pagination-size($padding-y, $padding-x, $font-size, $line-height, $border-radius) {
+@mixin pagination-size($padding-y, $padding-x, $font-size, $line-height, $bOrder-radius) {
   .page-link {
     padding: $padding-y $padding-x;
     @include font-size($font-size);
@@ -10,12 +10,12 @@
   .page-item {
     &:first-child {
       .page-link {
-        @include border-left-radius($border-radius);
+        @include bOrder-left-radius($bOrder-radius);
       }
     }
     &:last-child {
       .page-link {
-        @include border-right-radius($border-radius);
+        @include bOrder-right-radius($bOrder-radius);
       }
     }
   }

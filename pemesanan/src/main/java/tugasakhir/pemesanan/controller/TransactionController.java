@@ -68,19 +68,19 @@ public class TransactionController {
         return "forms/transactionforms";
     }
 
-    @GetMapping("/form/{id_order}")
-    public String registration(@PathVariable("id_order") Integer idOrder, Model model) {
-        Ordering order = orderingRepository.getById(idOrder);
-        System.out.println("id order will pay : " + idOrder);
+    @GetMapping("/form/{id_Order}")
+    public String registration(@PathVariable("id_Order") Integer idOrder, Model model) {
+        Ordering Order = orderingRepository.getById(idOrder);
+        System.out.println("id Order will pay : " + idOrder);
         Transaction trx = new Transaction();
-        trx.setOrderId(order.getId_order());
+        trx.setOrderId(Order.getId_Order());
         model.addAttribute("transaction", trx);
         return "forms/transactionforms";
     }
 
 
     @PostMapping("/create")
-    public String register(@RequestParam("orderId") Integer idOrder,
+    public String register(@RequestParam("OrderId") Integer idOrder,
                            @RequestParam("lunas") String lunas, @RequestParam("totalPay") Integer totalPay,  @RequestParam("note") String note,
                            Model model, HttpServletRequest request, final @RequestParam("image") MultipartFile file) {
         System.out.println("masukk sini");
@@ -125,7 +125,7 @@ public class TransactionController {
             ResponseData<Transaction> response = new ResponseData<>();
             Ordering ord = orderingRepository.getById(idOrder);
             transaction.setOrdering(ord);
-            transaction.setOrderId(ord.getId_order());
+            transaction.setOrderId(ord.getId_Order());
             String LD_PATTERN = "yyyy-MM-dd";
             DateTimeFormatter LD_FORMATTER = DateTimeFormatter.ofPattern(LD_PATTERN);
             String dateString = LD_FORMATTER.format(LocalDate.now());
@@ -163,7 +163,7 @@ public class TransactionController {
         orderingRepository.save(ord);
         trx.setOrdering(ord);
         trx.setUser(ord.getUser());
-        System.out.println("user order : " + ord.getUser().getIdUser() + " " + ord.getUser().getName());
+        System.out.println("user Order : " + ord.getUser().getIdUser() + " " + ord.getUser().getName());
         transactionRepository.save(trx);
         if(trx.getStatus().getIdStatus().equals(1)){
             Sale sale = new Sale();
@@ -175,7 +175,7 @@ public class TransactionController {
             System.out.println("trx no : "+ trx.getId_transaction());
             System.out.println("trx date : "+ trx.getTransactionDate());
             System.out.println("total : "+ trx.getTotalPay());
-            System.out.println("no order : "+ trx.getOrderId());
+            System.out.println("no Order : "+ trx.getOrderId());
             System.out.println("id user : " + trx.getUser().getIdUser());
             System.out.println("name : "+ trx.getUser().getName());
             saleController.save(sale);
@@ -190,7 +190,7 @@ public class TransactionController {
 
     //findOrderingByUsername
     @GetMapping("/mytransaction")
-    public String order(Model model){
+    public String Order(Model model){
         User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         List<Transaction> transactions =  transactionService.findOrderingByUser(user.getIdUser());
         for (Transaction t : transactions){
@@ -256,7 +256,7 @@ public class TransactionController {
         map.addAttribute("transaction", transaction);
         User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         if (user.getRole().getNameRole().equalsIgnoreCase("CUSTOMER")){
-            return "tables/showtransactionC";
+            return "redirect:/transaction/mytransaction";
         }else{
             return "tables/showtransactionA";
         }

@@ -1,10 +1,10 @@
 /*     Alert    */
 
 .alert {
-  border: 0px;
+  bOrder: 0px;
   position: relative;
   padding: .95rem 1.25rem;
-  border-radius: 1px;
+  bOrder-radius: 1px;
   color: inherit;
   background-color: $white-color;
   -webkit-box-shadow: 1px 1px 14px 0px rgba(18, 38, 63, 0.26);
@@ -22,7 +22,7 @@
       transform: translateY(-50%);
       width: 35px;
       height: 35px;
-      border-radius: 30px;
+      bOrder-radius: 30px;
       text-align: center;
       color: #fff;
     }
@@ -44,14 +44,14 @@
     height: 25px;
     line-height: 25px;
     top: 12px !important;
-    border-radius: 50%;
+    bOrder-radius: 50%;
   }
 }
 
 /*    Alert States    */
 
 @mixin alert-state($color){
-  border-left: 4px solid $color;
+  bOrder-left: 4px solid $color;
   [data-notify="icon"]:before {
     background: $color;
   }

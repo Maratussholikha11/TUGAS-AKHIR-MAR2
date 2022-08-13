@@ -34,7 +34,7 @@
 			<div class="logo-header" data-background-color="blue">
 				
 				<a href="../index.html" class="logo">
-					<img src="../../assets/img/logo.svg" alt="navbar brand" class="navbar-brand">
+					<img src="../../assets/img/logo3.png" alt="navbar brand" class="navbar-brand">
 				</a>
 				<button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon">
@@ -71,7 +71,7 @@
 								<i class="fa fa-search"></i>
 							</a>
 						</li>
-						<li class="nav-item dropdown hidden-caret">
+						<!--<li class="nav-item dropdown hidden-caret">
 							<a class="nav-link dropdown-toggle" href="#" id="messageDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 								<i class="fa fa-envelope"></i>
 							</a>
@@ -140,8 +140,8 @@
 									<a class="see-all" href="javascript:void(0);">See all messages<i class="fa fa-angle-right"></i> </a>
 								</li>
 							</ul>
-						</li>
-						<li class="nav-item dropdown hidden-caret">
+						</li>-->
+						<!--<li class="nav-item dropdown hidden-caret">
 							<a class="nav-link dropdown-toggle" href="#" id="notifDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 								<i class="fa fa-bell"></i>
 								<span class="notification">4</span>
@@ -249,33 +249,85 @@
 									</div>
 								</div>
 							</div>
-						</li>
+						</li>-->
+						<!--<li class="nav-item dropdown hidden-caret">
+							<a class="nav-link" data-toggle="dropdown" href="#" aria-expanded="false">
+								<i class="fas fa-layer-group"></i>
+							</a>
+							<div class="dropdown-menu quick-actions quick-actions-info animated fadeIn">
+								<div class="quick-actions-header">
+									<span class="title mb-1">Quick Actions</span>
+									<span class="subtitle op-8">Shortcuts</span>
+								</div>
+								<div class="quick-actions-scroll scrollbar-outer">
+									<div class="quick-actions-items">
+										<div class="row m-0">
+											<a class="col-6 col-md-4 p-0" href="#">
+												<div class="quick-actions-item">
+													<i class="flaticon-file-1"></i>
+													<span class="text">Generated Report</span>
+												</div>
+											</a>
+											<a class="col-6 col-md-4 p-0" href="#">
+												<div class="quick-actions-item">
+													<i class="flaticon-database"></i>
+													<span class="text">Create New Database</span>
+												</div>
+											</a>
+											<a class="col-6 col-md-4 p-0" href="#">
+												<div class="quick-actions-item">
+													<i class="flaticon-pen"></i>
+													<span class="text">Create New Post</span>
+												</div>
+											</a>
+											<a class="col-6 col-md-4 p-0" href="#">
+												<div class="quick-actions-item">
+													<i class="flaticon-interface-1"></i>
+													<span class="text">Create New Task</span>
+												</div>
+											</a>
+											<a class="col-6 col-md-4 p-0" href="#">
+												<div class="quick-actions-item">
+													<i class="flaticon-list"></i>
+													<span class="text">Completed Tasks</span>
+												</div>
+											</a>
+											<a class="col-6 col-md-4 p-0" href="#">
+												<div class="quick-actions-item">
+													<i class="flaticon-file"></i>
+													<span class="text">Create New Invoice</span>
+												</div>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>-->
 						<li class="nav-item dropdown hidden-caret">
 							<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false">
 								<div class="avatar-sm">
-									<img src="../../assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle">
+									&nbsp;&nbsp;&nbsp;Logout
+									<!--<img src="../../assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle">-->
 								</div>
 							</a>
 							<ul class="dropdown-menu dropdown-user animated fadeIn">
 								<div class="dropdown-user-scroll scrollbar-outer">
 									<li>
 										<div class="user-box">
-											<div class="avatar-lg"><img src="../../assets/img/profile.jpg" alt="image profile" class="avatar-img rounded"></div>
-											<div class="u-text">
-												<h4>Hizrian</h4>
-												<p class="text-muted">hello@example.com</p><a href="profile.html" class="btn btn-xs btn-secondary btn-sm">View Profile</a>
-											</div>
+											<!--<div class="avatar-lg"><img src="../../assets/img/profile.jpg" alt="image profile" class="avatar-img rounded"></div>-->
+											<h4 th:text="${userName}"></h4>
+											<p class="text-muted" th:text="${userEmail}"></p>
 										</div>
 									</li>
 									<li>
-										<div class="dropdown-divider"></div>
+										<!--<div class="dropdown-divider"></div>
 										<a class="dropdown-item" href="#">My Profile</a>
 										<a class="dropdown-item" href="#">My Balance</a>
 										<a class="dropdown-item" href="#">Inbox</a>
 										<div class="dropdown-divider"></div>
 										<a class="dropdown-item" href="#">Account Setting</a>
-										<div class="dropdown-divider"></div>
-										<a class="dropdown-item" href="#">Logout</a>
+										<div class="dropdown-divider"></div>-->
+										<a class="dropdown-item" th:href="@{/logout}">Logout</a>
 									</li>
 								</div>
 							</ul>
@@ -289,51 +341,17 @@
 		<div class="sidebar sidebar-style-2">
 			<div class="sidebar-wrapper scrollbar scrollbar-inner">
 				<div class="sidebar-content">
-					<div class="user">
-						<div class="avatar-sm float-left mr-2">
-							<img src="../../assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle">
-						</div>
-						<div class="info">
-							<a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
-								<span>
-									Hizrian
-									<span class="user-level">Administrator</span>
-									<span class="caret"></span>
-								</span>
-							</a>
-							<div class="clearfix"></div>
 
-							<div class="collapse in" id="collapseExample">
-								<ul class="nav">
-									<li>
-										<a href="#profile">
-											<span class="link-collapse">My Profile</span>
-										</a>
-									</li>
-									<li>
-										<a href="#edit">
-											<span class="link-collapse">Edit Profile</span>
-										</a>
-									</li>
-									<li>
-										<a href="#settings">
-											<span class="link-collapse">Settings</span>
-										</a>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
 					<ul class="nav nav-primary">
 						<li class="nav-item">
-							<a data-toggle="collapse" href="#dashboard" class="collapsed" aria-expanded="false">
+							<a th:href="@{/}" class="collapsed" aria-expanded="false">
 								<i class="fas fa-home"></i>
 								<p>Dashboard</p>
-								<span class="caret"></span>
+								<!--<span class="caret"></span>-->
 							</a>
 							<div class="collapse" id="dashboard">
 								<ul class="nav nav-collapse">
-									<li>
+									<!--<li>
 										<a href="../../demo1/index.html">
 											<span class="sub-item">Dashboard 1</span>
 										</a>
@@ -342,7 +360,7 @@
 										<a href="../../demo2/index.html">
 											<span class="sub-item">Dashboard 2</span>
 										</a>
-									</li>
+									</li>-->
 								</ul>
 							</div>
 						</li>
@@ -352,7 +370,7 @@
 							</span>
 							<h4 class="text-section">Components</h4>
 						</li>
-						<li class="nav-item">
+						<!--<li class="nav-item">
 							<a data-toggle="collapse" href="#base">
 								<i class="fas fa-layer-group"></i>
 								<p>Base</p>
@@ -412,8 +430,8 @@
 									</li>
 								</ul>
 							</div>
-						</li>
-						<li class="nav-item">
+						</li>-->
+						<!--<li class="nav-item">
 							<a data-toggle="collapse" href="#sidebarLayouts">
 								<i class="fas fa-th-list"></i>
 								<p>Sidebar Layouts</p>
@@ -448,7 +466,7 @@
 									</li>
 								</ul>
 							</div>
-						</li>
+						</li>-->
 						<li class="nav-item active submenu">
 							<a data-toggle="collapse" href="#forms">
 								<i class="fas fa-pen-square"></i>
@@ -457,9 +475,24 @@
 							</a>
 							<div class="collapse show" id="forms">
 								<ul class="nav nav-collapse">
-									<li class="active">
-										<a href="../forms/forms.html">
-											<span class="sub-item">Basic Form</span>
+									<li>
+										<a th:href="@{/product}">
+											<span class="sub-item">Form Produk</span>
+										</a>
+									</li>
+									<li>
+										<a th:href="@{ordering/order}">
+											<span class="sub-item">Form Pemesanan</span>
+										</a>
+									</li>
+									<li>
+										<a th:href="@{transaction/form}">
+											<span class="sub-item">Form Transaksi</span>
+										</a>
+									</li>
+									<li>
+										<a th:href="@{user/create/customer}">
+											<span class="sub-item">Form Pelanggan</span>
 										</a>
 									</li>
 								</ul>
@@ -474,34 +507,34 @@
 							<div class="collapse" id="tables">
 								<ul class="nav nav-collapse">
 									<li>
-										<a th:href="@{/product}">
-											<span class="sub-item">Product Form</span>
+										<a th:href="@{/product/show}">
+											<span class="sub-item">Produk</span>
 										</a>
 									</li>
 									<li>
-										<a th:href="@{/ordering/order}">
-											<span class="sub-item">Order Form</span>
+										<a th:href="@{/ordering/show}">
+											<span class="sub-item">Pesanan</span>
 										</a>
 									</li>
 									<li>
-										<a th:href="@{/transaction/form}">
-											<span class="sub-item">Transaction Form</span>
+										<a th:href="@{/transaction/show}">
+											<span class="sub-item">Transaksi</span>
 										</a>
 									</li>
 									<li>
 										<a th:href="@{/sale/show}">
-											<span class="sub-item">Sale</span>
+											<span class="sub-item">Penjualan</span>
 										</a>
 									</li>
 									<li>
-										<a href="forms/forms.html">
-											<span class="sub-item">Basic Form</span>
+										<a th:href="@{/user/customer}">
+											<span class="sub-item">Pelanggan</span>
 										</a>
 									</li>
 								</ul>
 							</div>
 						</li>
-						<li class="nav-item">
+						<!--<li class="nav-item">
 							<a data-toggle="collapse" href="#maps">
 								<i class="fas fa-map-marker-alt"></i>
 								<p>Maps</p>
@@ -516,8 +549,8 @@
 									</li>
 								</ul>
 							</div>
-						</li>
-						<li class="nav-item">
+						</li>-->
+						<!--<li class="nav-item">
 							<a data-toggle="collapse" href="#charts">
 								<i class="far fa-chart-bar"></i>
 								<p>Charts</p>
@@ -537,14 +570,14 @@
 									</li>
 								</ul>
 							</div>
-						</li>
-						<li class="nav-item">
+						</li>-->
+						<!--<li class="nav-item">
 							<a href="../widgets.html">
 								<i class="fas fa-desktop"></i>
 								<p>Widgets</p>
 								<span class="badge badge-success">4</span>
 							</a>
-						</li>
+						</li>-->
 					</ul>
 				</div>
 			</div>
@@ -553,7 +586,7 @@
 			<div class="content">
 				<div class="page-inner">
 					<div class="page-header">
-						<h4 class="page-title">Forms</h4>
+						<h4 class="page-title">Form</h4>
 						<ul class="breadcrumbs">
 							<li class="nav-home">
 								<a href="#">
@@ -564,22 +597,15 @@
 								<i class="flaticon-right-arrow"></i>
 							</li>
 							<li class="nav-item">
-								<a href="#">Forms</a>
+								<a href="#">Form</a>
 							</li>
 							<li class="separator">
 								<i class="flaticon-right-arrow"></i>
 							</li>
-							<li class="nav-item">
-								<a href="#">Basic Form</a>
-							</li>
+
 							<li>
 								<a th:href="@{/product}">
-									<span class="sub-item">Product Form</span>
-								</a>
-							</li>
-							<li>
-								<a th:href="@{/ordering/order}">
-									<span class="sub-item">Order Form</span>
+									<span class="sub-item">Form Produk</span>
 								</a>
 							</li>
 						</ul>
@@ -589,21 +615,21 @@
 							<form id="form"  th:action="@{/product/create}" th:object="${product}" method="post" novalidate enctype="multipart/form-data">
 							<div class="card">
 								<div class="card-header">
-									<div class="card-title"><b>Tambah Produk</b></div>
+									<div class="card-title"><b>Tambah product</b></div>
 								</div>
 								<div class="card-body">
 									<div class="row">
 										<div class="col-md-6 col-lg-4">
 											<div class="form-group form-floating-label">
-												<input type="text" class="form-control input-border-bottom" th:field="*{productName}"  id="productName" name="productName" required>
-												<label for="productName" class="placeholder">Nama Produk</label>
+												<input type="text" class="form-control input-bOrder-bottom" th:field="*{productName}"  id="productName" name="productName" required>
+												<label for="productName" class="placeholder">Nama product</label>
 											</div>
 											<div class="form-group form-floating-label">
-												<input type="text" class="form-control input-border-bottom" th:field="*{description}"  rows="3" cols="45" id="description" name="description" required>
+												<input type="text" class="form-control input-bOrder-bottom" th:field="*{description}"  rows="3" cols="45" id="description" name="description" required>
 												<label for="description" class="placeholder">Deskripsi</label>
 											</div>
 											<div class="form-group form-floating-label">
-												<input type="number" class="form-control input-border-bottom" th:field="*{price}"  name="price" id="price" required>
+												<input type="number" class="form-control input-bOrder-bottom" th:field="*{price}"  name="price" id="price" required>
 												<label for="price" class="placeholder">Harga</label>
 											</div>
 											<div class="form-group form-floating-label" >

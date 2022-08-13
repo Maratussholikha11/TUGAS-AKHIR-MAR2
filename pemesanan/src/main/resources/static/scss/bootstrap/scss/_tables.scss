@@ -12,16 +12,16 @@
   td {
     padding: $table-cell-padding;
     vertical-align: top;
-    border-top: $table-border-width solid $table-border-color;
+    bOrder-top: $table-bOrder-width solid $table-bOrder-color;
   }
 
   thead th {
     vertical-align: bottom;
-    border-bottom: (2 * $table-border-width) solid $table-border-color;
+    bOrder-bottom: (2 * $table-bOrder-width) solid $table-bOrder-color;
   }
 
   tbody + tbody {
-    border-top: (2 * $table-border-width) solid $table-border-color;
+    bOrder-top: (2 * $table-bOrder-width) solid $table-bOrder-color;
   }
 }
 
@@ -38,32 +38,32 @@
 }
 
 
-// Border versions
+// BOrder versions
 //
-// Add or remove borders all around the table and between all the columns.
+// Add or remove bOrders all around the table and between all the columns.
 
-.table-bordered {
-  border: $table-border-width solid $table-border-color;
+.table-bOrdered {
+  bOrder: $table-bOrder-width solid $table-bOrder-color;
 
   th,
   td {
-    border: $table-border-width solid $table-border-color;
+    bOrder: $table-bOrder-width solid $table-bOrder-color;
   }
 
   thead {
     th,
     td {
-      border-bottom-width: 2 * $table-border-width;
+      bOrder-bottom-width: 2 * $table-bOrder-width;
     }
   }
 }
 
-.table-borderless {
+.table-bOrderless {
   th,
   td,
   thead th,
   tbody + tbody {
-    border: 0;
+    bOrder: 0;
   }
 }
 
@@ -72,7 +72,7 @@
 // Default zebra-stripe styles (alternating gray and transparent backgrounds)
 
 .table-striped {
-  tbody tr:nth-of-type(#{$table-striped-order}) {
+  tbody tr:nth-of-type(#{$table-striped-Order}) {
     background-color: $table-accent-bg;
   }
 }
@@ -98,7 +98,7 @@
 // inheritance to nested tables.
 
 @each $color, $value in $theme-colors {
-  @include table-row-variant($color, theme-color-level($color, $table-bg-level), theme-color-level($color, $table-border-level));
+  @include table-row-variant($color, theme-color-level($color, $table-bg-level), theme-color-level($color, $table-bOrder-level));
 }
 
 @include table-row-variant(active, $table-active-bg);
@@ -114,7 +114,7 @@
     th {
       color: $table-dark-color;
       background-color: $table-dark-bg;
-      border-color: $table-dark-border-color;
+      bOrder-color: $table-dark-bOrder-color;
     }
   }
 
@@ -122,7 +122,7 @@
     th {
       color: $table-head-color;
       background-color: $table-head-bg;
-      border-color: $table-border-color;
+      bOrder-color: $table-bOrder-color;
     }
   }
 }
@@ -134,15 +134,15 @@
   th,
   td,
   thead th {
-    border-color: $table-dark-border-color;
+    bOrder-color: $table-dark-bOrder-color;
   }
 
-  &.table-bordered {
-    border: 0;
+  &.table-bOrdered {
+    bOrder: 0;
   }
 
   &.table-striped {
-    tbody tr:nth-of-type(#{$table-striped-order}) {
+    tbody tr:nth-of-type(#{$table-striped-Order}) {
       background-color: $table-dark-accent-bg;
     }
   }
@@ -175,9 +175,9 @@
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
 
-        // Prevent double border on horizontal scroll due to use of `display: block;`
-        > .table-bordered {
-          border: 0;
+        // Prevent double bOrder on horizontal scroll due to use of `display: block;`
+        > .table-bOrdered {
+          bOrder: 0;
         }
       }
     }

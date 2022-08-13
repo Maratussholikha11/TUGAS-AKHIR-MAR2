@@ -3,17 +3,17 @@
 .pagination {
   > li {
     > a, &:first-child > a, &:last-child > a, > span, &:first-child > span, &:last-child > span {
-      border-radius: 100px !important;
+      bOrder-radius: 100px !important;
       margin: 0 2px;
       color: #777777;
-      border-color: #ddd;
+      bOrder-color: #ddd;
     }
   }
   
   @mixin pagination-active-state($color) {
     > a, &:first-child > a, &:last-child > a, > span, &:first-child > span, &:last-child > span {
       background: $color;
-      border-color: $color;
+      bOrder-color: $color;
       color: $white-color;
     }
   }

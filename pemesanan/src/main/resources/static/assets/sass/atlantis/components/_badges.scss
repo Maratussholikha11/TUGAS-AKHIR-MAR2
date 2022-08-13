@@ -1,18 +1,18 @@
 /*     Badge    */
 
 .badge {
-  border-radius: 50px;
+  bOrder-radius: 50px;
   margin-left: auto;
   line-height: 1;
   padding: 6px 10px;
   vertical-align: middle;
   font-weight: $font-weight-normal;
   font-size: 11px;
-  border: 1px solid #ddd;
+  bOrder: 1px solid #ddd;
 }
 
 [class*="badge-"]:not(.badge-count) {
-  border: 0px !important;
+  bOrder: 0px !important;
 }
 
 .badge-default {

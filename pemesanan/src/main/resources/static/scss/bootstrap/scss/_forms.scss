@@ -16,10 +16,10 @@
   color: $input-color;
   background-color: $input-bg;
   background-clip: padding-box;
-  border: $input-border-width solid $input-border-color;
+  bOrder: $input-bOrder-width solid $input-bOrder-color;
 
   // Note: This has no effect on <select>s in some browsers, due to the limited stylability of `<select>`s in CSS.
-  @include border-radius($input-border-radius, 0);
+  @include bOrder-radius($input-bOrder-radius, 0);
 
   @include box-shadow($input-box-shadow);
   @include transition($input-transition);
@@ -27,7 +27,7 @@
   // Unstyle the caret on `<select>`s in IE10+.
   &::-ms-expand {
     background-color: transparent;
-    border: 0;
+    bOrder: 0;
   }
 
   // Remove select outline from select box in FF
@@ -95,23 +95,23 @@ select.form-control {
 // For use with horizontal and inline forms, when you need the label (or legend)
 // text to align with the form controls.
 .col-form-label {
-  padding-top: add($input-padding-y, $input-border-width);
-  padding-bottom: add($input-padding-y, $input-border-width);
+  padding-top: add($input-padding-y, $input-bOrder-width);
+  padding-bottom: add($input-padding-y, $input-bOrder-width);
   margin-bottom: 0; // Override the `<label>/<legend>` default
   @include font-size(inherit); // Override the `<legend>` default
   line-height: $input-line-height;
 }
 
 .col-form-label-lg {
-  padding-top: add($input-padding-y-lg, $input-border-width);
-  padding-bottom: add($input-padding-y-lg, $input-border-width);
+  padding-top: add($input-padding-y-lg, $input-bOrder-width);
+  padding-bottom: add($input-padding-y-lg, $input-bOrder-width);
   @include font-size($input-font-size-lg);
   line-height: $input-line-height-lg;
 }
 
 .col-form-label-sm {
-  padding-top: add($input-padding-y-sm, $input-border-width);
-  padding-bottom: add($input-padding-y-sm, $input-border-width);
+  padding-top: add($input-padding-y-sm, $input-bOrder-width);
+  padding-bottom: add($input-padding-y-sm, $input-bOrder-width);
   @include font-size($input-font-size-sm);
   line-height: $input-line-height-sm;
 }
@@ -120,7 +120,7 @@ select.form-control {
 // Readonly controls as plain text
 //
 // Apply class to a readonly input to make it appear like regular plain
-// text (without any border, background color, focus indicator)
+// text (without any bOrder, background color, focus indicator)
 
 .form-control-plaintext {
   display: block;
@@ -131,8 +131,8 @@ select.form-control {
   line-height: $input-line-height;
   color: $input-plaintext-color;
   background-color: transparent;
-  border: solid transparent;
-  border-width: $input-border-width 0;
+  bOrder: solid transparent;
+  bOrder-width: $input-bOrder-width 0;
 
   &.form-control-sm,
   &.form-control-lg {
@@ -154,7 +154,7 @@ select.form-control {
   padding: $input-padding-y-sm $input-padding-x-sm;
   @include font-size($input-font-size-sm);
   line-height: $input-line-height-sm;
-  @include border-radius($input-border-radius-sm);
+  @include bOrder-radius($input-bOrder-radius-sm);
 }
 
 .form-control-lg {
@@ -162,7 +162,7 @@ select.form-control {
   padding: $input-padding-y-lg $input-padding-x-lg;
   @include font-size($input-font-size-lg);
   line-height: $input-line-height-lg;
-  @include border-radius($input-border-radius-lg);
+  @include bOrder-radius($input-bOrder-radius-lg);
 }
 
 // stylelint-disable-next-line no-duplicate-selectors

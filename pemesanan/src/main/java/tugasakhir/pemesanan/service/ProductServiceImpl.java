@@ -1,7 +1,6 @@
 package tugasakhir.pemesanan.service;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,17 +18,17 @@ public class ProductServiceImpl implements ProductService {
 	private ProductRepository productRepository;
 	
 	@Override
-	public void saveProduct(Product product) {
-		productRepository.save(product);	
+	public void saveproduct(Product product) {
+		productRepository.save(product);
 	}
 
 	@Override
-	public List<Product> getAllActiveProducts() {
+	public List<Product> getAllActiveproducts() {
 		return productRepository.findAll();
 	}
 
 	@Override
-	public Product getProductById(Integer id) {
+	public Product getproductById(Integer id) {
 		return productRepository.getById(id);
 	}
 
@@ -39,7 +38,7 @@ public class ProductServiceImpl implements ProductService {
 	}
 
 	@Override
-	public List<Product> getProduct(SearchData searchData) {
+	public List<Product> getproduct(SearchData searchData) {
 		return productRepository.search(searchData.getSearchKey());
 	}
 

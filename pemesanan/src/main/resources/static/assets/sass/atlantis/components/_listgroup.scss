@@ -7,8 +7,8 @@
 	.list-group-item {
 		display: flex;
 		align-items: stretch;
-		border-width: 1px 0;
-		border-color: #ebecec;
+		bOrder-width: 1px 0;
+		bOrder-color: #ebecec;
 	}
 	.list-group-item-figure {
 		align-self: start;
@@ -42,12 +42,12 @@
 	}
 }
 
-.list-group-bordered {
+.list-group-bOrdered {
 	.list-group-item {
-		border: 1px solid #e3ebf6;
+		bOrder: 1px solid #e3ebf6;
 		&.active {
 			background: $primary-color;
-			border-color: $primary-color;
+			bOrder-color: $primary-color;
 		}
 	}
 }

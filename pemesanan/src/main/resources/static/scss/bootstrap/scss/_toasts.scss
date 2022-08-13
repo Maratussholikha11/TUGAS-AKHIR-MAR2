@@ -7,10 +7,10 @@
   color: $toast-color;
   background-color: $toast-background-color;
   background-clip: padding-box;
-  border: $toast-border-width solid $toast-border-color;
+  bOrder: $toast-bOrder-width solid $toast-bOrder-color;
   box-shadow: $toast-box-shadow;
   opacity: 0;
-  @include border-radius($toast-border-radius);
+  @include bOrder-radius($toast-bOrder-radius);
 
   &:not(:last-child) {
     margin-bottom: $toast-padding-x;
@@ -37,8 +37,8 @@
   color: $toast-header-color;
   background-color: $toast-header-background-color;
   background-clip: padding-box;
-  border-bottom: $toast-border-width solid $toast-header-border-color;
-  @include border-top-radius(subtract($toast-border-radius, $toast-border-width));
+  bOrder-bottom: $toast-bOrder-width solid $toast-header-bOrder-color;
+  @include bOrder-top-radius(subtract($toast-bOrder-radius, $toast-bOrder-width));
 }
 
 .toast-body {

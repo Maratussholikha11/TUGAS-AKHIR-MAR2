@@ -138,7 +138,7 @@ public class UserController {
     }
 
     @GetMapping("/updateadmin/{id}")
-    public String updateProduct(@PathVariable("id") Integer id, Model model){
+    public String updateproduct(@PathVariable("id") Integer id, Model model){
         try {
             User user = userRepository.getById(id);
             model.addAttribute("user", user);

@@ -33,24 +33,24 @@
 //
 
 .nav-tabs {
-  border-bottom: $nav-tabs-border-width solid $nav-tabs-border-color;
+  bOrder-bottom: $nav-tabs-bOrder-width solid $nav-tabs-bOrder-color;
 
   .nav-item {
-    margin-bottom: -$nav-tabs-border-width;
+    margin-bottom: -$nav-tabs-bOrder-width;
   }
 
   .nav-link {
-    border: $nav-tabs-border-width solid transparent;
-    @include border-top-radius($nav-tabs-border-radius);
+    bOrder: $nav-tabs-bOrder-width solid transparent;
+    @include bOrder-top-radius($nav-tabs-bOrder-radius);
 
     @include hover-focus() {
-      border-color: $nav-tabs-link-hover-border-color;
+      bOrder-color: $nav-tabs-link-hover-bOrder-color;
     }
 
     &.disabled {
       color: $nav-link-disabled-color;
       background-color: transparent;
-      border-color: transparent;
+      bOrder-color: transparent;
     }
   }
 
@@ -58,14 +58,14 @@
   .nav-item.show .nav-link {
     color: $nav-tabs-link-active-color;
     background-color: $nav-tabs-link-active-bg;
-    border-color: $nav-tabs-link-active-border-color;
+    bOrder-color: $nav-tabs-link-active-bOrder-color;
   }
 
   .dropdown-menu {
-    // Make dropdown border overlap tab border
-    margin-top: -$nav-tabs-border-width;
+    // Make dropdown bOrder overlap tab bOrder
+    margin-top: -$nav-tabs-bOrder-width;
     // Remove the top rounded corners here since there is a hard edge above the menu
-    @include border-top-radius(0);
+    @include bOrder-top-radius(0);
   }
 }
 
@@ -76,7 +76,7 @@
 
 .nav-pills {
   .nav-link {
-    @include border-radius($nav-pills-border-radius);
+    @include bOrder-radius($nav-pills-bOrder-radius);
   }
 
   .nav-link.active,

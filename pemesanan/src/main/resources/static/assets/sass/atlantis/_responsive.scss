@@ -60,7 +60,7 @@
 @media screen and (max-width: 991px) {
   .main-header[data-background-color] {
     .navbar-header {
-      border-top: 1px solid rgba(0, 0, 0, 0.1);
+      bOrder-top: 1px solid rgba(0, 0, 0, 0.1);
     }
   }
   .sidebar {
@@ -84,7 +84,7 @@
     -o-transform: translate3d(0px, 0, 0);
     -ms-transform: translate3d(0px, 0, 0);
     transform: translate3d(0px, 0, 0) !important;
-    border-right: 1px solid $grey-color;
+    bOrder-right: 1px solid $grey-color;
   }
   .sidebar .sidebar-wrapper {
     padding-top: 0px;
@@ -154,7 +154,7 @@
       margin-left: 0px !important;
       opacity: 1;
       display: block;
-      order: 1;
+      Order: 1;
     }
     .more {
       opacity: 1;
@@ -162,7 +162,7 @@
       cursor: pointer;
       display: inline-block;
       line-height: 56px;
-      order: 3;
+      Order: 3;
       width: unset;
       margin-left: auto;
     }
@@ -210,7 +210,7 @@
       text-align: center;
       width: 100%;
       padding: 10px 15px 0px;
-      order: 1;
+      Order: 1;
     }
     .main-panel {
       transform: translate3d(0, 62px, 0) !important;
@@ -292,9 +292,9 @@
       width: 100%;
       height: unset;
       min-height: unset;
-      border-bottom: 1px solid #eee;
-      border-left: 0;
-      border-right: 0;
+      bOrder-bottom: 1px solid #eee;
+      bOrder-left: 0;
+      bOrder-right: 0;
       background: $transparent-bg;
       padding-top: 0px;
       padding-bottom: 0px;
@@ -371,7 +371,7 @@
         padding-top: 15px;
         padding-left: 5px;
         padding-bottom: 0px;
-        border-left: 0px;
+        bOrder-left: 0px;
       }
       .btn-group-page-header{
         position: absolute;
@@ -410,15 +410,15 @@
       }
       .fc-left {
         @extend %fc-position-margin;
-        order: 1;
+        Order: 1;
       }
       .fc-right {
         @extend %fc-position-margin;
-        order: 3;
+        Order: 3;
       }
       .fc-center {
         @extend %fc-position-margin;
-        order: 2;
+        Order: 2;
       }
     }
   }

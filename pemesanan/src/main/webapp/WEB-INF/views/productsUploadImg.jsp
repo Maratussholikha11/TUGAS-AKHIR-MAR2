@@ -18,7 +18,7 @@
 <a href="${pageContext.request.contextPath}/home" class="btn btn-danger text-right">Go Home</a>
 </h1>
 <br><br>
-<table id="example" class="table table-striped table-bordered text-center">
+<table id="example" class="table table-striped table-bOrdered text-center">
         <thead>
             <tr>
                 <th>SR. No.</th>

@@ -35,7 +35,7 @@ public class TransactionService {
         Ordering ord = orderingRepository.getById(transaction.getOrderId());
         Transaction current = new Transaction();
         current.setOrdering(ord);
-        current.setOrderId(ord.getId_order());
+        current.setOrderId(ord.getId_Order());
         current.setTransactionDate(transaction.getTransactionDate());
         current.setImage(transaction.getImage()); //receipt
         current.setReceiptName(transaction.getReceiptName());
@@ -51,7 +51,7 @@ public class TransactionService {
         return transactionRepository.save(transaction);
     }
 
-    // select order by user
+    // select Order by user
     public List<Transaction> findOrderingByUser(Integer idUser){
         return transactionRepository.findOrderingByUser(idUser);
     }

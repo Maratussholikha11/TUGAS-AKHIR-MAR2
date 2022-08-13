@@ -28,9 +28,9 @@ public class SaleService {
         User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         System.out.println("user adalah :" + user.getName());
         Sale current = new Sale();
-//        System.out.println("total cost ordering : " + sale.getOrdering().getTotalCost() );
-//        Ordering ord = orderingService.findById(sale.getOrdering().getId_order());
-//        System.out.println("total cost ordering : " + ord.getTotalCost());
+//        System.out.println("total cost Ordering : " + sale.getOrdering().getTotalCost() );
+//        Ordering ord = orderingService.findById(sale.getOrdering().getId_Order());
+//        System.out.println("total cost Ordering : " + ord.getTotalCost());
 //        current.setTotalPay(ord.getTotalCost());
         current.setLunas(sale.getLunas());
         current.getTransactionDate();
@@ -47,7 +47,7 @@ public class SaleService {
         return saleRepository.findAll();
     }
     // count laba
-    // count total cost per order
+    // count total cost per Order
 
 
 }

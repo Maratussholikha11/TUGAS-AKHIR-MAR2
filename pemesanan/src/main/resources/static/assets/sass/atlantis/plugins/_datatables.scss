@@ -4,7 +4,7 @@ table.dataTable {
   margin-top: 15px !important;
   margin-bottom: 15px !important;
   max-width: none !important;
-  border-collapse: separate !important;
+  bOrder-collapse: separate !important;
   td, th {
     -webkit-box-sizing: content-box;
     box-sizing: content-box;
@@ -139,7 +139,7 @@ div {
     margin-bottom: 0 !important;
   }
   &.dataTables_scrollBody table {
-    border-top: none;
+    bOrder-top: none;
     margin-top: 0 !important;
     margin-bottom: 0 !important;
     thead {
@@ -149,7 +149,7 @@ div {
     }
     tbody tr:first-child {
       th, td {
-        border-top: none;
+        bOrder-top: none;
       }
     }
   }
@@ -157,7 +157,7 @@ div {
     box-sizing: content-box;
     > table {
       margin-top: 0 !important;
-      border-top: none;
+      bOrder-top: none;
     }
   }
 }
@@ -195,24 +195,24 @@ table {
       top: 5px;
     }
   }
-  &.table-bordered.dataTable {
+  &.table-bOrdered.dataTable {
     th, td {
-      border-left-width: 0;
+      bOrder-left-width: 0;
     }
     th:last-child, td:last-child {
-      border-right-width: 0;
+      bOrder-right-width: 0;
     }
     tbody {
       th, td {
-        border-bottom-width: 0;
+        bOrder-bottom-width: 0;
       }
     }
   }
 }
 
 div {
-  &.dataTables_scrollHead table.table-bordered {
-    border-bottom-width: 0;
+  &.dataTables_scrollHead table.table-bOrdered {
+    bOrder-bottom-width: 0;
   }
   &.table-responsive > div.dataTables_wrapper > div.row {
     margin: 0;

@@ -110,10 +110,10 @@ public class User implements UserDetails, Serializable {
     }
 
     public void setOrdering(List<Ordering> ordering) {
-        for( Ordering data : ordering){
+        for( Ordering data : Ordering){
             data.setUser(this);
         }
-        this.orderingUser = ordering;
+        this.OrderingUser = Ordering;
     }*/
 
 

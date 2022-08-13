@@ -9,7 +9,7 @@
 }
 
 .ui-helper-hidden-accessible {
-  border: 0;
+  bOrder: 0;
   clip: rect(0 0 0 0);
   height: 1px;
   margin: -1px;
@@ -22,7 +22,7 @@
 .ui-helper-reset {
   margin: 0;
   padding: 0;
-  border: 0;
+  bOrder: 0;
   outline: 0;
   line-height: 1.3;
   text-decoration: none;
@@ -34,7 +34,7 @@
   &:after, &:before {
     content: "";
     display: table;
-    border-collapse: collapse;
+    bOrder-collapse: collapse;
   }
   &:after {
     clear: both;
@@ -172,7 +172,7 @@
 .ui-selectable-helper {
   position: absolute;
   z-index: 100;
-  border: 1px dotted #000;
+  bOrder: 1px dotted #000;
 }
 
 .ui-sortable-handle {
@@ -198,7 +198,7 @@
     z-index: 1;
     font-size: .7em;
     display: block;
-    border: 0;
+    bOrder: 0;
     background-position: 0 0;
   }
   &.ui-state-disabled {
@@ -254,7 +254,7 @@
   background: -o-linear-gradient(top, $white-color 0, #f7f7f7 100%);
   background: -ms-linear-gradient(top, $white-color 0, #f7f7f7 100%);
   background: linear-gradient(to bottom, $white-color 0, #f7f7f7 100%);
-  border-radius: 50px;
+  bOrder-radius: 50px;
   box-shadow: 0 1px 4px 0 #9191ab !important;
   &:focus {
     background: $white-color;
@@ -264,7 +264,7 @@
     background: -o-linear-gradient(top, $white-color 0, #f7f7f7 100%);
     background: -ms-linear-gradient(top, $white-color 0, #f7f7f7 100%);
     background: linear-gradient(to bottom, $white-color 0, #f7f7f7 100%);
-    border-radius: 50px;
+    bOrder-radius: 50px;
     box-shadow: 0 1px 4px 0 #9191ab !important;
   }
 }

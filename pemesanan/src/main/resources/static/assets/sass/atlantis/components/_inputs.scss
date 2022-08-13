@@ -2,11 +2,11 @@
 
 .form-control {
   font-size: 14px;
-  border-color: #ebedf2;
+  bOrder-color: #ebedf2;
   padding: .6rem 1rem;
   height: inherit !important;
   &:focus {
-    border-color: #3e93ff;
+    bOrder-color: #3e93ff;
   }
 }
 
@@ -69,7 +69,7 @@
 .form-control::-ms-input-placeholder { color:inherit;opacity:.7 }  
 
 .input-group-text {
-  border-color : #ebedf2 !important;
+  bOrder-color : #ebedf2 !important;
 }
 
 .form-button-action {
@@ -84,7 +84,7 @@
 
 .select-all-checkbox + .form-check-sign:before {
   background: #ccc !important;
-  border-color: #ccc !important;
+  bOrder-color: #ccc !important;
 }
 
 .form-check{
@@ -106,9 +106,9 @@
       top: 1px;
       width: 16px;
       height: 16px;
-      border: 1px solid #ccc;
+      bOrder: 1px solid #ccc;
       background: $transparent-bg;
-      border-radius: 4px;
+      bOrder-radius: 4px;
     }
     &:not(:checked) + .form-check-sign:after, &:checked + .form-check-sign:after, + .form-check-sign:after {
       content: "\f00c";
@@ -139,13 +139,13 @@
     &:disabled {
       &:not(:checked) + .form-check-sign:before {
         box-shadow: none;
-        border-color: #bbb;
+        bOrder-color: #bbb;
         background-color: #ddd;
       }
       &:checked + .form-check-sign {
         &:before {
           box-shadow: none;
-          border-color: #bbb;
+          bOrder-color: #bbb;
           background-color: #ddd;
         }
         &:after {
@@ -157,13 +157,13 @@
       }
     }
     &:checked:focus + .form-check-sign:before, &:not(:checked):focus + .form-check-sign:before {
-      border: 1px solid #ccc;
+      bOrder: 1px solid #ccc;
     }
   }
 }
 
 .form-check-sign:hover:before {
-  border: 1px solid #ccc !important;
+  bOrder: 1px solid #ccc !important;
 }
 
 .form-check {
@@ -255,7 +255,7 @@
       }
     }
     &:checked:focus + .form-radio-sign:before, &:not(:checked):focus + .form-radio-sign:before {
-      border: 1px solid #ccc;
+      bOrder: 1px solid #ccc;
     }
   }
 }
@@ -349,8 +349,8 @@
 
 .form-group-default {
   background-color: $white-color;
-  border: 1px solid rgba(0,0,0,.07);
-  border-radius: 4px;
+  bOrder: 1px solid rgba(0,0,0,.07);
+  bOrder-radius: 4px;
   padding-top: 7px;
   padding-left: 12px;
   padding-right: 12px;
@@ -377,7 +377,7 @@
     font-weight: $font-weight-normal;
   }
   .form-control{
-    border: 0;
+    bOrder: 0;
     min-height: 25px;
     padding: 0;
     margin-top: 6px;
@@ -388,7 +388,7 @@
     height: unset !important;
   }
   &.active {
-    border-color: rgba(0,0,0,.1)!important;
+    bOrder-color: rgba(0,0,0,.1)!important;
     background-color: #f0f0f0;
     label {
       opacity: 0.5;
@@ -425,7 +425,7 @@
   .form-control ::-moz-placeholder { color: $transparent-bg; }
   .form-control :-ms-input-placeholder { color: $transparent-bg; }
 
-  .input-border-bottom + .placeholder{
+  .input-bOrder-bottom + .placeholder{
     padding: .375rem 0 .75rem;
   }
 }
@@ -447,11 +447,11 @@
     color: $success-color !important;
   }
   .form-control {
-    border-color: $success-color !important;
+    bOrder-color: $success-color !important;
     color: $success-color !important;
   }
   .input-group-text{
-    border-color: $success-color !important;
+    bOrder-color: $success-color !important;
     background: $success-color !important;
     color: $white-color !important;
   }
@@ -462,11 +462,11 @@
     color: $danger-color !important;
   }
   .form-control {
-    border-color: $danger-color !important;
+    bOrder-color: $danger-color !important;
     color: $danger-color !important;
   }
   .input-group-text{
-    border-color: $danger-color !important;
+    bOrder-color: $danger-color !important;
     background: $danger-color !important;
     color: $white-color !important;
   }
@@ -476,7 +476,7 @@
   label{
     &.error, &.success{
       width: 100%;
-      order: 100;
+      Order: 100;
     }
   }
 }
@@ -522,50 +522,50 @@
 
 .input-group {
   &.has-icon {
-    border-radius: .25rem;
-    border: 1px solid #ced4da;
+    bOrder-radius: .25rem;
+    bOrder: 1px solid #ced4da;
   }
   &.has-success, &.has-icon.has-success {
-    border: 1px solid $success-color !important;
+    bOrder: 1px solid $success-color !important;
     color: $success-color;
   }
   &.has-error {
-    border: 1px solid $danger-color !important;
+    bOrder: 1px solid $danger-color !important;
     color: $danger-color;
   }
   &.has-icon {
     &.has-error {
-      border: 1px solid $danger-color !important;
+      bOrder: 1px solid $danger-color !important;
       color: $danger-color;
     }
     .form-control {
-      border-radius: .25rem;
-      border: 0px;
+      bOrder-radius: .25rem;
+      bOrder: 0px;
       position: relative;
     }
     .input-group-icon {
       background: $transparent-bg;
-      border: 0px;
+      bOrder: 0px;
     }
   }
 }
 
 .input-square {
-  border-radius: 0px !important;
+  bOrder-radius: 0px !important;
 }
 
 .input-pill {
-  border-radius: 1.3rem !important;
+  bOrder-radius: 1.3rem !important;
 }
 
 .input-solid {
   background: #e8e8e8 !important;
-  border-color: #e8e8e8 !important;
+  bOrder-color: #e8e8e8 !important;
 }
 
-.input-border-bottom{
-  border-width: 0 0 1px 0;
-  border-radius: 0px;
+.input-bOrder-bottom{
+  bOrder-width: 0 0 1px 0;
+  bOrder-radius: 0px;
   padding: .75rem 0;
   background: transparent !important;
 }
@@ -599,7 +599,7 @@
       margin-bottom: 15px;
       box-shadow: 0 1px 15px 1px rgba(39,39,39,.1);
       &.img-circle{
-        border-radius: 2000px;
+        bOrder-radius: 2000px;
       }
     }
   }
@@ -608,7 +608,7 @@
 .form-control {
   &:disabled, &[readonly] {
     background: #e8e8e8 !important;
-    border-color: #e8e8e8 !important;
+    bOrder-color: #e8e8e8 !important;
   }
   &:disabled, &[readonly] {
     opacity: 0.6 !important;
@@ -677,7 +677,7 @@ label {
 /*      Custom Dropzone      */
 .dropzone{
   padding: 70px 60px 80px !important;
-  border: 2px dashed rgba(0, 0, 0, 0.13) !important;
+  bOrder: 2px dashed rgba(0, 0, 0, 0.13) !important;
   background: $transparent-bg !important;
   &:hover {
     background: #fafafa !important;
@@ -702,14 +702,14 @@ label {
 
 /*      Custom Summernote     */
 .note-editor.note-frame {
-  border: 0px !important;
+  bOrder: 0px !important;
   box-shadow: none !important;
   .note-toolbar {
     padding: 0 !important;
-    border-bottom: 0px !important;
+    bOrder-bottom: 0px !important;
   }
   .note-btn{
-    border: 1px solid #eee !important;
+    bOrder: 1px solid #eee !important;
     background: #fafafa !important;
   }
   .note-placeholder{
@@ -721,7 +721,7 @@ label {
   .note-editing-area{
    .note-editable{
     margin-top: 15px !important;
-    border: 1px solid #eee !important;
+    bOrder: 1px solid #eee !important;
   }
 }
 }

@@ -49,7 +49,7 @@ public class ProductController {
 	public Map<String, Product> products = new HashMap<>();
 
 	@GetMapping(value = {"/home"})
-	public String addProductPage() {
+	public String addproductPage() {
 		return "indexUploadImg";
 	}
 
@@ -102,9 +102,9 @@ public class ProductController {
 			product.setPrice(price);
 			product.setDescription(descriptions[0]);
 			product.setFileName(fileName);
-			productService.saveProduct(product);
+			productService.saveproduct(product);
 			log.info("HttpStatus===" + new ResponseEntity<>(HttpStatus.OK));
-			System.out.println("Product Saved With File - " + fileName);
+			System.out.println("product Saved With File - " + fileName);
 			return "redirect:/product/show";
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -156,9 +156,9 @@ public class ProductController {
 			product.setPrice(price);
 			product.setDescription(descriptions[0]);
 			product.setFileName(fileName);
-			productService.saveProduct(product);
+			productService.saveproduct(product);
 			log.info("HttpStatus===" + new ResponseEntity<>(HttpStatus.OK));
-			System.out.println("Product Saved With File - " + fileName);
+			System.out.println("product Saved With File - " + fileName);
 			return "redirect:/product/show";
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -173,7 +173,7 @@ public class ProductController {
 			throws ServletException, IOException {
 		log.info("Id :: " + id);
 		Integer ids = Integer.valueOf(id);
-		product = productService.getProductById(ids);
+		product = productService.getproductById(ids);
 		response.setContentType("image/jpeg, image/jpg, image/png, image/gif");
 		response.getOutputStream().write(product.getImage());
 		response.getOutputStream().close();
@@ -181,17 +181,17 @@ public class ProductController {
 	}
 
 	/*@GetMapping("/product/productdetails")
-	String showProductDetails(@RequestParam("id") Integer id, Product product, Model model) {
+	String showproductDetails(@RequestParam("id") Integer id, product product, Model model) {
 		try {
 			log.info("Id :: " + id);
 			if (id != 0) {
-			product = productService.getProductById(id);
+			product = productService.getproductById(id);
 			
 				log.info("products :: " + product);
 				if (product.isPresent()) {
 					model.addAttribute("id", product.get().getId_product());
 					model.addAttribute("description", product.get().getDescription());
-					model.addAttribute("name", product.get().getProductName());
+					model.addAttribute("name", product.get().getproductName());
 					model.addAttribute("price", product.get().getPrice());
 					return "productdetails";
 				}
@@ -220,7 +220,7 @@ public class ProductController {
 
 	@PostMapping("/product/search")
 	String search(SearchData searchData, Model model){
-		List<Product> products = productService.getProduct(searchData);
+		List<Product> products = productService.getproduct(searchData);
 		SearchData searchKey = new SearchData();
 		model.addAttribute("search", searchKey);
 		model.addAttribute("products", products);
@@ -229,7 +229,7 @@ public class ProductController {
 
         //1
 	@GetMapping("/product/update/{id}")
-	public String updateProduct(@PathVariable("id") String id, Model model){
+	public String updateproduct(@PathVariable("id") String id, Model model){
 		try {
 			Integer idp = Integer.valueOf(id);
 			Product product = productRepository.getById(idp);
@@ -251,7 +251,13 @@ public class ProductController {
 	public String detail(@PathVariable("id") Integer id, Model model){
 		Product product = productRepository.getById(id);
 		model.addAttribute("product", product);
-		return "tables/showdetailproduct";
+
+		User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		if (user.getRole().getNameRole().equalsIgnoreCase("CUSTOMER")){
+			return  "tables/showdetailproductC";
+		}else{
+			return "tables/showdetailproduct";
+		}
 	}
 
 

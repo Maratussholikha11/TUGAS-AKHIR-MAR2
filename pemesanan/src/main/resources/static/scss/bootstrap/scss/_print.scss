@@ -51,7 +51,7 @@
     }
     pre,
     blockquote {
-      border: $border-width solid $gray-500; // Bootstrap custom code; using `$border-width` instead of 1px
+      bOrder: $bOrder-width solid $gray-500; // Bootstrap custom code; using `$bOrder-width` instead of 1px
       page-break-inside: avoid;
     }
 
@@ -101,11 +101,11 @@
       display: none;
     }
     .badge {
-      border: $border-width solid $black;
+      bOrder: $bOrder-width solid $black;
     }
 
     .table {
-      border-collapse: collapse !important;
+      bOrder-collapse: collapse !important;
 
       td,
       th {
@@ -113,10 +113,10 @@
       }
     }
 
-    .table-bordered {
+    .table-bOrdered {
       th,
       td {
-        border: 1px solid $gray-300 !important;
+        bOrder: 1px solid $gray-300 !important;
       }
     }
 
@@ -127,13 +127,13 @@
       td,
       thead th,
       tbody + tbody {
-        border-color: $table-border-color;
+        bOrder-color: $table-bOrder-color;
       }
     }
 
     .table .thead-dark th {
       color: inherit;
-      border-color: $table-border-color;
+      bOrder-color: $table-bOrder-color;
     }
 
     // Bootstrap specific changes end

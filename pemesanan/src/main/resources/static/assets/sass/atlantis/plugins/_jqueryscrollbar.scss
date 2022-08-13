@@ -4,7 +4,7 @@
   padding: 0 !important;
   position: relative;
   > .scroll-content {
-    border: none !important;
+    bOrder: none !important;
     box-sizing: content-box !important;
     height: auto;
     left: 0;
@@ -38,13 +38,13 @@
 }
 
 .scroll-textarea {
-  border: 1px solid #ccc;
-  border-top-color: #999;
+  bOrder: 1px solid #ccc;
+  bOrder-top-color: #999;
   > .scroll-content {
     overflow: hidden !important;
     > textarea {
-      border: none !important;
-      box-sizing: border-box;
+      bOrder: none !important;
+      box-sizing: bOrder-box;
       height: 100% !important;
       margin: 0;
       max-height: none !important;
@@ -69,13 +69,13 @@
 }
 
 .scrollbar-inner > .scroll-element {
-  border: none;
+  bOrder: none;
   margin: 0;
   padding: 0;
   position: absolute;
   z-index: 10;
   div {
-    border: none;
+    bOrder: none;
     margin: 0;
     padding: 0;
     position: absolute;
@@ -109,9 +109,9 @@
     }
   }
   .scroll-bar, .scroll-element_outer, .scroll-element_track {
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
+    -webkit-bOrder-radius: 5px;
+    -moz-bOrder-radius: 5px;
+    bOrder-radius: 5px;
   }
   .scroll-bar {
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
@@ -134,13 +134,13 @@
 
 .scrollbar-outer > {
   .scroll-element {
-    border: none;
+    bOrder: none;
     margin: 0;
     padding: 0;
     position: absolute;
     z-index: 10;
     div {
-      border: none;
+      bOrder: none;
       margin: 0;
       padding: 0;
       position: absolute;
@@ -176,9 +176,9 @@
       background-color: #eee;
     }
     .scroll-bar, .scroll-element_outer, .scroll-element_track {
-      -webkit-border-radius: 5px;
-      -moz-border-radius: 5px;
-      border-radius: 5px;
+      -webkit-bOrder-radius: 5px;
+      -moz-bOrder-radius: 5px;
+      bOrder-radius: 5px;
     }
     .scroll-bar {
       background-color: #d9d9d9;
@@ -221,14 +221,14 @@
 .scrollbar-macosx {
   > .scroll-element {
     background: 0 0;
-    border: none;
+    bOrder: none;
     margin: 0;
     padding: 0;
     position: absolute;
     z-index: 10;
     div {
       background: 0 0;
-      border: none;
+      bOrder: none;
       margin: 0;
       padding: 0;
       position: absolute;
@@ -248,9 +248,9 @@
       -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
       filter: alpha(opacity = 0);
       opacity: 0;
-      -webkit-border-radius: 7px;
-      -moz-border-radius: 7px;
-      border-radius: 7px;
+      -webkit-bOrder-radius: 7px;
+      -moz-bOrder-radius: 7px;
+      bOrder-radius: 7px;
       -webkit-transition: opacity .2s linear;
       -moz-transition: opacity .2s linear;
       -o-transition: opacity .2s linear;
@@ -321,14 +321,14 @@
 
 .scrollbar-light > {
   .scroll-element {
-    border: none;
+    bOrder: none;
     margin: 0;
     overflow: hidden;
     padding: 0;
     position: absolute;
     z-index: 10;
     div {
-      border: none;
+      bOrder: none;
       margin: 0;
       overflow: hidden;
       padding: 0;
@@ -342,9 +342,9 @@
     }
     background-color: $white-color;
     .scroll-element_outer {
-      -webkit-border-radius: 10px;
-      -moz-border-radius: 10px;
-      border-radius: 10px;
+      -webkit-bOrder-radius: 10px;
+      -moz-bOrder-radius: 10px;
+      bOrder-radius: 10px;
     }
     .scroll-element_size {
       background: -moz-linear-gradient(left, #dbdbdb 0, #e8e8e8 100%);
@@ -353,9 +353,9 @@
       background: -o-linear-gradient(left, #dbdbdb 0, #e8e8e8 100%);
       background: -ms-linear-gradient(left, #dbdbdb 0, #e8e8e8 100%);
       background: linear-gradient(to right, #dbdbdb 0, #e8e8e8 100%);
-      -webkit-border-radius: 10px;
-      -moz-border-radius: 10px;
-      border-radius: 10px;
+      -webkit-bOrder-radius: 10px;
+      -moz-bOrder-radius: 10px;
+      bOrder-radius: 10px;
     }
     &.scroll-x {
       bottom: 0;
@@ -378,10 +378,10 @@
       background: -o-linear-gradient(left, #fefefe 0, #f5f5f5 100%);
       background: -ms-linear-gradient(left, #fefefe 0, #f5f5f5 100%);
       background: linear-gradient(to right, #fefefe 0, #f5f5f5 100%);
-      border: 1px solid #dbdbdb;
-      -webkit-border-radius: 10px;
-      -moz-border-radius: 10px;
-      border-radius: 10px;
+      bOrder: 1px solid #dbdbdb;
+      -webkit-bOrder-radius: 10px;
+      -moz-bOrder-radius: 10px;
+      bOrder-radius: 10px;
     }
   }
   .scroll-content {
@@ -440,14 +440,14 @@
 
 .scrollbar-rail > {
   .scroll-element {
-    border: none;
+    bOrder: none;
     margin: 0;
     overflow: hidden;
     padding: 0;
     position: absolute;
     z-index: 10;
     div {
-      border: none;
+      bOrder: none;
       margin: 0;
       overflow: hidden;
       padding: 0;
@@ -486,9 +486,9 @@
     }
     .scroll-bar {
       background-color: #d0b9a0;
-      -webkit-border-radius: 2px;
-      -moz-border-radius: 2px;
-      border-radius: 2px;
+      -webkit-bOrder-radius: 2px;
+      -moz-bOrder-radius: 2px;
+      bOrder-radius: 2px;
       box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
     }
     .scroll-element_outer:hover .scroll-bar {
@@ -553,14 +553,14 @@
 
 .scrollbar-dynamic > .scroll-element {
   background: 0 0;
-  border: none;
+  bOrder: none;
   margin: 0;
   padding: 0;
   position: absolute;
   z-index: 10;
   div {
     background: 0 0;
-    border: none;
+    bOrder: none;
     margin: 0;
     padding: 0;
     position: absolute;
@@ -587,16 +587,16 @@
   }
   .scroll-element_outer {
     opacity: .3;
-    -webkit-border-radius: 12px;
-    -moz-border-radius: 12px;
-    border-radius: 12px;
+    -webkit-bOrder-radius: 12px;
+    -moz-bOrder-radius: 12px;
+    bOrder-radius: 12px;
   }
   .scroll-element_size {
     background-color: #ccc;
     opacity: 0;
-    -webkit-border-radius: 12px;
-    -moz-border-radius: 12px;
-    border-radius: 12px;
+    -webkit-bOrder-radius: 12px;
+    -moz-bOrder-radius: 12px;
+    bOrder-radius: 12px;
     -webkit-transition: opacity .2s;
     -moz-transition: opacity .2s;
     -o-transition: opacity .2s;
@@ -605,9 +605,9 @@
   }
   .scroll-bar {
     background-color: #6c6e71;
-    -webkit-border-radius: 7px;
-    -moz-border-radius: 7px;
-    border-radius: 7px;
+    -webkit-bOrder-radius: 7px;
+    -moz-bOrder-radius: 7px;
+    bOrder-radius: 7px;
   }
   &.scroll-x .scroll-bar {
     bottom: 0;
@@ -665,9 +665,9 @@
   &.scroll-draggable .scroll-element_outer .scroll-bar, &:hover .scroll-element_outer .scroll-bar {
     height: 100%;
     width: 100%;
-    -webkit-border-radius: 12px;
-    -moz-border-radius: 12px;
-    border-radius: 12px;
+    -webkit-bOrder-radius: 12px;
+    -moz-bOrder-radius: 12px;
+    bOrder-radius: 12px;
   }
   &.scroll-x {
     &.scroll-draggable .scroll-element_outer, &:hover .scroll-element_outer {
@@ -685,14 +685,14 @@
 
 .scrollbar-chrome > {
   .scroll-element {
-    border: none;
+    bOrder: none;
     margin: 0;
     overflow: hidden;
     padding: 0;
     position: absolute;
     z-index: 10;
     div {
-      border: none;
+      bOrder: none;
       margin: 0;
       overflow: hidden;
       padding: 0;
@@ -707,7 +707,7 @@
     background-color: $white-color;
     .scroll-element_track {
       background: $grey-color;
-      border: 1px solid #dbdbdb;
+      bOrder: 1px solid #dbdbdb;
     }
     &.scroll-x {
       bottom: 0;
@@ -725,19 +725,19 @@
     }
     .scroll-bar {
       background-color: #d9d9d9;
-      border: 1px solid #bdbdbd;
+      bOrder: 1px solid #bdbdbd;
       cursor: default;
-      -webkit-border-radius: 2px;
-      -moz-border-radius: 2px;
-      border-radius: 2px;
+      -webkit-bOrder-radius: 2px;
+      -moz-bOrder-radius: 2px;
+      bOrder-radius: 2px;
       &:hover {
         background-color: #c2c2c2;
-        border-color: #a9a9a9;
+        bOrder-color: #a9a9a9;
       }
     }
     &.scroll-draggable .scroll-bar {
       background-color: #919191;
-      border-color: #7e7e7e;
+      bOrder-color: #7e7e7e;
     }
   }
   .scroll-content {
@@ -763,7 +763,7 @@
     }
     &.scroll-x {
       .scroll-element_outer {
-        border-left: 1px solid #dbdbdb;
+        bOrder-left: 1px solid #dbdbdb;
       }
       .scroll-element_track {
         height: 14px;
@@ -781,7 +781,7 @@
     }
     &.scroll-y {
       .scroll-element_outer {
-        border-top: 1px solid #dbdbdb;
+        bOrder-top: 1px solid #dbdbdb;
       }
       .scroll-element_track {
         top: -3px;

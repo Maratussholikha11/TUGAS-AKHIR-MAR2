@@ -10,9 +10,9 @@
   height: $card-height;
   word-wrap: break-word;
   background-color: $card-bg;
-  background-clip: border-box;
-  border: $card-border-width solid $card-border-color;
-  @include border-radius($card-border-radius);
+  background-clip: bOrder-box;
+  bOrder: $card-bOrder-width solid $card-bOrder-color;
+  @include bOrder-radius($card-bOrder-radius);
 
   > hr {
     margin-right: 0;
@@ -20,25 +20,25 @@
   }
 
   > .list-group {
-    border-top: inherit;
-    border-bottom: inherit;
+    bOrder-top: inherit;
+    bOrder-bottom: inherit;
 
     &:first-child {
-      border-top-width: 0;
-      @include border-top-radius($card-inner-border-radius);
+      bOrder-top-width: 0;
+      @include bOrder-top-radius($card-inner-bOrder-radius);
     }
 
     &:last-child  {
-      border-bottom-width: 0;
-      @include border-bottom-radius($card-inner-border-radius);
+      bOrder-bottom-width: 0;
+      @include bOrder-bottom-radius($card-inner-bOrder-radius);
     }
   }
 
   // Due to specificity of the above selector (`.card > .list-group`), we must
-  // use a child selector here to prevent double borders.
+  // use a child selector here to prevent double bOrders.
   > .card-header + .list-group,
   > .list-group + .card-footer {
-    border-top: 0;
+    bOrder-top: 0;
   }
 }
 
@@ -85,10 +85,10 @@
   margin-bottom: 0; // Removes the default margin-bottom of <hN>
   color: $card-cap-color;
   background-color: $card-cap-bg;
-  border-bottom: $card-border-width solid $card-border-color;
+  bOrder-bottom: $card-bOrder-width solid $card-bOrder-color;
 
   &:first-child {
-    @include border-radius($card-inner-border-radius $card-inner-border-radius 0 0);
+    @include bOrder-radius($card-inner-bOrder-radius $card-inner-bOrder-radius 0 0);
   }
 }
 
@@ -96,10 +96,10 @@
   padding: $card-spacer-y $card-spacer-x;
   color: $card-cap-color;
   background-color: $card-cap-bg;
-  border-top: $card-border-width solid $card-border-color;
+  bOrder-top: $card-bOrder-width solid $card-bOrder-color;
 
   &:last-child {
-    @include border-radius(0 0 $card-inner-border-radius $card-inner-border-radius);
+    @include bOrder-radius(0 0 $card-inner-bOrder-radius $card-inner-bOrder-radius);
   }
 }
 
@@ -112,7 +112,7 @@
   margin-right: -$card-spacer-x / 2;
   margin-bottom: -$card-spacer-y;
   margin-left: -$card-spacer-x / 2;
-  border-bottom: 0;
+  bOrder-bottom: 0;
 }
 
 .card-header-pills {
@@ -128,7 +128,7 @@
   bottom: 0;
   left: 0;
   padding: $card-img-overlay-padding;
-  @include border-radius($card-inner-border-radius);
+  @include bOrder-radius($card-inner-bOrder-radius);
 }
 
 .card-img,
@@ -140,12 +140,12 @@
 
 .card-img,
 .card-img-top {
-  @include border-top-radius($card-inner-border-radius);
+  @include bOrder-top-radius($card-inner-bOrder-radius);
 }
 
 .card-img,
 .card-img-bottom {
-  @include border-bottom-radius($card-inner-border-radius);
+  @include bOrder-bottom-radius($card-inner-bOrder-radius);
 }
 
 
@@ -196,38 +196,38 @@
 
       + .card {
         margin-left: 0;
-        border-left: 0;
+        bOrder-left: 0;
       }
 
       // Handle rounded corners
       @if $enable-rounded {
         &:not(:last-child) {
-          @include border-right-radius(0);
+          @include bOrder-right-radius(0);
 
           .card-img-top,
           .card-header {
             // stylelint-disable-next-line property-disallowed-list
-            border-top-right-radius: 0;
+            bOrder-top-right-radius: 0;
           }
           .card-img-bottom,
           .card-footer {
             // stylelint-disable-next-line property-disallowed-list
-            border-bottom-right-radius: 0;
+            bOrder-bottom-right-radius: 0;
           }
         }
 
         &:not(:first-child) {
-          @include border-left-radius(0);
+          @include bOrder-left-radius(0);
 
           .card-img-top,
           .card-header {
             // stylelint-disable-next-line property-disallowed-list
-            border-top-left-radius: 0;
+            bOrder-top-left-radius: 0;
           }
           .card-img-bottom,
           .card-footer {
             // stylelint-disable-next-line property-disallowed-list
-            border-bottom-left-radius: 0;
+            bOrder-bottom-left-radius: 0;
           }
         }
       }
@@ -270,17 +270,17 @@
     overflow: hidden;
 
     &:not(:last-of-type) {
-      border-bottom: 0;
-      @include border-bottom-radius(0);
+      bOrder-bottom: 0;
+      @include bOrder-bottom-radius(0);
     }
 
     &:not(:first-of-type) {
-      @include border-top-radius(0);
+      @include bOrder-top-radius(0);
     }
 
     > .card-header {
-      @include border-radius(0);
-      margin-bottom: -$card-border-width;
+      @include bOrder-radius(0);
+      margin-bottom: -$card-bOrder-width;
     }
   }
 }

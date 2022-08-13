@@ -34,7 +34,7 @@
 			<div class="logo-header" data-background-color="blue">
 				
 				<a href="../index.html" class="logo">
-					<img src="../../assets/img/logo(2).png" alt="navbar brand" class="navbar-brand">
+					<img src="../../assets/img/logo3.png" alt="navbar brand" class="navbar-brand">
 				</a>
 				<button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon">
@@ -288,47 +288,13 @@
 		<div class="sidebar sidebar-style-2">
 			<div class="sidebar-wrapper scrollbar scrollbar-inner">
 				<div class="sidebar-content">
-					<div class="user">
-						<div class="avatar-sm float-left mr-2">
-							<img src="../../assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle">
-						</div>
-						<div class="info">
-							<a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
-								<span>
-									Hizrian
-									<span class="user-level">Customer</span>
-									<span class="caret"></span>
-								</span>
-							</a>
-							<div class="clearfix"></div>
 
-							<div class="collapse in" id="collapseExample">
-								<ul class="nav">
-									<li>
-										<a href="#profile">
-											<span class="link-collapse">My Profile</span>
-										</a>
-									</li>
-									<li>
-										<a href="#edit">
-											<span class="link-collapse">Edit Profile</span>
-										</a>
-									</li>
-									<li>
-										<a href="#settings">
-											<span class="link-collapse">Settings</span>
-										</a>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
 					<ul class="nav nav-primary">
 						<li class="nav-item">
-							<a data-toggle="collapse" href="#dashboard" class="collapsed" aria-expanded="false">
+							<a th:href="@{/}" class="collapsed" aria-expanded="false">
 								<i class="fas fa-home"></i>
 								<p>Dashboard</p>
-								<span class="caret"></span>
+								<!--<span class="caret"></span>-->
 							</a>
 							<div class="collapse" id="dashboard">
 								<ul class="nav nav-collapse">
@@ -456,23 +422,24 @@
 							</a>
 							<div class="collapse show" id="forms">
 								<ul class="nav nav-collapse">
-									<!--<li class="active">
-										<a href="../forms/forms.html">
-											<span class="sub-item">Basic Form</span>
-										</a>
-									</li>-->
 									<li>
 										<a th:href="@{/product}">
-											<span class="sub-item">Product Form</span>
+											<span class="sub-item">Form Produk</span>
 										</a>
+									</li>
+									<li>
 										<a th:href="@{ordering/order}">
-											<span class="sub-item">Order Form</span>
+											<span class="sub-item">Form Pemesanan</span>
 										</a>
+									</li>
+									<li>
 										<a th:href="@{transaction/form}">
-											<span class="sub-item">Transaction Form</span>
+											<span class="sub-item">Form Transaksi</span>
 										</a>
+									</li>
+									<li>
 										<a th:href="@{user/create/customer}">
-											<span class="sub-item">Customer Form</span>
+											<span class="sub-item">Form Pelanggan</span>
 										</a>
 									</li>
 								</ul>
@@ -488,27 +455,27 @@
 								<ul class="nav nav-collapse">
 									<li>
 										<a th:href="@{/product/show}">
-											<span class="sub-item">Product</span>
+											<span class="sub-item">Produk</span>
 										</a>
 									</li>
 									<li>
 										<a th:href="@{/ordering/show}">
-											<span class="sub-item">Order</span>
+											<span class="sub-item">Pesanan</span>
 										</a>
 									</li>
 									<li>
 										<a th:href="@{/transaction/show}">
-											<span class="sub-item">Transaction</span>
+											<span class="sub-item">Transaksi</span>
 										</a>
 									</li>
 									<li>
 										<a th:href="@{/sale/show}">
-											<span class="sub-item">Sale</span>
+											<span class="sub-item">Penjualan</span>
 										</a>
 									</li>
 									<li>
 										<a th:href="@{/user/customer}">
-											<span class="sub-item">Customer</span>
+											<span class="sub-item">Pelanggan</span>
 										</a>
 									</li>
 								</ul>
@@ -566,7 +533,7 @@
 			<div class="content">
 				<div class="page-inner">
 					<div class="page-header">
-						<h4 class="page-title">Forms</h4>
+						<h4 class="page-title">Form</h4>
 						<ul class="breadcrumbs">
 							<li class="nav-home">
 								<a href="#">
@@ -577,14 +544,17 @@
 								<i class="flaticon-right-arrow"></i>
 							</li>
 							<li class="nav-item">
-								<a href="#">Forms</a>
+								<a href="#">Form</a>
 							</li>
 							<li class="separator">
 								<i class="flaticon-right-arrow"></i>
 							</li>
-							<li class="nav-item">
-								<a href="#">Basic Form</a>
+							<li>
+								<a th:href="@{user/create/customer}">
+									<span class="sub-item">Form Pelanggan</span>
+								</a>
 							</li>
+
 						</ul>
 					</div>
 					<div class="row">
@@ -600,27 +570,27 @@
 									<div class="row">
 										<div class="col-md-6 col-lg-4">
 											<div class="form-group form-floating-label">
-												<input type="text" class="form-control input-border-bottom" th:field="${user.name}"  id="name" name="name" required>
+												<input type="text" class="form-control input-bOrder-bottom" th:field="${user.name}"  id="name" name="name" required>
 												<label for="name" class="placeholder">Nama Lengkap</label>
 											</div>
 											<div class="form-group form-floating-label">
-												<input type="text" class="form-control input-border-bottom" th:field="*{address}"  id="address" name="address" required>
+												<input type="text" class="form-control input-bOrder-bottom" th:field="*{address}"  id="address" name="address" required>
 												<label for="address" class="placeholder">Alamat</label>
 											</div>
 											<div class="form-group form-floating-label">
-												<input type="number" class="form-control input-border-bottom" th:field="*{noTelepon}"  name="noTelepon" id="noTelepon" required>
+												<input type="number" class="form-control input-bOrder-bottom" th:field="*{noTelepon}"  name="noTelepon" id="noTelepon" required>
 												<label for="noTelepon" class="placeholder">No Telepon</label>
 											</div>
 											<div class="form-group form-floating-label">
-												<input type="text" class="form-control input-border-bottom" th:field="*{username}"   name="username" id="username">
+												<input type="text" class="form-control input-bOrder-bottom" th:field="*{username}"   name="username" id="username">
 												<label for="username" class="placeholder">Username</label>
 											</div>
 											<div class="form-group form-floating-label">
-												<input type="password" class="form-control input-border-bottom" th:field="*{password}"  name="password" id="password">
+												<input type="password" class="form-control input-bOrder-bottom" th:field="*{password}"  name="password" id="password">
 												<label for="password" class="placeholder">Password</label>
 											</div>
 											<div class="form-group form-floating-label">
-												<input type="email" class="form-control input-border-bottom" th:field="*{email}"  name="email" id="email">
+												<input type="email" class="form-control input-bOrder-bottom" th:field="*{email}"  name="email" id="email">
 												<label for="email" class="placeholder">Email</label>
 											</div>
 										</div>

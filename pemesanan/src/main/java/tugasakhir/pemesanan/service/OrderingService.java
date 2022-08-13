@@ -4,12 +4,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import tugasakhir.pemesanan.model.Ordering;
-//import tugasakhir.pemesanan.model.Product;
+//import tugasakhir.pemesanan.model.product;
 import tugasakhir.pemesanan.model.Product;
 import tugasakhir.pemesanan.model.User;
 import tugasakhir.pemesanan.repository.OrderingRepository;
 
-import java.util.Date;
 import java.util.List;
 
 @Service
@@ -23,7 +22,7 @@ public class OrderingService {
     ProductService productService;
 
     public Ordering save(Ordering ordering){
-//       if(ordering.getId_order()!=null){
+//       if(ordering.getId_Order()!=null){
             User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
             System.out.println("user adalah :" + user.getName());
             Ordering current = new Ordering();
@@ -39,7 +38,7 @@ public class OrderingService {
             Product p = productService.findById(ordering.getProductId());
             current.setProduct(p);
             current.setProductId(p.getId_product());
-            System.out.println("order by \n user name : " + user.getName());
+            System.out.println("Order by \n user name : " + user.getName());
             System.out.println("id product : " + ordering.getProductId());
             System.out.println("quantity : " + ordering.getQuantity());
             System.out.println("price : " + p.getPrice());
@@ -52,10 +51,10 @@ public class OrderingService {
     }
 
     public Ordering update(Ordering ordering){
-//       if(ordering.getId_order()!=null){
+//       if(ordering.getId_Order()!=null){
         User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         System.out.println("user adalah :" + user.getName());
-        Ordering current = orderingRepository.getById(ordering.getId_order());
+        Ordering current = orderingRepository.getById(ordering.getId_Order());
         current.setProduct(ordering.getProduct());
 //            current.setSale(ordering.getSale());
         current.setDp(ordering.getDp());
@@ -68,7 +67,7 @@ public class OrderingService {
         Product p = productService.findById(ordering.getProductId());
         current.setProduct(p);
 
-        System.out.println("order by \n user name : " + user.getName());
+        System.out.println("Order by \n user name : " + user.getName());
         System.out.println("id product : " + ordering.getProductId());
         System.out.println("quantity : " + ordering.getQuantity());
         System.out.println("price : " + p.getPrice());
@@ -88,29 +87,29 @@ public class OrderingService {
         return orderingRepository.getById(id);
     }
 
-    // select order by user
+    // select Order by user
     public List<Ordering> findOrderingByUser(Integer idUser){
         return orderingRepository.findOrderingByUser(idUser);
     }
 
-    // find all ordering
+    // find all Ordering
     public List<Ordering> findAllOrdering(){
         return orderingRepository.findAll();
     }
 
 
     // BELUM JADI
-    // fing order by username and name
-    public List<Ordering>findByProductUsernameLike(String username){
+    // fing Order by username and name
+    public List<Ordering>findByproductUsernameLike(String username){
         System.out.println("service");
         System.out.println("print repo : " + orderingRepository.findOrderingByUsername(username));
         return orderingRepository.findOrderingByUsername(username);
     }
 
-    // find order by percentage
+    // find Order by percentage
     public List<Ordering> findByPercentage(Integer a, Integer b){
         return orderingRepository.findByPercentageBetween(a, b);
     }
 
-    // delete order
+    // delete Order
 }

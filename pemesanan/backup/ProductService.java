@@ -3,48 +3,48 @@ package tugasakhir.pemesanan.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import tugasakhir.pemesanan.model.Product;
-import tugasakhir.pemesanan.repository.ProductRepository;
+import tugasakhir.pemesanan.model.product;
+import tugasakhir.pemesanan.repository.productRepository;
 
 import java.util.List;
 
 @Service
-public class ProductService {
+public class productService {
 
     @Autowired
     private ProductRepository productRepository;
 
-    public Product save(Product product){
+    public product save(product product){
         if(product.getId_product()!=null){
-            Product current = productRepository.findById(product.getId_product()).get();
+            product current = productRepository.findById(product.getId_product()).get();
             current.setOrderings(product.getOrderings());
             current.setPhoto(product.getPhoto());
             current.setPrice(product.getPrice());
-            current.setProductName(product.getProductName());
+            current.setproductName(product.getproductName());
             current.setPhoto(product.getPhoto());
             product = current;
         }
         return productRepository.save(product);
     }
 
-    public Product findById(Integer id){
+    public product findById(Integer id){
         return productRepository.getById(id);
     }
 
 
     // find product by name
-    public List<Product> findProductByName(String a){
-        return productRepository.findProductByProductNameLike(a);
+    public List<product> findproductByName(String a){
+        return productRepository.findproductByproductNameLike(a);
     }
 
     //findAll
-    public Iterable<Product> findAll(){
+    public Iterable<product> findAll(){
         return productRepository.findAll();
     }
 
     // find product by name
-    public List<Product> findByProductNameLike(String name){
-        return productRepository.findProductByProductNameLike("%"+ name +"%");
+    public List<product> findByproductNameLike(String name){
+        return productRepository.findproductByproductNameLike("%"+ name +"%");
     }
 
 

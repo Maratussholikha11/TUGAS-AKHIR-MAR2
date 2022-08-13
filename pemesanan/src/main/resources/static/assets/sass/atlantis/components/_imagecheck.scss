@@ -11,19 +11,19 @@
 }
 
 .imagecheck-figure {
-  border: 1px solid rgba(0, 40, 100, 0.12);
-  border-radius: 3px;
+  bOrder: 1px solid rgba(0, 40, 100, 0.12);
+  bOrder-radius: 3px;
   margin: 0;
   position: relative;
 }
 
 .imagecheck-input {
   &:focus ~ .imagecheck-figure {
-    border-color: $primary-color;
+    bOrder-color: $primary-color;
     box-shadow: 0 0 0 2px rgba(70, 127, 207, 0.25);
   }
   &:checked ~ .imagecheck-figure {
-    border-color: rgba(0, 40, 100, 0.24);
+    bOrder-color: rgba(0, 40, 100, 0.24);
   }
 }
 
@@ -43,7 +43,7 @@
   background: $primary-color url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3E%3C/svg%3E") no-repeat center (center / 50%) 50%;
   color: #fff;
   z-index: 1;
-  border-radius: 3px;
+  bOrder-radius: 3px;
   opacity: 0;
   transition: .3s opacity;
 }
@@ -57,12 +57,12 @@
   opacity: .64;
   transition: .3s opacity;
   &:first-child {
-    border-top-left-radius: 2px;
-    border-top-right-radius: 2px;
+    bOrder-top-left-radius: 2px;
+    bOrder-top-right-radius: 2px;
   }
   &:last-child {
-    border-bottom-left-radius: 2px;
-    border-bottom-right-radius: 2px;
+    bOrder-bottom-left-radius: 2px;
+    bOrder-bottom-right-radius: 2px;
   }
 }
 

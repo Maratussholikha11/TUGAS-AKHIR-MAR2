@@ -1,75 +1,75 @@
 // stylelint-disable property-disallowed-list, declaration-no-important
 
 //
-// Border
+// BOrder
 //
 
-.border         { border: $border-width solid $border-color !important; }
-.border-top     { border-top: $border-width solid $border-color !important; }
-.border-right   { border-right: $border-width solid $border-color !important; }
-.border-bottom  { border-bottom: $border-width solid $border-color !important; }
-.border-left    { border-left: $border-width solid $border-color !important; }
+.bOrder         { bOrder: $bOrder-width solid $bOrder-color !important; }
+.bOrder-top     { bOrder-top: $bOrder-width solid $bOrder-color !important; }
+.bOrder-right   { bOrder-right: $bOrder-width solid $bOrder-color !important; }
+.bOrder-bottom  { bOrder-bottom: $bOrder-width solid $bOrder-color !important; }
+.bOrder-left    { bOrder-left: $bOrder-width solid $bOrder-color !important; }
 
-.border-0        { border: 0 !important; }
-.border-top-0    { border-top: 0 !important; }
-.border-right-0  { border-right: 0 !important; }
-.border-bottom-0 { border-bottom: 0 !important; }
-.border-left-0   { border-left: 0 !important; }
+.bOrder-0        { bOrder: 0 !important; }
+.bOrder-top-0    { bOrder-top: 0 !important; }
+.bOrder-right-0  { bOrder-right: 0 !important; }
+.bOrder-bottom-0 { bOrder-bottom: 0 !important; }
+.bOrder-left-0   { bOrder-left: 0 !important; }
 
 @each $color, $value in $theme-colors {
-  .border-#{$color} {
-    border-color: $value !important;
+  .bOrder-#{$color} {
+    bOrder-color: $value !important;
   }
 }
 
-.border-white {
-  border-color: $white !important;
+.bOrder-white {
+  bOrder-color: $white !important;
 }
 
 //
-// Border-radius
+// BOrder-radius
 //
 
 .rounded-sm {
-  border-radius: $border-radius-sm !important;
+  bOrder-radius: $bOrder-radius-sm !important;
 }
 
 .rounded {
-  border-radius: $border-radius !important;
+  bOrder-radius: $bOrder-radius !important;
 }
 
 .rounded-top {
-  border-top-left-radius: $border-radius !important;
-  border-top-right-radius: $border-radius !important;
+  bOrder-top-left-radius: $bOrder-radius !important;
+  bOrder-top-right-radius: $bOrder-radius !important;
 }
 
 .rounded-right {
-  border-top-right-radius: $border-radius !important;
-  border-bottom-right-radius: $border-radius !important;
+  bOrder-top-right-radius: $bOrder-radius !important;
+  bOrder-bottom-right-radius: $bOrder-radius !important;
 }
 
 .rounded-bottom {
-  border-bottom-right-radius: $border-radius !important;
-  border-bottom-left-radius: $border-radius !important;
+  bOrder-bottom-right-radius: $bOrder-radius !important;
+  bOrder-bottom-left-radius: $bOrder-radius !important;
 }
 
 .rounded-left {
-  border-top-left-radius: $border-radius !important;
-  border-bottom-left-radius: $border-radius !important;
+  bOrder-top-left-radius: $bOrder-radius !important;
+  bOrder-bottom-left-radius: $bOrder-radius !important;
 }
 
 .rounded-lg {
-  border-radius: $border-radius-lg !important;
+  bOrder-radius: $bOrder-radius-lg !important;
 }
 
 .rounded-circle {
-  border-radius: 50% !important;
+  bOrder-radius: 50% !important;
 }
 
 .rounded-pill {
-  border-radius: $rounded-pill !important;
+  bOrder-radius: $rounded-pill !important;
 }
 
 .rounded-0 {
-  border-radius: 0 !important;
+  bOrder-radius: 0 !important;
 }

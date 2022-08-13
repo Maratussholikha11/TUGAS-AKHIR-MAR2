@@ -12,20 +12,20 @@ import tugasakhir.pemesanan.dto.BusinessException;
 import tugasakhir.pemesanan.dto.ResponseData;
 import tugasakhir.pemesanan.dto.SearchData;
 import tugasakhir.pemesanan.model.Ordering;
-import tugasakhir.pemesanan.model.Product;
+import tugasakhir.pemesanan.model.product;
 import tugasakhir.pemesanan.model.User;
-import tugasakhir.pemesanan.repository.ProductRepository;
-import tugasakhir.pemesanan.service.ProductService;
+import tugasakhir.pemesanan.repository.productRepository;
+import tugasakhir.pemesanan.service.productService;
 
 import java.security.Principal;
 import java.util.List;
 
 @Controller
 @RequestMapping("/product")
-public class ProductController {
+public class productController {
 
     @Autowired
-    private ProductService productService;
+    private productService productService;
 
     @Autowired
     private ProductRepository productRepository;
@@ -35,25 +35,25 @@ public class ProductController {
 
     @GetMapping("/create")
     @ResponseBody
-    public ResponseEntity<ResponseData<Product>> register(@RequestBody Product product){
-        ResponseData<Product> response = new ResponseData<>();
+    public ResponseEntity<ResponseData<product>> register(@RequestBody product product){
+        ResponseData<product> response = new ResponseData<>();
         User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         System.out.println("role : " + user.getRole().getNameRole());
-        Product product1  = modelMapper.map(product, Product.class);
+        product product1  = modelMapper.map(product, product.class);
         response.setPayload(productService.save(product1));
         return ResponseEntity.ok(response);
     }
 
     @PutMapping("/update")
     @ResponseBody
-    public String updateProduct(@RequestBody Product product){
+    public String updateproduct(@RequestBody product product){
         productService.save(product);
         return "product Updated";
     }
 
     @GetMapping(value = "/findById/{a}")
     @ResponseBody
-    public Object getProductById(@PathVariable("a") Integer a) throws BusinessException {
+    public Object getproductById(@PathVariable("a") Integer a) throws BusinessException {
         try{
             return productService.findById(a);
         }catch (Exception e){
@@ -63,8 +63,8 @@ public class ProductController {
     }
 
     @GetMapping(value = "/namelike")
-    public List<Product> getProductByNameLike(@RequestBody SearchData searchData){
-        return productService.findByProductNameLike(searchData.getSearchKey());
+    public List<product> getproductByNameLike(@RequestBody SearchData searchData){
+        return productService.findByproductNameLike(searchData.getSearchKey());
     }
 
 
@@ -75,8 +75,8 @@ public class ProductController {
     }
 
     @RequestMapping(value = "/allproduct", method = RequestMethod.GET)
-    public  String getAllProducts (Model model){
-        List<Product> products = productRepository.findAll();
+    public  String getAllproducts (Model model){
+        List<product> products = productRepository.findAll();
         model.addAttribute("products", products);
         return "shop";
     }

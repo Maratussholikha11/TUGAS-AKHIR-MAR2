@@ -37,9 +37,9 @@
     > .timeline-panel {
       width: 50%;
       float: left;
-      border: 1px solid #eeeeee;
+      bOrder: 1px solid #eeeeee;
       background: $white-color;
-      border-radius: 3px;
+      bOrder-radius: 3px;
       padding: 20px;
       position: relative;
       -webkit-box-shadow: 0px 1px 20px 1px rgba(69, 65, 78, 0.06);
@@ -60,14 +60,14 @@
       > .timeline-panel {
         float: right;
         &:before {
-          border-left-width: 0;
-          border-right-width: 15px;
+          bOrder-left-width: 0;
+          bOrder-right-width: 15px;
           left: -15px;
           right: auto;
         }
         &:after {
-          border-left-width: 0;
-          border-right-width: 14px;
+          bOrder-left-width: 0;
+          bOrder-right-width: 14px;
           left: -14px;
           right: auto;
         }
@@ -80,10 +80,10 @@
           top: 26px;
           right: -15px;
           display: inline-block;
-          border-top: 15px solid $transparent-bg;
-          border-left: 15px solid #eeeeee;
-          border-right: 0 solid #eeeeee;
-          border-bottom: 15px solid $transparent-bg;
+          bOrder-top: 15px solid $transparent-bg;
+          bOrder-left: 15px solid #eeeeee;
+          bOrder-right: 0 solid #eeeeee;
+          bOrder-bottom: 15px solid $transparent-bg;
           content: " ";
         }
         &:after {
@@ -91,10 +91,10 @@
           top: 27px;
           right: -14px;
           display: inline-block;
-          border-top: 14px solid $transparent-bg;
-          border-left: 14px solid $white-color;
-          border-right: 0 solid $white-color;
-          border-bottom: 14px solid $transparent-bg;
+          bOrder-top: 14px solid $transparent-bg;
+          bOrder-left: 14px solid $white-color;
+          bOrder-right: 0 solid $white-color;
+          bOrder-bottom: 14px solid $transparent-bg;
           content: " ";
         }
       }
@@ -111,10 +111,10 @@
         margin-left: -25px;
         background-color: #999999;
         z-index: 100;
-        border-top-right-radius: 50%;
-        border-top-left-radius: 50%;
-        border-bottom-right-radius: 50%;
-        border-bottom-left-radius: 50%;
+        bOrder-top-right-radius: 50%;
+        bOrder-top-left-radius: 50%;
+        bOrder-bottom-right-radius: 50%;
+        bOrder-bottom-left-radius: 50%;
       }
     }
   }

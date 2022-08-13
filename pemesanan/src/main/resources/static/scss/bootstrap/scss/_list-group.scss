@@ -9,7 +9,7 @@
   // No need to set list-style: none; since .list-group-item is block level
   padding-left: 0; // reset padding because ul and ol
   margin-bottom: 0;
-  @include border-radius($list-group-border-radius);
+  @include bOrder-radius($list-group-bOrder-radius);
 }
 
 
@@ -25,7 +25,7 @@
 
   // Hover state
   @include hover-focus() {
-    z-index: 1; // Place hover/focus items above their siblings for proper border styling
+    z-index: 1; // Place hover/focus items above their siblings for proper bOrder styling
     color: $list-group-action-hover-color;
     text-decoration: none;
     background-color: $list-group-hover-bg;
@@ -49,14 +49,14 @@
   color: $list-group-color;
   text-decoration: if($link-decoration == none, null, none);
   background-color: $list-group-bg;
-  border: $list-group-border-width solid $list-group-border-color;
+  bOrder: $list-group-bOrder-width solid $list-group-bOrder-color;
 
   &:first-child {
-    @include border-top-radius(inherit);
+    @include bOrder-top-radius(inherit);
   }
 
   &:last-child {
-    @include border-bottom-radius(inherit);
+    @include bOrder-bottom-radius(inherit);
   }
 
   &.disabled,
@@ -68,18 +68,18 @@
 
   // Include both here for `<a>`s and `<button>`s
   &.active {
-    z-index: 2; // Place active items above their siblings for proper border styling
+    z-index: 2; // Place active items above their siblings for proper bOrder styling
     color: $list-group-active-color;
     background-color: $list-group-active-bg;
-    border-color: $list-group-active-border-color;
+    bOrder-color: $list-group-active-bOrder-color;
   }
 
   & + & {
-    border-top-width: 0;
+    bOrder-top-width: 0;
 
     &.active {
-      margin-top: -$list-group-border-width;
-      border-top-width: $list-group-border-width;
+      margin-top: -$list-group-bOrder-width;
+      bOrder-top-width: $list-group-bOrder-width;
     }
   }
 }
@@ -98,13 +98,13 @@
 
       > .list-group-item {
         &:first-child {
-          @include border-bottom-left-radius($list-group-border-radius);
-          @include border-top-right-radius(0);
+          @include bOrder-bottom-left-radius($list-group-bOrder-radius);
+          @include bOrder-top-right-radius(0);
         }
 
         &:last-child {
-          @include border-top-right-radius($list-group-border-radius);
-          @include border-bottom-left-radius(0);
+          @include bOrder-top-right-radius($list-group-bOrder-radius);
+          @include bOrder-bottom-left-radius(0);
         }
 
         &.active {
@@ -112,12 +112,12 @@
         }
 
         + .list-group-item {
-          border-top-width: $list-group-border-width;
-          border-left-width: 0;
+          bOrder-top-width: $list-group-bOrder-width;
+          bOrder-left-width: 0;
 
           &.active {
-            margin-left: -$list-group-border-width;
-            border-left-width: $list-group-border-width;
+            margin-left: -$list-group-bOrder-width;
+            bOrder-left-width: $list-group-bOrder-width;
           }
         }
       }
@@ -128,17 +128,17 @@
 
 // Flush list items
 //
-// Remove borders and border-radius to keep list group items edge-to-edge. Most
+// Remove bOrders and bOrder-radius to keep list group items edge-to-edge. Most
 // useful within other components (e.g., cards).
 
 .list-group-flush {
-  @include border-radius(0);
+  @include bOrder-radius(0);
 
   > .list-group-item {
-    border-width: 0 0 $list-group-border-width;
+    bOrder-width: 0 0 $list-group-bOrder-width;
 
     &:last-child {
-      border-bottom-width: 0;
+      bOrder-bottom-width: 0;
     }
   }
 }

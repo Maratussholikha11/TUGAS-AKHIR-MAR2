@@ -23,7 +23,7 @@ public class Sale {
 
 //    @ManyToOne(fetch = FetchType.EAGER)
 //    @JsonIgnoreProperties({"sale"})
-//    @JoinColumn(name = "id_order")
+//    @JoinColumn(name = "id_Order")
 //    private Ordering ordering;
 
     @ManyToOne(fetch = FetchType.EAGER)
