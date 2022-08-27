@@ -251,7 +251,7 @@
 											<span class="sub-item">Form Produk</span>
 										</a>
 									</li>
-									<li>
+									<!--<li>
 										<a th:href="@{ordering/order}">
 											<span class="sub-item">Form Pemesanan</span>
 										</a>
@@ -265,7 +265,7 @@
 										<a th:href="@{user/registration}">
 											<span class="sub-item">Form Pelanggan</span>
 										</a>
-									</li>
+									</li>-->
 
 								</ul>
 							</div>
@@ -432,14 +432,13 @@
 													<!--<td th:text="${sale.lunas}"></td>-->
 													<td th:text="${sale.transactionId}"></td>
 													<td th:text="${sale.transactionDate}"></td>
-													<td th:text="${sale.totalPay}"></td>
+													<td th:text="${sale.transaction.ordering.totalCost}"></td>
 													<td th:text="${sale.transaction.OrderId}"></td>
 													<td th:text="${sale.transaction.user.name}"></td>
 												</tr>
 											</tbody>
 										</table>
 										<a th:href="@{/sale/export/pdf}" class="btn btn-success text-right">Export to PDF</a>
-
 									</div>
 								</div>
 							</div>

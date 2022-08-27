@@ -52,7 +52,7 @@ public class PdfSaleExporter {
             table.addCell(String.valueOf(sale.getId_sale()));
             table.addCell(String.valueOf(sale.getTransactionId()));
             table.addCell(sale.getTransactionDate());
-            table.addCell(String.valueOf(sale.getTotalPay()));
+            table.addCell(String.valueOf(sale.getTransaction().getOrdering().getTotalCost()));
             table.addCell(String.valueOf(sale.getTransaction().getOrderId()));
             table.addCell(sale.getTransaction().getUser().getName());
         }

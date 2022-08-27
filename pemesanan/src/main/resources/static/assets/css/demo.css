@@ -1,3 +1,11 @@
+.row .col-xl-4 .card img{
+    width:265px;
+    height:340px;
+     display: block;
+        margin-left: auto;
+        margin-right: auto;
+}
+
 .custom-template {
 	position: fixed;
 	top: 50%;
@@ -277,6 +285,20 @@ button[type="button"] btn{
    /* width:45px;*/
    /* margin-right:10px;
     margin-left:10px;*/
+}
+
+.timeline-body .notee{
+    font-size:10px;
+
+}
+
+.timeline-body .noteee{
+
+    text-align:center;
+    position:center;
+    background-color:#ffc080;
+    width:20%;
+    bOrder-radius:8px;
 }
 
 

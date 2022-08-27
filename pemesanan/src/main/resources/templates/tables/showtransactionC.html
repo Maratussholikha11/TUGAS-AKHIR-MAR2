@@ -396,7 +396,10 @@
 											<tr>
 												<th>ID Transaksi</th>
 												<th>Id Pesanan</th>
-												<th>Jumlah Bayar</th>
+												<th>Total Harga</th>
+												<th>DP</th>
+												<th>Biaya Akhir</th>
+												<th>Bayar</th>
 												<th>Lunas</th>
 												<th>Struk pembayaran</th>
 												<th>Catatan</th>
@@ -410,6 +413,9 @@
 													<th:set var="count" value="${count + 1}" scope="page"></th:set>
 													<td th:text="${transaction.id_transaction}"></td>
 													<td th:text="${transaction.OrderId}"></td>
+													<td th:text="${transaction.ordering.totalCost}"></td>
+													<td th:text="${transaction.ordering.dp}"></td>
+													<td th:text="${transaction.ordering.finalCost}"></td>
 													<td th:text="${transaction.totalPay}"></td>
 													<td th:text="${transaction.lunas}"></td>
 													<td> <img th:src="'../resources/static/receipt/' +${transaction.receiptName}" alt="" width="150px" height="150px"></td>

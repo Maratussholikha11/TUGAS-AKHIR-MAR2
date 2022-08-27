@@ -70,9 +70,31 @@ public class DashboardController {
 		String p1 = products.get(0).getProductName();
 		String p2 = products.get(1).getProductName();
 		String p3 = products.get(2).getProductName();
+		String p4 = products.get(3).getProductName();
+		String p5 = products.get(4).getProductName();
+		String p6 = products.get(5).getProductName();
+		String p7 = products.get(6).getProductName();
+		String p8 = products.get(7).getProductName();
+		String p9 = products.get(8).getProductName();
+
+
+		/*String p10 = products.get(10).getProductName();
+		String p11 = products.get(11).getProductName();
+		String p12 = products.get(12).getProductName();
+		String p13 = products.get(13).getProductName();
+		String p14 = products.get(14).getProductName();
+		String p15 = products.get(15).getProductName();*/
+
 		Integer h1 = products.get(0).getPrice();
 		Integer h2 = products.get(1).getPrice();
 		Integer h3 = products.get(2).getPrice();
+		Integer h4 = products.get(3).getPrice();
+		Integer h5 = products.get(4).getPrice();
+		Integer h6 = products.get(5).getPrice();
+		Integer h7 = products.get(6).getPrice();
+		Integer h8 = products.get(7).getPrice();
+		Integer h9 = products.get(8).getPrice();
+
 		model.addAttribute("p1", p1);
 		model.addAttribute("p2", p2);
 		model.addAttribute("p3", p3);

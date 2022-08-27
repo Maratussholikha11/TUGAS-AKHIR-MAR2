@@ -19,15 +19,32 @@
 				sessionStorage.fonts = true;
 			}
 		});
+
+
 	</script>
+
 
 	<!-- CSS Files -->
 	<link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="../../assets/css/atlantis.min.css">
 	<!-- CSS Just for demo purpose, don't include it in your project -->
 	<link rel="stylesheet" href="../../assets/css/demo.css">
+
 </head>
 <body>
+	<script type="text/javascript">
+		alert('cek');
+	    function validasi() {
+			var jml = document.getElementById('quantity').value;
+			alert(jml);
+			if(jml > 400){
+				alert('Maksimal jumlah adalah 400 pcs');
+				return;
+			else{
+				return true;
+			}
+		}
+    </script>
 	<div class="wrapper sidebar_minimize">
 		<div class="main-header">
 			<!-- Logo Header -->
@@ -377,15 +394,14 @@
 									<span class="sub-item">Form Pemesanan</span>
 								</a>
 							</li>
-
 						</ul>
 					</div>
 					<div class="row">
 						<div class="col-md-12">
-							<form id="form"  th:action="@{/ordering/createorder}" th:object="${order}"  method="post">
+							<form id="form"  th:action="@{/ordering/createorder}" th:object="${order}" onSubmit="validasi()" method="post" enctype="multipart/form-data" >
 							<div class="card">
 								<div class="card-header">
-									<div class="card-title"><b>Buat Pesanan</b></div>
+									<div class="card-title"><b>Form Pesanan</b></div>
 								</div>
 								<div class="card-body">
 									<div class="row">
@@ -402,32 +418,86 @@
 												<input type="number" class="form-control input-bOrder-bottom" th:field="*{dp}"  name="dp" id="dp" required>
 												<label for="dp" class="placeholder">DP</label>
 											</div>
-											<div class="form-group form-floating-label">
+
+											<!--<div class="form-group form-floating-label">
 												<input type="date" class="form-control input-bOrder-bottom" th:field="*{OrderDate}"  name="OrderDate" id="OrderDate">
 												<label for="OrderDate" class="placeholder">Tanggal pemesanan</label>
 											</div>
 											<div class="form-group form-floating-label">
 												<input type="date" class="form-control input-bOrder-bottom" th:field="*{deadline}"   name="deadline" id="deadline">
 												<label for="dp" class="placeholder">Tenggat</label>
+											</div>-->
+											<div class="form-group form-floating-label">
+												<label for="image" class="placeholder">Struk DP</label><br>
+												<input type="file" class="form-control input-bOrder-bottom"   name="image" id="image" required="true">
 											</div>
 											<div class="form-group">
 												<div class="input-group">
 													<div class="input-group-prepend">
 														<span class="input-group-text">Detail Pesanan</span>
 													</div>
-													<textarea class="form-control" aria-label="With textarea" name="OrderDetails"  th:field="*{OrderDetails}" ></textarea>
+													<textarea class="form-control" aria-label="With textarea" name="OrderDetails"  th:field="*{OrderDetails}" required="true"></textarea>
 												</div>
 											</div>
 										</div>
 									</div>
 								</div>
+								<!-- disini-->
+								<div class="col-md-12">
+
+									<ul style="float:center;"><!--class="timeline"-->
+										<!--<li>
+											<div class="timeline-badge"><i class="flaticon-message"></i></div>
+											<div class="timeline-panel">
+												<div class="timeline-heading">
+													<h4 class="timeline-title">Mussum ipsum cacilds</h4>
+													<p><small class="text-muted"><i class="flaticon-message"></i> 11 hours ago via Twitter</small></p>
+												</div>
+												<div class="timeline-body">
+													<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+												</div>
+											</div>
+										</li>-->
+										<li > <!--class="timeline-inverted"-->
+											<!--<div class="timeline-badge warning"><i class="flaticon-alarm-1"></i></div>-->
+											<div ><!--class="timeline-panel"-->
+												<div class="timeline-heading">
+
+												</div>
+												<center>
+													<div class="timeline-body">
+														<div class="noteee">
+															<div class="notee">
+																<p>NOTE</p>
+																<ul>
+																	<li>maksimal jumlah produk pesanan 400 pcs.</li>
+																	<li>jumlah lebih dari 100 pcs, 15 hari pengerjaan.</li>
+																	<li>jumlah lebih dari 200 pcs, 30 hari pengerjaan.</li>
+																	<li>jumlah lebih dari 300 pcs, 45 hari pengerjaan.</li>
+																	<li>jumlah lebih dari 400 pcs, 60 hari pengerjaan.</li>
+																	Syarat pesanan diterima :
+																	<li>maksimal dp adalah 30% dari total estimasi harga</li>
+																	<li>nama rekening sama dengan akun / tambahkan catatan nama pemesan jika menggunakan rekening lain</li>
+																</ul>
+															</div>
+														</div>
+													</div>
+												</center>
+
+
+													<!--<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>-->
+												</div>
+											</div>
+										</li>
+									</ul>
+								</div>
 								<div class="card-action">
 									<button class="btn btn-success">Submit</button>&nbsp;&nbsp;&nbsp;
-									<button class="btn btn-danger">Cancel</button>
 								</div>
 							</div>
 							</form>
 						</div>
+
 					</div>
 				</div>
 			</div>

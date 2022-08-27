@@ -251,7 +251,7 @@
 											<span class="sub-item">Form Produk</span>
 										</a>
 									</li>
-									<li>
+									<!--<li>
 										<a th:href="@{ordering/order}">
 											<span class="sub-item">Form Pemesanan</span>
 										</a>
@@ -265,7 +265,7 @@
 										<a th:href="@{user/registration}">
 											<span class="sub-item">Form Pelanggan</span>
 										</a>
-									</li>
+									</li>-->
 								</ul>
 							</div>
 						</li>
@@ -415,11 +415,13 @@
 											<thead>
 											<tr>
 												<th>Id Pesanan</th>
-												<th>Id produk</th>
+												<!--<th>Id produk</th>-->
 												<th>Pelanggan</th>
-												<th>Tenggat Waktu</th>
 												<th>Tanggal Pesan</th>
-												<th>Total Harga</th>
+												<th>Tenggat Waktu</th>
+
+												<!--<th>Total Harga</th>-->
+												<th>Status Pesanan</th>
 												<th>Progress</th>
 												<th>Status Pembayaran</th>
 												<th>Aksi</th>
@@ -430,40 +432,63 @@
 												<tr th:each="order : ${order}">
 													<th:set var="count" value="${count + 1}" scope="page"></th:set>
 													<td th:text="${order.id_Order}"></td>
-													<td th:text="${order.product.id_product}"></td>
+													<!--<td th:text="${order.product.id_product}"></td>-->
 													<td th:text="${order.user.name}"></td>
+													<td th:text="${order.OrderDate}"></td>
 													<td th:text="${order.deadline}"></td>
 													<!--<td th:text="${order.dp}"></td>-->
-													<td th:text="${order.OrderDate}"></td>
 													<!--<td th:text="${order.OrderDetails}"></td>
 													<td th:text="${order.quantity}"></td>-->
-													<td th:text="${order.totalCost}"></td>
+													<!--<td th:text="${order.totalCost}"></td>-->
+													<td th:text="${order.statusOrder}"></td>
 													<td th:text="${order.percentage}"></td>
 													<td th:text="${order.statusPayment}"></td>
-													<td>
-														<div class="form-button-action">
-															<button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Detail" style="margin-left:-42px;">
-																<a th:href="@{/ordering/detail/{id} (id=${order.id_Order})}" class="btn btn-warning text-right" target="_blank">
-																	<!--<i class="fa fa-file"></i>-->
-																	Detail
-																</a>
-															</button>
-															&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-															<button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Edit Task" style="margin-left:-52px;">
-																<a th:href="@{'/ordering/update/' + ${order.id_Order}}" class="btn btn-info text-right" target="_blank">
-																	<!--<i class="fa fa-edit"></i>-->
-																	Ubah
-																</a>
-															</button>
+													<div th:unless="${order.statusOrder=='Menunggu'}">
+														<td>
+															<div class="form-button-action">
+																<button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Detail" style="margin-left:-42px;">
+																	<a th:href="@{/ordering/detail/{id} (id=${order.id_Order})}" class="btn btn-warning text-right" target="_blank">
+																		<!--<i class="fa fa-file"></i>-->
+																		Detail
+																	</a>
+																</button>
+																&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+																<button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Edit Task" style="margin-left:-52px;">
+																	<a th:href="@{'/ordering/update/' + ${order.id_Order}}" class="btn btn-info text-right" target="_blank">
+																		<!--<i class="fa fa-edit"></i>-->
+																		Update Progress
+																	</a>
+																</button>
+															</div>
+														</td>
+													</div>
+															<div th:if="${order.statusOrder=='Menunggu'}">
+																<td>
+																	<div class="form-button-action">
+																		<button type="button"  title="" class="btn btn-link btn-primary btn-lg" data-original-title="Detail">
+																			<a th:href="@{/ordering/detail/{id} (id=${order.id_Order})}" class="btn btn-warning text-right" target="_blank">
+																				<!--<i class="fa fa-file"></i>-->Detail <!--data-toggle="tooltip"-->
+																			</a>
+																		</button>
+																	</div>
+																	<div class="form-button-action">
+																		<button type="button"  title="" class="btn btn-link btn-primary btn-lg" data-original-title="Detail">
+																			<a th:href="@{/ordering/save/{id} (id=${order.id_Order})}" class="btn btn-success text-right" target="_blank">
+																				<!--<i class="fa fa-file"></i>-->Terima Pesanan <!--data-toggle="tooltip"-->
+																			</a>
+																		</button>
+																	</div>
+																</td>
+															</div>
 															&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-															<button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-danger" data-original-title="Remove" style="margin-left:-52px;">
+															<!--<button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-danger" data-original-title="Remove" style="margin-left:-52px;">
                                                                 <a th:href="@{/ordering/delete/{id} (id=${order.id_Order})}" class="btn btn-danger text-right" target="_blank">
-                                                                    <!--<i class="fa fa-times"></i>-->
+                                                                    &lt;!&ndash;<i class="fa fa-times"></i>&ndash;&gt;
 																	Hapus
                                                                 </a>
-                                                            </button>
-														</div>
-													</td>
+                                                            </button>-->
+
+
 												</tr>
 											</tbody>
 										</table>

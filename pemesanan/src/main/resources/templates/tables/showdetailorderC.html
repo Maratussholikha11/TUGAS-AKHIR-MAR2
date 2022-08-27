@@ -425,8 +425,13 @@
 											<thead>
 											<tr>
 												<tr>
-													<td>Id Order</td>
+													<td>Id Pesanan</td>
 													<td th:text="${order.id_Order}"></td>
+												</tr>
+
+												<tr>
+													<td>Id Produk</td>
+													<td th:text="${order.product.id_product}"></td>
 												</tr>
 												<tr>
 													<td>Detail Pesanan</td>
@@ -435,6 +440,18 @@
 												<tr>
 													<td>Jumlah</td>
 													<td th:text="${order.quantity}"></td>
+												</tr>
+												<tr>
+													<td>Total harga</td>
+													<td th:text="${order.totalCost}"></td>
+												</tr>
+												<tr>
+													<td>DP</td>
+													<td th:text="${order.dp}"></td>
+												</tr>
+												<tr>
+													<td>Biaya akhir</td>
+													<td th:text="${order.finalCost}"></td>
 												</tr>
 												<tr>
 													<td> </td>

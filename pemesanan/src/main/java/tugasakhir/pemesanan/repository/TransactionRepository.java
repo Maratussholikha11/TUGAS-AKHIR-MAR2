@@ -14,4 +14,7 @@ public interface TransactionRepository extends JpaRepository<Transaction, Intege
 
     @Query("select o from Transaction o where o.user.idUser = :idUser")
     public List<Transaction> findOrderingByUser(@PathParam("idUser") Integer idUser);
+
+    @Query("select o from Transaction o where o.user.idUser = :idUser")
+    public List<Transaction> findOrderingByOrder(@PathParam("idUser") Integer idUser);
 }

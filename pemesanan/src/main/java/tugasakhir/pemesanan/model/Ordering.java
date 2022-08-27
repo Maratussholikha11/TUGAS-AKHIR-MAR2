@@ -46,6 +46,10 @@ public class Ordering {
     @Column(name = "dp")
     private Integer dp;
 
+    @Column(name = "final_cost")
+    private Integer finalCost;
+
+
     @Column(name = "Order_date")
     private String OrderDate;
 
@@ -60,6 +64,16 @@ public class Ordering {
 
     @Column(name = "status_payment")
     private String statusPayment;
+
+    @Column(name = "status_order")
+    private String statusOrder;
+
+    @Lob
+    @Column(name = "receipt_dp", length = Integer.MAX_VALUE, nullable = true)
+    private byte[] image;
+
+    @Column(name = "receipt_dp_name")
+    String receiptDpName;
 
     @Override
     public String toString() {

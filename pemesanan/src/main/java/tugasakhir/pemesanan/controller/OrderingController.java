@@ -1,19 +1,34 @@
 package tugasakhir.pemesanan.controller;
 import org.modelmapper.ModelMapper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 import tugasakhir.pemesanan.dto.ResponseData;
 import tugasakhir.pemesanan.model.Ordering;
 import tugasakhir.pemesanan.model.Product;
+import tugasakhir.pemesanan.model.Transaction;
 import tugasakhir.pemesanan.model.User;
 import tugasakhir.pemesanan.repository.OrderingRepository;
 import tugasakhir.pemesanan.service.OrderingService;
 import tugasakhir.pemesanan.service.ProductService;
 //import tugasakhir.pemesanan.service.productService;
 
+import javax.servlet.http.HttpServletRequest;
+import java.io.BufferedOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.nio.file.Paths;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 @Controller
@@ -31,6 +46,12 @@ public class OrderingController {
 
     @Autowired
     private ModelMapper modelMapper;
+
+    @Value("${ReceiptDpDir}")
+    private String uploadFolder;
+
+    private final Logger log = LoggerFactory.getLogger(this.getClass());
+
 
     @GetMapping("/order")
     public String registration(Model model){
@@ -50,7 +71,7 @@ public class OrderingController {
     }
 
 
-    @PostMapping("/createorder")
+    /*@PostMapping("/createorder")
     public String register(Ordering ordering){
         ResponseData<Ordering> response = new ResponseData<>();
         if (ordering.getPercentage() == null){
@@ -63,6 +84,79 @@ public class OrderingController {
         }else{
             return "redirect:/ordering/show";
         }
+    }*/
+
+    @PostMapping("/createorder")
+    public String register(@RequestParam("productId") Integer productId,
+                           @RequestParam("quantity") String quantity, @RequestParam("dp") Integer dp,  @RequestParam("OrderDetails") String orderDetails, Model model, HttpServletRequest request, final @RequestParam("image") MultipartFile file){
+
+
+        try {
+            ResponseData<Ordering> response = new ResponseData<>();
+
+            String uploadDirectory = request.getServletContext().getRealPath(uploadFolder);
+            log.info("uploadDirectory:: " + uploadDirectory);
+            String fileName = file.getOriginalFilename();
+            String filePath = Paths.get(uploadDirectory, fileName).toString();
+            log.info("FileName: " + file.getOriginalFilename());
+            if (fileName == null || fileName.contains("..")) {
+                model.addAttribute("invalid", "Sorry! Filename contains invalid path sequence \" + fileName");
+                System.out.println("Sorry! Filename contains invalid path sequence " + fileName);
+            }
+            /*String[] names = name.split(",");
+            String[] descriptions = description.split(",");
+            Date createDate = new Date();
+            log.info("Name: " + names[0]+" "+filePath);
+            log.info("description: " + descriptions[0]);
+            log.info("price: " + price);*/
+            try {
+                File dir = new File(uploadDirectory);
+                if (!dir.exists()) {
+                    log.info("Folder Created");
+                    dir.mkdirs();
+                }
+                // Save the file locally
+                BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(new File(filePath)));
+                stream.write(file.getBytes());
+                stream.close();
+                System.out.println("file uploadeddd");
+            } catch (Exception e) {
+                log.info("in catch");
+                e.printStackTrace();
+            }
+            byte[] imageData = file.getBytes();
+            Ordering ordering1 = new Ordering();
+            Product p = productService.getproductById(productId);
+            ordering1.setOrderDetails(orderDetails);
+            /*ordering1.setOrderDate(ordering.getOrderDate());
+            ordering1.setDeadline(ordering.getDeadline());
+            ordering1.setPercentage(ordering.getPercentage());*/
+            ordering1.setQuantity(Integer.valueOf(quantity));
+            ordering1.setDp(dp);
+            ordering1.setStatusOrder("Menunggu");
+            ordering1.setReceiptDpName(fileName);
+//            ordering1.setStatusPayment(ordering.getStatusPayment());
+            ordering1.setImage(imageData);
+            ordering1.setProduct(p);
+            ordering1.setProductId(p.getId_product());
+
+            String LD_PATTERN = "yyyy-MM-dd";
+            DateTimeFormatter LD_FORMATTER = DateTimeFormatter.ofPattern(LD_PATTERN);
+            String dateString = LD_FORMATTER.format(LocalDate.now());
+            /*transaction.setTransactionDate(dateString);*/
+            response.setPayload(orderingService.save(ordering1));
+            log.info("HttpStatus===" + new ResponseEntity<>(HttpStatus.OK));
+            System.out.println("Receipt Saved With File - " + fileName);
+            User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+            if (user.getRole().getNameRole().equalsIgnoreCase("CUSTOMER")){
+                return  "redirect:/ordering/myorder";
+            }else{
+                return "redirect:/ordering/show";
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+            return "error bestiee";
+        }
     }
 
     @PostMapping("/updateorder")
@@ -70,14 +164,14 @@ public class OrderingController {
         ResponseData<Ordering> response = new ResponseData<>();
         System.out.println("productId :" + ordering.getProductId());
         Ordering ord = orderingRepository.getById(id_order);
-        ord.setOrderDate(ordering.getOrderDate());
+        /*ord.setOrderDate(ordering.getOrderDate());
         ord.setDeadline(ordering.getDeadline());
         ord.setOrderDetails(ordering.getOrderDetails());
-        ord.setDp(ordering.getDp());
+        ord.setDp(ordering.getDp());*/
         ord.setPercentage(ordering.getPercentage());
-        ord.setQuantity(ordering.getQuantity());
+        /*ord.setQuantity(ordering.getQuantity());
         ord.setTotalCost(ord.getTotalCost());
-        ord.setUser(ordering.getUser());
+        ord.setUser(ordering.getUser());*/
         response.setPayload(orderingService.update(ord));
         return "redirect:/ordering/show";
     }
@@ -113,6 +207,13 @@ public class OrderingController {
             return "redirect:/";
         }
 
+    }
+
+    @GetMapping("/save/{id}")
+    public String save(@PathVariable("id") Integer id){
+        Ordering ord = orderingRepository.getById(id);
+        orderingService.terima(ord);
+        return "redirect:/ordering/show";
     }
 
     @GetMapping("/delete/{id}")

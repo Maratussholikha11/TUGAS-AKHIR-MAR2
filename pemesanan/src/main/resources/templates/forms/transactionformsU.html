@@ -379,12 +379,14 @@
 						<div class="col-md-12">
 							<form id="form"  th:action="@{/transaction/update}" th:object="${transaction}"  method="post"  enctype="multipart/form-data">
 								<input type="hidden" name="id_transaction" th:field="*{id_transaction}" th:value="${transaction.id_transaction}" id="id_transaction" hidden="true">
+								<input type="hidden"  th:field="*{OrderId}" id="OrderId"  name="OrderId" >
 								<div class="card">
 								<div class="card-header">
-									<div class="card-title"><b>Ubah Transaksi</b></div>
+									<div class="card-title"><b>Approve Transaksi</b></div>
 								</div>
 								<div class="card-body">
 									<div class="row">
+										<!--<input type="hidden" id="id_transaction"  name="id_transaction" th:field="*{id_transaction}"   hidden="true">
 										<div class="col-md-6 col-lg-4">
 											<div class="form-group form-floating-label">
 												<input type="text" class="form-control input-bOrder-bottom"  th:field="*{id_transaction}"  name="id_transaction"  required>
@@ -398,26 +400,18 @@
 												<input type="number" class="form-control input-bOrder-bottom" th:field="*{totalPay}"  id="totalPay" name="totalPay" required>
 												<label for="totalPay" class="placeholder">Jumlah Bayar</label>
 											</div>
-											<div class="form-check" style="font-size:15px">
-												<!--<label>Status Pembayaran</label><br/>S
-												<label class="form-radio-label">
-													<input class="form-radio-input" type="radio" name="optionsRadios"  th:value="selesai" name="lunas" checked="">
-													<span class="form-radio-sign">Selesai</span>
-												</label>
-												<label class="form-radio-label ml-3">
-													<input class="form-radio-input" type="radio" name="optionsRadios" th:value="menunggu" name="lunas">
-													<span class="form-radio-sign">Menunggu</span>
-												</label>-->
+											&lt;!&ndash;<div class="form-check" style="font-size:15px">
+
 												<label class="form-radio-label">Status Pembayaran</label>
 												<br>
 												<input class="form-radio-input" type="radio" name="lunas" th:value="selesai" required="">Selesai
 												&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 												<input class="form-radio-input" type="radio" name="lunas" th:value="menunggu" required="">Menunggu
-											</div>
-<!--											<div class="form-group form-floating-label">-->
-<!--												<label for="image" class="placeholder">Struk Pembayaran</label><br>-->
-<!--												<input type="file" class="form-control input-bOrder-bottom"   name="image" id="image" required>-->
-<!--											</div>-->
+											</div>&ndash;&gt;
+&lt;!&ndash;											<div class="form-group form-floating-label">&ndash;&gt;
+&lt;!&ndash;												<label for="image" class="placeholder">Struk Pembayaran</label><br>&ndash;&gt;
+&lt;!&ndash;												<input type="file" class="form-control input-bOrder-bottom"   name="image" id="image" required>&ndash;&gt;
+&lt;!&ndash;											</div>&ndash;&gt;-->
 											<div class="form-group">
 												<div class="input-group">
 													<div class="input-group-prepend">
@@ -425,11 +419,11 @@
 													</div>
 													<textarea class="form-control" aria-label="With textarea"  th:field="*{note}"  name="note"  id="note" ></textarea>
 												</div>
-											</div>
+											</div><!--
 											<div class="form-group form-floating-label">
 												<input type="date" class="form-control input-bOrder-bottom" th:field="*{TransactionDate}"  name="TransactionDate" id="TransactionDate">
 												<label for="TransactionDate" class="placeholder">Tanggal Transaksi</label>
-											</div>
+											</div>-->
 											<div class="form-group">
 												<label for="status">Status</label>
 												<select class="form-control" id="status"  name="status">

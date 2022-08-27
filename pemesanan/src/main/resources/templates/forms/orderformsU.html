@@ -250,7 +250,7 @@
 											<span class="sub-item">Form Produk</span>
 										</a>
 									</li>
-									<li>
+									<!--<li>
 										<a th:href="@{ordering/order}">
 											<span class="sub-item">Form Pemesanan</span>
 										</a>
@@ -264,7 +264,7 @@
 										<a th:href="@{user/registration}">
 											<span class="sub-item">Form Pelanggan</span>
 										</a>
-									</li>
+									</li>-->
 								</ul>
 							</div>
 						</li>
@@ -394,43 +394,49 @@
 								<input type="hidden" name="id_Order" th:field="*{id_Order}" th:value="${order.id_Order}" id="id_Order" hidden="true">
 							<div class="card">
 								<div class="card-header">
-									<div class="card-title"><b>Ubah Pesanan</b></div>
+									<div class="card-title"><b>Update Progress</b></div>
 								</div>
 								<div class="card-body">
 									<div class="row">
 										<div class="col-md-6 col-lg-4">
-											<div class="form-group form-floating-label">
-												<input type="text" class="form-control input-bOrder-bottom" disabled="disabled" th:field="*{id_Order}"  name="id_Order" id="id_Order" required>
-												<label for="id_Order" class="placeholder">Id Pesanan</label>
+											<!--<div class="form-group form-floating-label">
+												&lt;!&ndash;<input type="text" class="form-control input-bOrder-bottom" disabled="disabled" th:field="*{id_Order}"  name="id_Order" id="id_Order" required>&ndash;&gt;
+												<label  class="placeholder">Id Pesanan</label>
+												<input type="text" class="form-control input-bOrder-bottom" disabled="disabled" th:value="${order.id_Order}"  name="id_Order" id="id_Order" required>
+
 											</div>
 											<div class="form-group form-floating-label">
-												<input type="text" class="form-control input-bOrder-bottom" th:value="${order.productId}"  id="productId" name="productId" required>
-												<label for="productId" class="placeholder">Id produk</label>
+												<label  class="placeholder">Id produk</label>
+												<input type="text" class="form-control input-bOrder-bottom" th:value="${order.productId}"  id="productId" name="productId" readonly="true" required >
+
 											</div>
 											<div class="form-group form-floating-label">
-												<input type="number" class="form-control input-bOrder-bottom" th:field="*{quantity}"  rows="3" cols="45" id="quantity" name="quantity" required>
-												<label for="quantity" class="placeholder">Jumlah</label>
+												<label  class="placeholder">Jumlah</label>
+												<input type="number" class="form-control input-bOrder-bottom" th:field="*{quantity}"  rows="3" cols="45" id="quantity" name="quantity" readonly="true" required>
+
 											</div>
-											<div class="form-group form-floating-label">
-												<input type="number" class="form-control input-bOrder-bottom" th:field="*{dp}"  name="dp" id="dp" required>
+											&lt;!&ndash;<div class="form-group form-floating-label">
+												<input type="number" class="form-control input-bOrder-bottom" th:field="*{dp}"  name="dp" id="dp" readonly="true"  required>
 												<label for="dp" class="placeholder">DP</label>
+											</div>&ndash;&gt;
+											<div class="form-group form-floating-label">
+												<label  class="placeholder">Tanggal pemesanan</label>
+												<input type="date" class="form-control input-bOrder-bottom" th:field="*{OrderDate}"  name="OrderDate" id="OrderDate" readonly="true" >
+
 											</div>
 											<div class="form-group form-floating-label">
-												<input type="date" class="form-control input-bOrder-bottom" th:field="*{OrderDate}"  name="OrderDate" id="OrderDate">
-												<label for="OrderDate" class="placeholder">Tanggal pemesanan</label>
-											</div>
-											<div class="form-group form-floating-label">
-												<input type="date" class="form-control input-bOrder-bottom" th:field="*{deadline}"   name="deadline" id="deadline">
-												<label for="dp" class="placeholder">Tenggat</label>
+												<label  class="placeholder">Tenggat</label>
+												<input type="date" class="form-control input-bOrder-bottom" th:field="*{deadline}"   name="deadline" id="deadline" readonly="true" >
+
 											</div>
 											<div class="form-group">
 												<div class="input-group">
 													<div class="input-group-prepend">
 														<span class="input-group-text">Detail Pesanan</span>
 													</div>
-													<textarea class="form-control" aria-label="With textarea" name="OrderDetails"  th:field="*{OrderDetails}" ></textarea>
+													<textarea class="form-control" aria-label="With textarea" name="OrderDetails"  th:field="*{OrderDetails}" readonly="true" ></textarea>
 												</div>
-											</div>
+											</div>-->
 											<div class="form-group form-floating-label">
 												<input type="number" class="form-control input-bOrder-bottom" id="percentage"  name="percentage" th:field="*{percentage}"   >
 												<label for="percentage" class="placeholder">Progress</label>
@@ -440,7 +446,6 @@
 								</div>
 								<div class="card-action">
 									<button class="btn btn-success">Submit</button>&nbsp;&nbsp;&nbsp;
-									<button class="btn btn-danger">Cancel</button>
 								</div>
 							</div>
 							</form>

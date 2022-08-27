@@ -49,5 +49,8 @@ public class SaleService {
     // count laba
     // count total cost per Order
 
+    public List<Sale> listSale() {
+        return saleRepository.findAll();
+    }
 
 }

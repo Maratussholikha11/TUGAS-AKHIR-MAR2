@@ -81,7 +81,7 @@ public class TransactionController {
 
     @PostMapping("/create")
     public String register(@RequestParam("OrderId") Integer idOrder,
-                           @RequestParam("lunas") String lunas, @RequestParam("totalPay") Integer totalPay,  @RequestParam("note") String note,
+                            @RequestParam("totalPay") Integer totalPay,  @RequestParam("note") String note,
                            Model model, HttpServletRequest request, final @RequestParam("image") MultipartFile file) {
         System.out.println("masukk sini");
         try {
@@ -118,12 +118,16 @@ public class TransactionController {
             byte[] imageData = file.getBytes();
             Transaction transaction = new Transaction();
             transaction.setTotalPay(totalPay);
-            transaction.setLunas(lunas);
             transaction.setNote(note);
             transaction.setReceiptName(fileName);
             transaction.setImage(imageData);
             ResponseData<Transaction> response = new ResponseData<>();
             Ordering ord = orderingRepository.getById(idOrder);
+            if(totalPay == ord.getFinalCost()){
+                transaction.setLunas("lunas");
+            }
+            ord.setStatusPayment("Pending");
+            orderingRepository.save(ord);
             transaction.setOrdering(ord);
             transaction.setOrderId(ord.getId_Order());
             String LD_PATTERN = "yyyy-MM-dd";
@@ -149,12 +153,12 @@ public class TransactionController {
     @PostMapping("/update")
     public String update(@RequestParam("id_transaction") Integer id,Transaction transaction){
         Transaction trx = transactionRepository.getById(id);
-        trx.setTransactionDate(transaction.getTransactionDate());
+//        trx.setTransactionDate(transaction.getTransactionDate());
         trx.setImage(transaction.getImage());
-        trx.setLunas(transaction.getLunas());
-        trx.setTotalPay(transaction.getTotalPay());
+        trx.setLunas("Lunas");
+//        trx.setTotalPay(transaction.getTotalPay());
         trx.setNote(transaction.getNote());
-        trx.setTotalPay(transaction.getTotalPay());
+//        trx.setTotalPay(transaction.getTotalPay());
         trx.setOrderId(transaction.getOrderId());
         System.out.println("status updated : " + transaction.getStatus().getIdStatus());
         trx.setStatus(transaction.getStatus());

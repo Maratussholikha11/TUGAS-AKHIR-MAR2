@@ -21,6 +21,7 @@
 		});
 	</script>
 
+
 	<!-- CSS Files -->
 	<link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="../../assets/css/atlantis.min.css">
@@ -28,6 +29,8 @@
 	<link rel="stylesheet" href="../../assets/css/demo.css">
 </head>
 <body>
+
+
 	<div class="wrapper">
 		<div class="main-header">
 			<!-- Logo Header -->
@@ -246,15 +249,20 @@
 							</a>
 							<div class="collapse" id="forms">
 								<ul class="nav nav-collapse">
-									<li>
+									<!--<li>
 										<a th:href="@{/product}">
 											<span class="sub-item">Form Produk</span>
 										</a>
 
-									</li>
+									</li>-->
 									<li>
 										<a th:href="@{ordering/order}">
 											<span class="sub-item">Form Pemesanan</span>
+										</a>
+									</li>
+									<li>
+										<a th:href="@{transaction/form}">
+											<span class="sub-item">Form Transaksi</span>
 										</a>
 									</li>
 
@@ -395,11 +403,12 @@
 											<thead>
 											<tr>
 												<th>Id Pesanan</th>
-												<th>Id produk</th>
+												<!--<th>Id produk</th>-->
 												<th>Pelanggan</th>
-												<th>Tenggat Waktu</th>
 												<th>Tanggal Pesan</th>
-												<th>Total Harga</th>
+												<th>Tenggat Waktu</th>
+												<!--<th>Total Harga</th>-->
+												<th>Status Pesanan</th>
 												<th>Progress</th>
 												<th>Status Pembayaran</th>
 												<th>Aksi</th>
@@ -410,33 +419,59 @@
 												<tr th:each="order : ${order}">
 													<th:set var="count" value="${count + 1}" scope="page"></th:set>
 													<td th:text="${order.id_Order}"></td>
-													<td th:text="${order.product.id_product}"></td>
+													<!--<td th:text="${order.product.id_product}"></td>-->
 													<td th:text="${order.user.name}"></td>
+													<td th:text="${order.OrderDate}"></td>
 													<td th:text="${order.deadline}"></td>
 													<!--<td th:text="${order.dp}"></td>-->
-													<td th:text="${order.OrderDate}"></td>
 													<!--<td th:text="${order.OrderDetails}"></td>
 													<td th:text="${order.quantity}"></td>-->
-													<td th:text="${order.totalCost}"></td>
+													<!--<td th:text="${order.totalCost}"></td>-->
+													<td th:text="${order.statusOrder}"></td>
 													<td th:text="${order.percentage}"></td>
-													<td th:text="${order.statusPayment}"></td>
-													<td>
-														<div class="form-button-action">
-															<button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Detail">
-																<a th:href="@{/ordering/detail/{id} (id=${order.id_Order})}" class="btn btn-warning text-right" target="_blank">
-																	<!--<i class="fa fa-file"></i>-->Detail
+													<td th:text="${order.statusPayment}" id="sts"></td>
 
-																</a>
-															</button>
-															&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-															<button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Bayar">
-																<a th:href="@{'/transaction/form/' + ${order.id_Order}}"  class="btn btn-success text-right" target="_blank">
-																	<!--<i class="fa fa-money" aria-hidden="true"></i>-->Bayar
-																</a>
-															</button>
-															&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+													<div th:if="${order.statusPayment=='Pay off'}">
+														<td>
+															<div class="form-button-action">
+																<button type="button"  title="" class="btn btn-link btn-primary btn-lg" data-original-title="Detail">
+																	<a th:href="@{/ordering/detail/{id} (id=${order.id_Order})}" class="btn btn-warning text-right" target="_blank">
+																		<!--<i class="fa fa-file"></i>-->Detail <!--data-toggle="tooltip"-->
+																	</a>
+																</button>
+															</div>
+														</td>
+													</div>
+													<div th:if="${order.statusPayment=='Pending'}">
+														<td>
+															<div class="form-button-action">
+																<button type="button"  title="" class="btn btn-link btn-primary btn-lg" data-original-title="Detail">
+																	<a th:href="@{/ordering/detail/{id} (id=${order.id_Order})}" class="btn btn-warning text-right" target="_blank">
+																		<!--<i class="fa fa-file"></i>-->Detail <!--data-toggle="tooltip"-->
+																	</a>
+																</button>
+															</div>
+														</td>
+													</div>
+													<div th:unless="${order.statusPayment=='Pending'}">
+														<div th:unless="${order.statusPayment=='Pay off'}">
+															<td>
+																<div class="form-button-action">
+																	<button type="button"  title="" class="btn btn-link btn-primary btn-lg" data-original-title="Detail">
+																		<a th:href="@{/ordering/detail/{id} (id=${order.id_Order})}" class="btn btn-warning text-right" target="_blank">
+																			<!--<i class="fa fa-file"></i>-->Detail <!--data-toggle="tooltip"-->
+																		</a>
+																	</button>
+																</div>
+																<button type="button"  title="" class="btn btn-link btn-primary btn-lg" data-original-title="Bayar" id="btnBayar">
+																	<a th:href="@{'/transaction/form/' + ${order.id_Order}}"  class="btn btn-success text-right" target="_blank">
+																		<!--<i class="fa fa-money" aria-hidden="true"></i>-->Bayar <!--data-toggle="tooltip"-->
+																	</a>
+																</button>
+															</td>
+
 														</div>
-													</td>
+													</div>
 												</tr>
 											</tbody>
 										</table>

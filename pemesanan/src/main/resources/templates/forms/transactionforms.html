@@ -397,22 +397,14 @@
 												<input type="number" class="form-control input-bOrder-bottom" th:value="${transaction.totalPay}" id="totalPay" name="totalPay" required>
 												<label for="totalPay" class="placeholder">Jumlah Bayar</label>
 											</div>
-											<div class="form-check" style="font-size:15px">
-												<!--<label>Status Pembayaran</label><br/>S
-												<label class="form-radio-label">
-													<input class="form-radio-input" type="radio" name="optionsRadios"  th:value="selesai" name="lunas" checked="">
-													<span class="form-radio-sign">Selesai</span>
-												</label>
-												<label class="form-radio-label ml-3">
-													<input class="form-radio-input" type="radio" name="optionsRadios" th:value="menunggu" name="lunas">
-													<span class="form-radio-sign">Menunggu</span>
-												</label>-->
+											<!--<div class="form-check" style="font-size:15px">
+
 												<label class="form-radio-label">Status Pembayaran</label>
 												<br>
 												<input class="form-radio-input" type="radio" name="lunas" th:value="selesai" required="">Selesai
 												&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 												<input class="form-radio-input" type="radio" name="lunas" th:value="menunggu" required="">Menunggu
-											</div>
+											</div>-->
 											<div class="form-group form-floating-label">
 												<label for="image" class="placeholder">Struk Pembayaran</label><br>
 												<input type="file" class="form-control input-bOrder-bottom"   name="image" id="image" required>
@@ -430,7 +422,6 @@
 								</div>
 								<div class="card-action">
 									<button class="btn btn-success">Submit</button>&nbsp;&nbsp;&nbsp;
-									<button class="btn btn-danger">Cancel</button>
 								</div>
 							</div>
 							</form>
