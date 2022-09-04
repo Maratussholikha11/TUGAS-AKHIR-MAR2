@@ -253,7 +253,7 @@
 						<li class="nav-item dropdown hidden-caret">
 							<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false">
 								<div class="avatar-sm">
-									&nbsp;&nbsp;&nbsp;Logout
+									&nbsp;&nbsp;&nbsp;Login
 									<!--<img src="../../assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle">-->
 								</div>
 							</a>
@@ -274,7 +274,7 @@
 										<div class="dropdown-divider"></div>
 										<a class="dropdown-item" href="#">Account Setting</a>
 										<div class="dropdown-divider"></div>-->
-										<a class="dropdown-item" th:href="@{/logout}">Logout</a>
+										<a class="dropdown-item" th:href="@{/login}">Login</a>
 									</li>
 								</div>
 							</ul>
@@ -422,7 +422,7 @@
 							</a>
 							<div class="collapse show" id="forms">
 								<ul class="nav nav-collapse">
-									<li>
+									<!--<li>
 										<a th:href="@{/product}">
 											<span class="sub-item">Form Produk</span>
 										</a>
@@ -441,7 +441,7 @@
 										<a th:href="@{user/create/customer}">
 											<span class="sub-item">Form Pelanggan</span>
 										</a>
-									</li>
+									</li>-->
 								</ul>
 							</div>
 						</li>
@@ -453,7 +453,7 @@
 							</a>
 							<div class="collapse" id="tables">
 								<ul class="nav nav-collapse">
-									<li>
+									<!--<li>
 										<a th:href="@{/product/show}">
 											<span class="sub-item">Produk</span>
 										</a>
@@ -467,17 +467,8 @@
 										<a th:href="@{/transaction/show}">
 											<span class="sub-item">Transaksi</span>
 										</a>
-									</li>
-									<li>
-										<a th:href="@{/sale/show}">
-											<span class="sub-item">Penjualan</span>
-										</a>
-									</li>
-									<li>
-										<a th:href="@{/user/customer}">
-											<span class="sub-item">Pelanggan</span>
-										</a>
-									</li>
+									</li>-->
+
 								</ul>
 							</div>
 						</li>
@@ -562,7 +553,7 @@
 							<form id="form"  th:action="@{/user/register}" th:object="${user}"  method="post">
 							<div class="card">
 								<div class="card-header">
-									<div class="card-title"><b>Tambah Pelanggan</b></div>
+									<div class="card-title"><b>Daftar</b></div>
 									</div>
 								<!--<input type="text" name="idUser" th:field="*{idUser}" th:value="${user.idUser}" id="idUser" hidden="true">
 -->
@@ -598,7 +589,6 @@
 								</div>
 								<div class="card-action">
 									<button class="btn btn-success">Submit</button>&nbsp;&nbsp;&nbsp;
-									<button class="btn btn-danger">Cancel</button>
 								</div>
 							</div>
 							</form>
