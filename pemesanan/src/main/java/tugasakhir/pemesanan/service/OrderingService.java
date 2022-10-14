@@ -83,6 +83,8 @@ public class OrderingService {
                     if(bln>12){
                         thn+=1;
                     }
+                }else{
+
                 }
 
             }else if(bln == 4 || bln == 6 || bln == 9 || bln == 7 || bln == 11){
@@ -110,20 +112,21 @@ public class OrderingService {
         }
         if(bln<10){
             System.out.println("after : " + thn + "-0"+ bln + "-" + hari);
-        }else if(bln>10){
+        }else if(bln>=10){
             System.out.println("day : " + day);
             System.out.println("after : " + thn + "-"+ bln + "-" + hari);
         }
-
+            System.out.println("dlnyaadalah = " +  thn + "-0"+ bln + "-" + hari);
             String deadline ="";
             if(bln<10){
-                System.out.println("deadinenya kapan ya : " + thn + "-0"+ bln + "-" + hari);
+                System.out.println("1120000 : " + thn + "-0"+ bln + "-" + hari);
                 deadline = thn + "-0"+ bln + "-" + hari;
-            }else if(bln>10){
+            }else if(bln>=10){
                 System.out.println("day : " + day);
                 System.out.println("deadinenya kapan ya  : " + thn + "-"+ bln + "-" + hari);
                 deadline = thn + "-"+ bln + "-" + hari;
             }
+            System.out.println("deadline : " + deadline);
             current.setDp(ordering.getDp());
             current.setDeadline(deadline);
             current.setOrderDate(currentDateTime);
