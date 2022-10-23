@@ -26,6 +26,19 @@
 	<link rel="stylesheet" href="../../assets/css/atlantis.min.css">
 	<!-- CSS Just for demo purpose, don't include it in your project -->
 	<link rel="stylesheet" href="../../assets/css/demo.css">
+	<script type="text/javascript">
+		function validasi_input(form){
+		 	var persen1 = document.getElementById("persen1").value;
+			var persen2 = document.getElementById("percentage").value;
+				alert("Persentase 1 "+ persen1 );
+				alert("Persentase 2 "+ persen2 );
+			if(persen2<persen1){
+				alert("Persentase tidak dapat turun!);
+				return false;
+			}
+			return true;
+		}
+	</script>
 </head>
 <body>
 	<div class="wrapper sidebar_minimize">
@@ -390,9 +403,11 @@
 					</div>
 					<div class="row">
 						<div class="col-md-12">
-							<form id="form"  th:action="@{/ordering/updateorder}" th:object="${order}"  method="post">
+							<form id="form"  th:action="@{/ordering/updateorder}" th:object="${order}"  method="post"  onsubmit="return validasi_input(this)">
 								<input type="hidden" name="id_Order" th:field="*{id_Order}" th:value="${order.id_Order}" id="id_Order" hidden="true">
-							<div class="card">
+								<input type="hidden" name="persen1" th:field="*{percentage}"  id="persen1" hidden="true">
+
+								<div class="card">
 								<div class="card-header">
 									<div class="card-title"><b>Update Progress</b></div>
 								</div>
@@ -438,9 +453,10 @@
 												</div>
 											</div>-->
 											<div class="form-group form-floating-label">
-												<input type="number" class="form-control input-bOrder-bottom" id="percentage"  name="percentage" th:field="*{percentage}"   >
+												<input type="number" class="form-control input-bOrder-bottom" id="percentage"  name="percentage"    >
 												<label for="percentage" class="placeholder">Progress</label>
 											</div>
+
 										</div>
 									</div>
 								</div>

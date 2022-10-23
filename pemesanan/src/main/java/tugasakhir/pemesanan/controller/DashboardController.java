@@ -222,5 +222,19 @@ public class DashboardController {
 	return "contact-us";
 	}
 
+	@RequestMapping(value = "/persadakonveksi", method = RequestMethod.GET)
+	public String Persada(Model model){
+		List<Product> products = productRepository.findAll();
+		model.addAttribute("products", products);
+//		User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+//		if (user.getRole().getNameRole().equalsIgnoreCase("CUSTOMER")){
+//			return  "tables/showproductC";
+//		}else{
+//			return "tables/showproduct";
+//		}
+		System.out.println("masuk ..");
+
+		return "tables/showproductunlogin";
+	}
 	
 }

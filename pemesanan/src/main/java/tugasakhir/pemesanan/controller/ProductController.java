@@ -251,13 +251,7 @@ public class ProductController {
 	public String detail(@PathVariable("id") Integer id, Model model){
 		Product product = productRepository.getById(id);
 		model.addAttribute("product", product);
-
-		User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-		if (user.getRole().getNameRole().equalsIgnoreCase("CUSTOMER")){
-			return  "tables/showdetailproductC";
-		}else{
-			return "tables/showdetailproduct";
-		}
+		return "tables/showdetailproductunlogin";
 	}
 
 

@@ -33,6 +33,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/product/create").hasAnyRole("ADMIN","OWNER")
                 .antMatchers("/product/update").hasAnyRole("ADMIN","OWNER")
                 .antMatchers("/product/allproduct").permitAll()
+                .antMatchers("/product/detail/{id}").permitAll()
 
                 .antMatchers("/sale/**").hasAnyRole("ADMIN","OWNER")
 
@@ -59,6 +60,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/templates/**").permitAll()
                 .antMatchers("/package tugasakhir.pemesanan.model;/**").permitAll()
                 .antMatchers("/webapp/resources/static/upload").permitAll()
+                .antMatchers("/persadakonveksi").permitAll()
                 //.anyRequest().authenticated()
                 .and().formLogin().loginPage("/login")
                 .and()

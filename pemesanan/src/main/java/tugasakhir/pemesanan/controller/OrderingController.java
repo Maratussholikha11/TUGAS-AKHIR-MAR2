@@ -65,6 +65,7 @@ public class OrderingController {
         Product product = productService.findById(idproduct);
         Ordering order  = new Ordering();
         order.setProductId(product.getId_product());
+        order.setProduct(product);
         System.out.println("id product will Order : " + product.getId_product());
         model.addAttribute("order",order);
         return  "forms/orderforms";
@@ -168,7 +169,9 @@ public class OrderingController {
         ord.setDeadline(ordering.getDeadline());
         ord.setOrderDetails(ordering.getOrderDetails());
         ord.setDp(ordering.getDp());*/
+        System.out.println("persen 1 => " + ordering.getPercentage());
         ord.setPercentage(ordering.getPercentage());
+        System.out.println("persen 2 => " + ord.getPercentage());
         /*ord.setQuantity(ordering.getQuantity());
         ord.setTotalCost(ord.getTotalCost());
         ord.setUser(ordering.getUser());*/

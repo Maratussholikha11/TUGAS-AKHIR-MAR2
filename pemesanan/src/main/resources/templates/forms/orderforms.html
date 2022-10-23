@@ -30,6 +30,26 @@
 	<!-- CSS Just for demo purpose, don't include it in your project -->
 	<link rel="stylesheet" href="../../assets/css/demo.css">
 
+	<script type="text/javascript">
+		function validasi_input(form){
+		  var price = document.getElementById("harga").value;
+			var qty = document.getElementById("quantity").value;
+			var dp = document.getElementById("dp").value;
+			var bayar = price * qty;
+			var jmlDp = 0;
+			var prc = 0.30;
+			var jmlDp = bayar * prc;
+
+
+			if(dp<jmlDp){
+				alert("Total biaya : " + bayar + "\nMinimal DP sebesar " + jmlDp);
+				return false;
+
+			}
+
+			return true;
+		}
+	</script>
 </head>
 <body>
 	<script type="text/javascript">
@@ -398,7 +418,7 @@
 					</div>
 					<div class="row">
 						<div class="col-md-12">
-							<form id="form"  th:action="@{/ordering/createorder}" th:object="${order}" onSubmit="validasi()" method="post" enctype="multipart/form-data" >
+							<form id="form"  th:action="@{/ordering/createorder}" th:object="${order}" onsubmit="return validasi_input(this)" method="post" enctype="multipart/form-data" >
 							<div class="card">
 								<div class="card-header">
 									<div class="card-title"><b>Form Pesanan</b></div>
@@ -407,8 +427,12 @@
 									<div class="row">
 										<div class="col-md-6 col-lg-4">
 											<div class="form-group form-floating-label">
-												<input type="text" class="form-control input-bOrder-bottom" th:value="${order.productId}"  id="productId" name="productId" required>
+												<input type="text" class="form-control input-bOrder-bottom" th:value="${order.productId}"  id="productId" name="productId"  required>
 												<label for="productId" class="placeholder">Id produk</label>
+											</div>
+											<div class="form-group form-floating-label">
+												<input type="hidden" class="form-control input-bOrder-bottom" th:value="${order.product.price}"  id="harga" name="harga" hidden>
+<!--												<label for="harga" class="placeholder">Harga 1 pcs</label>-->
 											</div>
 											<div class="form-group form-floating-label">
 												<input type="number" class="form-control input-bOrder-bottom" th:field="*{quantity}"  rows="3" cols="45" id="quantity" name="quantity" required>
