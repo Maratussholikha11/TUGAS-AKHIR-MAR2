@@ -28,12 +28,14 @@
 	<link rel="stylesheet" href="../../assets/css/demo.css">
 	<script type="text/javascript">
 		function validasi_input(form){
+		alert("apapun");
+
 		 	var persen1 = document.getElementById("persen1").value;
 			var persen2 = document.getElementById("percentage").value;
 				alert("Persentase 1 "+ persen1 );
 				alert("Persentase 2 "+ persen2 );
 			if(persen2<persen1){
-				alert("Persentase tidak dapat turun!);
+				alert("Persentase tidak dapat berkurang!);
 				return false;
 			}
 			return true;
@@ -133,16 +135,7 @@
 							</a>
 							<div class="collapse" id="dashboard">
 								<ul class="nav nav-collapse">
-									<!--<li>
-										<a href="../../demo1/index.html">
-											<span class="sub-item">Dashboard 1</span>
-										</a>
-									</li>
-									<li>
-										<a href="../../demo2/index.html">
-											<span class="sub-item">Dashboard 2</span>
-										</a>
-									</li>-->
+
 								</ul>
 							</div>
 						</li>
@@ -152,103 +145,6 @@
 							</span>
 							<h4 class="text-section">Components</h4>
 						</li>
-						<!--<li class="nav-item">
-							<a data-toggle="collapse" href="#base">
-								<i class="fas fa-layer-group"></i>
-								<p>Base</p>
-								<span class="caret"></span>
-							</a>
-							<div class="collapse" id="base">
-								<ul class="nav nav-collapse">
-									<li>
-										<a href="../components/avatars.html">
-											<span class="sub-item">Avatars</span>
-										</a>
-									</li>
-									<li>
-										<a href="../components/buttons.html">
-											<span class="sub-item">Buttons</span>
-										</a>
-									</li>
-									<li>
-										<a href="../components/gridsystem.html">
-											<span class="sub-item">Grid System</span>
-										</a>
-									</li>
-									<li>
-										<a href="../components/panels.html">
-											<span class="sub-item">Panels</span>
-										</a>
-									</li>
-									<li>
-										<a href="../components/notifications.html">
-											<span class="sub-item">Notifications</span>
-										</a>
-									</li>
-									<li>
-										<a href="../components/sweetalert.html">
-											<span class="sub-item">Sweet Alert</span>
-										</a>
-									</li>
-									<li>
-										<a href="../components/font-awesome-icons.html">
-											<span class="sub-item">Font Awesome Icons</span>
-										</a>
-									</li>
-									<li>
-										<a href="../components/simple-line-icons.html">
-											<span class="sub-item">Simple Line Icons</span>
-										</a>
-									</li>
-									<li>
-										<a href="../components/flaticons.html">
-											<span class="sub-item">Flaticons</span>
-										</a>
-									</li>
-									<li>
-										<a href="../components/typography.html">
-											<span class="sub-item">Typography</span>
-										</a>
-									</li>
-								</ul>
-							</div>
-						</li>-->
-						<!--<li class="nav-item">
-							<a data-toggle="collapse" href="#sidebarLayouts">
-								<i class="fas fa-th-list"></i>
-								<p>Sidebar Layouts</p>
-								<span class="caret"></span>
-							</a>
-							<div class="collapse" id="sidebarLayouts">
-								<ul class="nav nav-collapse">
-									<li>
-										<a href="../sidebar-style-1.html">
-											<span class="sub-item">Sidebar Style 1</span>
-										</a>
-									</li>
-									<li>
-										<a href="../overlay-sidebar.html">
-											<span class="sub-item">Overlay Sidebar</span>
-										</a>
-									</li>
-									<li>
-										<a href="../compact-sidebar.html">
-											<span class="sub-item">Compact Sidebar</span>
-										</a>
-									</li>
-									<li>
-										<a href="../static-sidebar.html">
-											<span class="sub-item">Static Sidebar</span>
-										</a>
-									</li>
-									<li>
-										<a href="../icon-menu.html">
-											<span class="sub-item">Icon Menu</span>
-										</a>
-									</li>
-								</ul>
-							</div>
-						</li>-->
 						<li class="nav-item active submenu">
 							<a data-toggle="collapse" href="#forms">
 								<i class="fas fa-pen-square"></i>
@@ -263,21 +159,6 @@
 											<span class="sub-item">Form Produk</span>
 										</a>
 									</li>
-									<!--<li>
-										<a th:href="@{ordering/order}">
-											<span class="sub-item">Form Pemesanan</span>
-										</a>
-									</li>
-									<li>
-										<a th:href="@{transaction/form}">
-											<span class="sub-item">Form Transaksi</span>
-										</a>
-									</li>
-									<li>
-										<a th:href="@{user/registration}">
-											<span class="sub-item">Form Pelanggan</span>
-										</a>
-									</li>-->
 								</ul>
 							</div>
 						</li>
@@ -318,50 +199,6 @@
 								</ul>
 							</div>
 						</li>
-						<!--<li class="nav-item">
-							<a data-toggle="collapse" href="#maps">
-								<i class="fas fa-map-marker-alt"></i>
-								<p>Maps</p>
-								<span class="caret"></span>
-							</a>
-							<div class="collapse" id="maps">
-								<ul class="nav nav-collapse">
-									<li>
-										<a href="../maps/jqvmap.html">
-											<span class="sub-item">JQVMap</span>
-										</a>
-									</li>
-								</ul>
-							</div>
-						</li>-->
-						<!--<li class="nav-item">
-							<a data-toggle="collapse" href="#charts">
-								<i class="far fa-chart-bar"></i>
-								<p>Charts</p>
-								<span class="caret"></span>
-							</a>
-							<div class="collapse" id="charts">
-								<ul class="nav nav-collapse">
-									<li>
-										<a href="../charts/charts.html">
-											<span class="sub-item">Chart Js</span>
-										</a>
-									</li>
-									<li>
-										<a href="../charts/sparkline.html">
-											<span class="sub-item">Sparkline</span>
-										</a>
-									</li>
-								</ul>
-							</div>
-						</li>-->
-						<!--<li class="nav-item">
-							<a href="../widgets.html">
-								<i class="fas fa-desktop"></i>
-								<p>Widgets</p>
-								<span class="badge badge-success">4</span>
-							</a>
-						</li>-->
 					</ul>
 				</div>
 			</div>
@@ -403,9 +240,9 @@
 					</div>
 					<div class="row">
 						<div class="col-md-12">
-							<form id="form"  th:action="@{/ordering/updateorder}" th:object="${order}"  method="post"  onsubmit="return validasi_input(this)">
+							<form id="form"  th:action="@{/ordering/updateorder}" th:object="${order}" onsubmit="return validasi_input(this)" method="post"  >
 								<input type="hidden" name="id_Order" th:field="*{id_Order}" th:value="${order.id_Order}" id="id_Order" hidden="true">
-								<input type="hidden" name="persen1" th:field="*{percentage}"  id="persen1" hidden="true">
+								<input type="hidden" name="persen1" th:value="${order.percentage}"  id="persen1" hidden="true">
 
 								<div class="card">
 								<div class="card-header">
@@ -414,46 +251,8 @@
 								<div class="card-body">
 									<div class="row">
 										<div class="col-md-6 col-lg-4">
-											<!--<div class="form-group form-floating-label">
-												&lt;!&ndash;<input type="text" class="form-control input-bOrder-bottom" disabled="disabled" th:field="*{id_Order}"  name="id_Order" id="id_Order" required>&ndash;&gt;
-												<label  class="placeholder">Id Pesanan</label>
-												<input type="text" class="form-control input-bOrder-bottom" disabled="disabled" th:value="${order.id_Order}"  name="id_Order" id="id_Order" required>
-
-											</div>
 											<div class="form-group form-floating-label">
-												<label  class="placeholder">Id produk</label>
-												<input type="text" class="form-control input-bOrder-bottom" th:value="${order.productId}"  id="productId" name="productId" readonly="true" required >
-
-											</div>
-											<div class="form-group form-floating-label">
-												<label  class="placeholder">Jumlah</label>
-												<input type="number" class="form-control input-bOrder-bottom" th:field="*{quantity}"  rows="3" cols="45" id="quantity" name="quantity" readonly="true" required>
-
-											</div>
-											&lt;!&ndash;<div class="form-group form-floating-label">
-												<input type="number" class="form-control input-bOrder-bottom" th:field="*{dp}"  name="dp" id="dp" readonly="true"  required>
-												<label for="dp" class="placeholder">DP</label>
-											</div>&ndash;&gt;
-											<div class="form-group form-floating-label">
-												<label  class="placeholder">Tanggal pemesanan</label>
-												<input type="date" class="form-control input-bOrder-bottom" th:field="*{OrderDate}"  name="OrderDate" id="OrderDate" readonly="true" >
-
-											</div>
-											<div class="form-group form-floating-label">
-												<label  class="placeholder">Tenggat</label>
-												<input type="date" class="form-control input-bOrder-bottom" th:field="*{deadline}"   name="deadline" id="deadline" readonly="true" >
-
-											</div>
-											<div class="form-group">
-												<div class="input-group">
-													<div class="input-group-prepend">
-														<span class="input-group-text">Detail Pesanan</span>
-													</div>
-													<textarea class="form-control" aria-label="With textarea" name="OrderDetails"  th:field="*{OrderDetails}" readonly="true" ></textarea>
-												</div>
-											</div>-->
-											<div class="form-group form-floating-label">
-												<input type="number" class="form-control input-bOrder-bottom" id="percentage"  name="percentage"    >
+												<input type="number" class="form-control input-bOrder-bottom" id="percentage" th:field="*{percentage}"  name="percentage"  max="100"  th:min="${order.percentage}"  >
 												<label for="percentage" class="placeholder">Progress</label>
 											</div>
 

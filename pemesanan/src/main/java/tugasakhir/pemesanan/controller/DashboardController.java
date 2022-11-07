@@ -234,7 +234,7 @@ public class DashboardController {
 //		}
 		System.out.println("masuk ..");
 
-		return "tables/showproductunlogin";
+		return "tables/showproductunlogin2";
 	}
 	
 }

@@ -27,6 +27,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.file.Paths;
+import java.security.Principal;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
@@ -89,7 +90,10 @@ public class OrderingController {
 
     @PostMapping("/createorder")
     public String register(@RequestParam("productId") Integer productId,
-                           @RequestParam("quantity") String quantity, @RequestParam("dp") Integer dp,  @RequestParam("OrderDetails") String orderDetails, Model model, HttpServletRequest request, final @RequestParam("image") MultipartFile file){
+                           @RequestParam("quantity") String quantity, @RequestParam("dp") Integer dp,  @RequestParam("OrderDetails") String orderDetails,
+                           @RequestParam("jeniskain") String jeniskain, @RequestParam("warnakain") String warnakain,  @RequestParam("jmlS") String jmlS,
+                           @RequestParam("jmlM") String jmlM, @RequestParam("jmlL") String jmlL,  @RequestParam("jmlXL") String jmlXL,  @RequestParam("jmlXXL") String jmlXXL,
+                           Model model, HttpServletRequest request, final @RequestParam("image") MultipartFile file){
 
 
         try {
@@ -104,12 +108,6 @@ public class OrderingController {
                 model.addAttribute("invalid", "Sorry! Filename contains invalid path sequence \" + fileName");
                 System.out.println("Sorry! Filename contains invalid path sequence " + fileName);
             }
-            /*String[] names = name.split(",");
-            String[] descriptions = description.split(",");
-            Date createDate = new Date();
-            log.info("Name: " + names[0]+" "+filePath);
-            log.info("description: " + descriptions[0]);
-            log.info("price: " + price);*/
             try {
                 File dir = new File(uploadDirectory);
                 if (!dir.exists()) {
@@ -128,7 +126,33 @@ public class OrderingController {
             byte[] imageData = file.getBytes();
             Ordering ordering1 = new Ordering();
             Product p = productService.getproductById(productId);
-            ordering1.setOrderDetails(orderDetails);
+
+            if(jmlS.isEmpty()){
+                jmlS = "0";
+            }if(jmlL.isEmpty()){
+                jmlL = "0";
+            }if(jmlXL.isEmpty()){
+                jmlXL ="0";
+            }if(jmlXXL.isEmpty()){
+                jmlXXL ="0";
+            }if(jmlM.isEmpty()){
+                jmlM = "0";
+            }
+
+            Integer S = Integer.valueOf(jmlS);
+            Integer M = Integer.valueOf(jmlM);
+            Integer L = Integer.valueOf(jmlL);
+            Integer XL = Integer.valueOf(jmlXL);
+            Integer XXL = Integer.valueOf(jmlXXL);
+
+
+
+            String detail = "Jenis kain : " + jeniskain + "\n Warna kain : " + warnakain + "\n Jml S : " + String.valueOf(S) +
+                    " Jml M : " + String.valueOf(M) + "\n jml L : " +  String.valueOf(L) + "\n JmXL  : " +  String.valueOf(XL)+ "\n JmXXL  : " +  String.valueOf(XXL) +
+                    " Catatan : " + orderDetails;
+
+            System.out.println("detailll : " + detail);
+            ordering1.setOrderDetails(detail);
             /*ordering1.setOrderDate(ordering.getOrderDate());
             ordering1.setDeadline(ordering.getDeadline());
             ordering1.setPercentage(ordering.getPercentage());*/
@@ -265,6 +289,13 @@ public class OrderingController {
        }
         return orderingService.findByPercentage(a, b);
     }
+
+    @RequestMapping (value="/tabelukuran", method = RequestMethod.GET)
+    public String contact(Model model, Principal p) {
+        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        return "forms/tableukuran";
+    }
+
 
 
 

@@ -6,6 +6,11 @@
         margin-right: auto;navbar-nav
 }
 
+.abc{
+    color:white;
+
+}
+
 .navbar-nav img{
     height: 30px;
     width: 30px;
@@ -264,6 +269,43 @@ body[data-background-color="dark"] .demo-icon .icon-class {
     display: flex;
     align-items:center;
     justify-content:center;
+}
+
+.card .produk{
+   display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 5px;
+    grid-auto-rows: minmax(50px, auto);
+   
+}
+
+.card .produk td{
+  margin-left:50px;
+   margin-left:50px;
+}
+
+
+.card .produk img{
+
+    width:100px;
+    height:100px;
+ }
+
+.tblukuran{
+    background-color:white;
+    border-radius:10px;
+}
+.tblukuran a{
+   text-align:center;
+}
+
+.tblukuran img{
+    display: block;
+      margin-left: auto;
+      margin-right: auto;
+     vertical-align: top;
+    width:500px;
+    height:400px;
 }
 
 .row .card-title{

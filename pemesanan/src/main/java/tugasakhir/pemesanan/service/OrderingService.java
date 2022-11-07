@@ -82,6 +82,7 @@ public class OrderingService {
                     hari =h;
                     if(bln>12){
                         thn+=1;
+                        bln=1;
                     }
                 }else{
 
@@ -95,6 +96,7 @@ public class OrderingService {
                     hari =h;
                     if(bln>12){
                         thn+=1;
+                        bln=1;
                     }
                 }
             }else if(bln == 02){
@@ -105,6 +107,7 @@ public class OrderingService {
                     hari =h;
                     if(bln>12){
                         thn+=1;
+                        bln=1;
                     }
                 }
             }
