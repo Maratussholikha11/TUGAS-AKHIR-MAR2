@@ -73,6 +73,7 @@ public class TransactionController {
         Ordering Order = orderingRepository.getById(idOrder);
         System.out.println("id Order will pay : " + idOrder);
         Transaction trx = new Transaction();
+        trx.setOrdering(Order);
         trx.setOrderId(Order.getId_Order());
         model.addAttribute("transaction", trx);
         return "forms/transactionforms";
@@ -117,7 +118,8 @@ public class TransactionController {
             }
             byte[] imageData = file.getBytes();
             Transaction transaction = new Transaction();
-            transaction.setTotalPay(totalPay);
+
+            //transaction.setTotalPay(totalPay);
             transaction.setNote(note);
             transaction.setReceiptName(fileName);
             transaction.setImage(imageData);
@@ -130,6 +132,9 @@ public class TransactionController {
             orderingRepository.save(ord);
             transaction.setOrdering(ord);
             transaction.setOrderId(ord.getId_Order());
+            int totalPayment = transaction.getOrdering().getDp() + transaction.getOrdering().getFinalCost();
+            System.out.println("dp : " + transaction.getOrdering().getDp()+ " + " + "final cost : " + transaction.getOrdering().getFinalCost() + " = " + totalPayment);
+            transaction.setTotalPay(totalPayment);
             String LD_PATTERN = "yyyy-MM-dd";
             DateTimeFormatter LD_FORMATTER = DateTimeFormatter.ofPattern(LD_PATTERN);
             String dateString = LD_FORMATTER.format(LocalDate.now());
@@ -151,19 +156,24 @@ public class TransactionController {
     }
 
     @PostMapping("/update")
-    public String update(@RequestParam("id_transaction") Integer id,Transaction transaction){
+    public String update(@RequestParam("id_transaction") Integer id,@RequestParam("status") String status ,Transaction transaction){
         Transaction trx = transactionRepository.getById(id);
 //        trx.setTransactionDate(transaction.getTransactionDate());
+        Ordering ord = orderingRepository.getById(transaction.getOrderId());
         trx.setImage(transaction.getImage());
-        trx.setLunas("Lunas");
+        if (status.equalsIgnoreCase("1")){
+            trx.setLunas("Lunas");
+            ord.setStatusPayment("Pay off");
+        }else if(status.equalsIgnoreCase("3")){
+            trx.setLunas("Pending");
+            ord.setStatusPayment("Pending");
+        }
 //        trx.setTotalPay(transaction.getTotalPay());
         trx.setNote(transaction.getNote());
 //        trx.setTotalPay(transaction.getTotalPay());
         trx.setOrderId(transaction.getOrderId());
         System.out.println("status updated : " + transaction.getStatus().getIdStatus());
         trx.setStatus(transaction.getStatus());
-        Ordering ord = orderingRepository.getById(transaction.getOrderId());
-        ord.setStatusPayment("Pay off");
         orderingRepository.save(ord);
         trx.setOrdering(ord);
         trx.setUser(ord.getUser());

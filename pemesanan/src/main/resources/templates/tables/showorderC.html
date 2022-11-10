@@ -430,63 +430,30 @@
 													<td th:text="${order.statusOrder}"></td>
 													<td th:text="${order.percentage}"></td>
 													<td th:text="${order.statusPayment}" id="sts"></td>
-
-													<div th:if="${order.statusPayment=='Pay off'}">
+													<!--<div th:if="${order.statusPayment=='Pay off'}">
 														<td>
 															<div class="form-button-action">
 																<button type="button"  title="" class="btn btn-link btn-primary btn-lg" data-original-title="Detail">
 																	<a th:href="@{/ordering/detail/{id} (id=${order.id_Order})}" class="btn btn-warning text-right" target="_blank">
-																		<!--<i class="fa fa-file"></i>-->Detail <!--data-toggle="tooltip"-->
-																	</a>
-																</button>
-															</div>
-														</td>
-													</div>
-													<div th:if="${order.statusPayment=='Pending'}">
-														<td>
-															<div class="form-button-action">
-																<button type="button"  title="" class="btn btn-link btn-primary btn-lg" data-original-title="Detail">
-																	<a th:href="@{/ordering/detail/{id} (id=${order.id_Order})}" class="btn btn-warning text-right" target="_blank">
-																		<!--<i class="fa fa-file"></i>-->Detail <!--data-toggle="tooltip"-->
-																	</a>
-																</button>
-															</div>
-															<div th:if="${order.statusOrder=='Diterima'}">
-<!--														<td>-->
-															<div class="form-button-action">
-																<!--<button type="button"  title="" class="btn btn-link btn-primary btn-lg" data-original-title="Detail">
-																	<a th:href="@{/ordering/detail/{id} (id=${order.id_Order})}" class="btn btn-warning text-right" target="_blank">
 																		&lt;!&ndash;<i class="fa fa-file"></i>&ndash;&gt;Detail &lt;!&ndash;data-toggle="tooltip"&ndash;&gt;
-																	</a>
-																</button>-->
-																<button type="button"  title="" class="btn btn-link btn-primary btn-lg" data-original-title="Bayar" id="btnBayar">
-																	<a th:href="@{'/transaction/form/' + ${order.id_Order}}"  class="btn btn-success text-right" target="_blank">
-																		<!--<i class="fa fa-money" aria-hidden="true"></i>-->Bayar <!--data-toggle="tooltip"-->
-																	</a>
-																</button>
-															</div>
-															</div>
-<!--														</td>-->
-														</td>
-													</div>
-													<!--<div th:if="${order.statusOrder=='Diterima'}">
-														<td>
-															<div class="form-button-action">
-																&lt;!&ndash;<button type="button"  title="" class="btn btn-link btn-primary btn-lg" data-original-title="Detail">
-																	<a th:href="@{/ordering/detail/{id} (id=${order.id_Order})}" class="btn btn-warning text-right" target="_blank">
-																		&lt;!&ndash;<i class="fa fa-file"></i>&ndash;&gt;Detail &lt;!&ndash;data-toggle="tooltip"&ndash;&gt;
-																	</a>
-																</button>&ndash;&gt;
-																<button type="button"  title="" class="btn btn-link btn-primary btn-lg" data-original-title="Bayar" id="btnBayar">
-																	<a th:href="@{'/transaction/form/' + ${order.id_Order}}"  class="btn btn-success text-right" target="_blank">
-																		&lt;!&ndash;<i class="fa fa-money" aria-hidden="true"></i>&ndash;&gt;Bayar &lt;!&ndash;data-toggle="tooltip"&ndash;&gt;
 																	</a>
 																</button>
 															</div>
 														</td>
 													</div>-->
-													<div th:unless="${order.statusPayment=='Pending'}">
-														<div th:unless="${order.statusPayment=='Pay off'}">
+													<!--<div th:if="${order.statusPayment=='Pending'}">
+														<td>
+															<div class="form-button-action">
+																<button type="button"  title="" class="btn btn-link btn-primary btn-lg" data-original-title="Detail">
+																	<a th:href="@{/ordering/detail/{id} (id=${order.id_Order})}" class="btn btn-warning text-right" target="_blank">
+																		&lt;!&ndash;<i class="fa fa-file"></i>&ndash;&gt;Detail &lt;!&ndash;data-toggle="tooltip"&ndash;&gt;
+																	</a>
+																</button>
+															</div>
+														</td>
+													</div>-->
+													<div th:if="${order.statusOrder=='Diterima'}">
+														<div th:if="${order.statusPayment=='Pay off'}">
 															<td>
 																<div class="form-button-action">
 																	<button type="button"  title="" class="btn btn-link btn-primary btn-lg" data-original-title="Detail">
@@ -495,9 +462,78 @@
 																		</a>
 																	</button>
 																</div>
+															</td>
+														</div>
+														<div th:if="${order.statusPayment=='Pending'}">
+														<td>
+															<div class="form-button-action">
+																<button type="button"  title="" class="btn btn-link btn-primary btn-lg" data-original-title="Detail">
+																	<a th:href="@{/ordering/detail/{id} (id=${order.id_Order})}" class="btn btn-warning text-right" target="_blank">
+																		<!--<i class="fa fa-file"></i>-->Detail <!--data-toggle="tooltip"-->
+																	</a>
+																</button>
+															</div>
+														</td>
+													</div>
+														<div th:if="${order.statusOrder=='Diterima'}">
+															<div th:unless="${order.statusPayment=='Pay off'}">
+																<div th:unless="${order.statusPayment=='Pending'}">
+																	<td>
+																		<div class="form-button-action">
+																			<button type="button"  title="" class="btn btn-link btn-primary btn-lg" data-original-title="Bayar" id="btnBayar">
+																				<a th:href="@{'/transaction/form/' + ${order.id_Order}}"  class="btn btn-success text-right" target="_blank">
+																					Bayar
+																				</a>
+																			</button>
+																		</div>
 
+																		<div class="form-button-action">
+																			<button type="button"  title="" class="btn btn-link btn-primary btn-lg" data-original-title="Detail">
+																				<a th:href="@{/ordering/detail/{id} (id=${order.id_Order})}" class="btn btn-warning text-right" target="_blank">
+																					<!--<i class="fa fa-file"></i>-->Detail <!--data-toggle="tooltip"-->
+																				</a>
+																			</button>
+																		</div>
+																	</td>
+																</div>
+															</div>
+															<!--<div th:if="${order.statusPayment=='Pending'}">
+																<td>
+																	<div class="form-button-action">
+																		<button type="button"  title="" class="btn btn-link btn-primary btn-lg" data-original-title="Detail">
+																			<a th:href="@{/ordering/detail/{id} (id=${order.id_Order})}" class="btn btn-warning text-right" target="_blank">
+																				&lt;!&ndash;<i class="fa fa-file"></i>&ndash;&gt;Detail &lt;!&ndash;data-toggle="tooltip"&ndash;&gt;
+																			</a>
+																		</button>
+																	</div>
+																</td>
+															</div>-->
 														</div>
 													</div>
+													<div th:if="${order.statusOrder=='Menunggu'}">
+														<td>
+															<div class="form-button-action">
+																<button type="button"  title="" class="btn btn-link btn-primary btn-lg" data-original-title="Detail">
+																	<a th:href="@{/ordering/detail/{id} (id=${order.id_Order})}" class="btn btn-warning text-right" target="_blank">
+																		<!--<i class="fa fa-file"></i>-->Detail <!--data-toggle="tooltip"-->
+																	</a>
+																</button>
+															</div>
+														</td>
+													</div>
+													<!--<div th:unless="${order.statusPayment=='Pending'}">
+														<div th:unless="${order.statusPayment=='Pay off'}">
+															<td>
+																<div class="form-button-action">
+																	<button type="button"  title="" class="btn btn-link btn-primary btn-lg" data-original-title="Detail">
+																		<a th:href="@{/ordering/detail/{id} (id=${order.id_Order})}" class="btn btn-warning text-right" target="_blank">
+																			&lt;!&ndash;<i class="fa fa-file"></i>&ndash;&gt;Detail &lt;!&ndash;data-toggle="tooltip"&ndash;&gt;
+																		</a>
+																	</button>
+																</div>
+
+														</div>
+													</div>-->
 												</tr>
 											</tbody>
 										</table>

@@ -296,6 +296,11 @@ public class OrderingController {
         return "forms/tableukuran";
     }
 
+    @RequestMapping (value="/tabelwarna", method = RequestMethod.GET)
+    public String color(Model model, Principal p) {
+        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        return "forms/tabelwarna";
+    }
 
 
 

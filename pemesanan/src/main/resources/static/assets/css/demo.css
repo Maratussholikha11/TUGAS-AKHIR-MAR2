@@ -279,6 +279,53 @@ body[data-background-color="dark"] .demo-icon .icon-class {
    
 }
 
+.warna{
+    color:white;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+        grid-gap: 20px;
+}
+
+.warna p{
+      line-height:60px;
+}
+
+.warna .merahcerah{
+
+    height:60px;
+    width:80px;
+    background-color:#e60000;
+}
+
+.warna .merahmaroon{
+    height:60px;
+    width:80px;
+    background-color:#990000;
+}
+
+.warna .pink{
+    height:60px;
+    width:80px;
+    background-color:#ff0066;
+}
+
+.warna .oren{
+    height:60px;
+    width:80px;
+    background-color:#ff3300;
+}
+.warna .biru{
+    height:60px;
+    width:80px;
+    background-color:#0080ff;
+}
+
+.warna .navy{
+    height:60px;
+    width:80px;
+    background-color:#004d99;
+}
+
 .card .produk td{
   margin-left:50px;
    margin-left:50px;
