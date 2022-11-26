@@ -55,8 +55,9 @@ public class UserController {
 
     @PostMapping("/register")
     public String register(User user){
-        System.out.println("userr 2 ");
-        ResponseData<User> response = new ResponseData<>();
+        try {
+            System.out.println("userr 2 ");
+            ResponseData<User> response = new ResponseData<>();
 //        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 //        User user1  = modelMapper.map(user, User.class);
 //        user1.setPassword(user.getPassword());
@@ -72,14 +73,18 @@ public class UserController {
 ////        emailService.sendEmail(email[0],"Acces Login User",text);
 //        response.setPayload(userDetailService.save(user1));
 //        return ResponseEntity.ok(response);
-        Role role = new Role();
-        if(user.getRole()==null) {
-            role = roleRepository.findByNameRole("CUSTOMER");
-            user.setRole(role);
+            Role role = new Role();
+            if(user.getRole()==null) {
+                role = roleRepository.findByNameRole("CUSTOMER");
+                user.setRole(role);
+            }
+            System.out.println("role : " + user.getRole().getNameRole());
+            userDetailService.save(user);
+            return "redirect:/";
+        }catch (Exception e){
+            return "register";
         }
-        System.out.println("role : " + user.getRole().getNameRole());
-        userDetailService.save(user);
-        return "redirect:/";
+
     }
 
     @GetMapping("/create/customer")

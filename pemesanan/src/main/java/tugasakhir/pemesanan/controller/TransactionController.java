@@ -165,8 +165,8 @@ public class TransactionController {
             trx.setLunas("Lunas");
             ord.setStatusPayment("Pay off");
         }else if(status.equalsIgnoreCase("3")){
-            trx.setLunas("Pending");
-            ord.setStatusPayment("Pending");
+            trx.setLunas("Rejected");
+            ord.setStatusPayment("Rejected");
         }
 //        trx.setTotalPay(transaction.getTotalPay());
         trx.setNote(transaction.getNote());
