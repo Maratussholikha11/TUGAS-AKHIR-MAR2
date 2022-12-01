@@ -171,11 +171,11 @@ public class OrderingService {
         current.setOrderDetails(ordering.getOrderDetails());
         current.setQuantity(ordering.getQuantity());
         current.setPercentage(ordering.getPercentage());
-        current.setUser(user);
+//        current.setUser(user);
         Product p = productService.findById(ordering.getProductId());
         current.setProduct(p);
 
-        System.out.println("Order by \n user name : " + user.getName());
+//        System.out.println("Order by \n user name : " + user.getName());
         System.out.println("id product : " + ordering.getProductId());
         System.out.println("quantity : " + ordering.getQuantity());
         System.out.println("price : " + p.getPrice());
