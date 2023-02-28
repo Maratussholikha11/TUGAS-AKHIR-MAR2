@@ -1,0 +1,2 @@
+1. dalam dokumentasi menambahkan filter bulan dan tahun jika akan mendoenload laporan data
+2. data produk dapat dihapus secara soft delete
