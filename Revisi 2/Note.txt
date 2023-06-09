@@ -1,2 +1,12 @@
-1. dalam dokumentasi menambahkan filter bulan dan tahun jika akan mendoenload laporan data
+1. dalam dokumentasi menambahkan filter bulan dan tahun jika akan mendownload laporan data
 2. data produk dapat dihapus secara soft delete
+3. Jika ingin menghapus data beri peringatan konfirmasi hapus(tetap hapus/cancel)
+4. ada reject di konfirmasi pembayaran
+
+
+cek bagian sequence lihat produk dan lihat detail produk
+input data pesanan, ada 
+konfirmasi pesanan, ada
+bayar pesanan, ada
+lihat data pesanan, activity dan sequence, ada
+konfirmasi pembyaran, ada
